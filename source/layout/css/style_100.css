@@ -3,11 +3,11 @@
 	top:0;
 	left:0;
 	margin-bottom: -115px;
-	width:1440px;
+	width:100%;
 	height:127px;
 	background-image:url(../images/common/bg_header.png);
 	background-repeat:no-repeat;
-	background-size:1440px 127px;
+	background-size:100% 127px;
 	z-index:10;
 }
 footer {
@@ -15,18 +15,18 @@ footer {
 	top:0;
 	left:0px;
 	margin-top: -124px;
-	width:1440px;
+	width:100%;
 	height:124px;
 	background-image:url(../images/common/bg_footer.png);
 	background-repeat:no-repeat;
-	background-size:1440px 124px;
+	background-size:100% 124px;
 	z-index:10;
 }
 nav {
 	position:absolute;
 	top:0px;
 	left:0;
-	width:1440px;
+	width:100%;
 	height:120px;
 	text-align:center;
 	padding-top: 10px;
@@ -46,54 +46,68 @@ nav ul li {
 	position:relative;
 	top:0;
 	left:0;
-	width:1440px;
-	height:800px;
+	width:100%;
+	height:100%
 	overflow:hidden;
+}
+.parallax-viewport {
+	width: 100%;
+}
+.parallax-viewport {
+	width: 100%;
+	max-width: 1440px;
+	height: 800px;
+	min-height:100%;
+	background-color: #FF0;
+}
+.parallax-viewport {
+	position: relative;     /* relative, absolute, fixed */
+	overflow: hidden;
+}
+.parallax-layer {
+	position: absolute;
 }
 .bg_content_1, .bg_content_2, .bg_content_3, .bg_content_4 {
 	position:absolute;
-	top:50px;
-	left:-100px;
-	
 	height:800px;
 	background-repeat:no-repeat;
 	z-index:0;
 }
 .bg_content_1 {
-	width:1822px;
+	width:110%;
 	top:25px;
-	left:-85px;
+	left:0;
 	background-image:url(../images/common/bg_content_1.jpg);
 	background-size:1822px 732px;
+	background-position-x:0;
 	z-index:0;
-	background-color:#FF0;
 }
 .bg_content_2 {
-	width:1800px;
+	width:107%;
 	top:105px;
-	left:95px;
+	left:0;
 	background-image:url(../images/common/bg_content_2.png);
 	background-size:1357px 175px;
+	background-position-x: 10%;
 	z-index:1;
-	background-color:#F0F;
 }
 .bg_content_3 {
-	width:1700px;
+	width:105%;
 	top:125px;
-	left:320px;
+	left:0;
 	background-image:url(../images/common/bg_content_3.png);
 	background-size:829px 487px;
 	z-index:2;
-	background-color:#0FF;
+	background-position:top center;
 }
 .bg_content_4 {
-	width:1600px;
+	width:103%;
 	top:120px;
-	left:-110px;
+	left:0;
 	background-image:url(../images/common/bg_content_4.png);
 	background-size:1674px 806px;
+	background-position-x:77%;
 	z-index:12;
-	background-color:#0F0;
 }
 .logo {
 	display:block;
@@ -105,23 +119,25 @@ nav ul li {
 	background-size:131px 63px;
 }
 .bottle {
-	position:absolute;
+	position:relative;
 	top:25px;
-	left:210px;
+	left:-288px;
 	width:481px;
 	height:756px;
 	background-image:url(../images/common/bottle.png);
 	background-repeat:no-repeat;
 	background-size:481px 756px;
 	z-index:11;
+	margin:0 auto;
 }
 .wrapp_content {
 	position: relative;
 	top: 150px;
-	left: 135px;
+	left: -65px;
 	width: 435px;
 	height:300px;
 	color:#362f2d;
+	margin:0 auto;
 }
 .wrapp_content h1{
 	line-height:0;
