@@ -1,0 +1,122 @@
+.bg_header {
+	position:relative;
+	top:0;
+	left:0;
+	margin-bottom: -115px;
+	width:1024px;
+	height:90px;
+	background-image:url(../images/common/bg_header.png);
+	background-repeat:no-repeat;
+	background-size:1024px 90px;
+	z-index:10;
+}
+footer {
+	position:relative;
+	top:0;
+	left:0px;
+	margin-top: -88px;
+	width:1024px;
+	height:88px;
+	background-image:url(../images/common/bg_footer.png);
+	background-repeat:no-repeat;
+	background-size:1440px 88px;
+	z-index:10;
+}
+nav {
+	position:absolute;
+	top:0px;
+	left:0;
+	width:1024px;
+	height:90px;
+	text-align:center;
+	z-index:15;
+}
+nav ul li a {
+	color:#FFFFFF;
+}
+nav ul li a:hover {
+	color: yellow;
+}
+nav ul li {
+	display:inline-block;
+	padding: 10px 10px;
+}
+.wrapper {
+	position:relative;
+	top:0;
+	left:0;
+	width:1024px;
+	height:565px;
+	overflow:hidden;
+}
+.bg_content_1, .bg_content_2, .bg_content_3, .bg_content_4 {
+	position:absolute;
+	top:50px;
+	left:-100px;
+	width:1297px;
+	height:521px;
+	background-repeat:no-repeat;
+	z-index:0;
+}
+.bg_content_1 {
+	top:25px;
+	left:-85px;
+	background-image:url(../images/common/bg_content_1.jpg);
+	background-size:1297px 521px;
+	z-index:0;
+}
+.bg_content_2 {
+	top:105px;
+	left:95px;
+	background-image:url(../images/common/bg_content_2.png);
+	background-size:1357px 175px;
+	z-index:1;
+}
+.bg_content_3 {
+	top:125px;
+	left:265px;
+	background-image:url(../images/common/bg_content_3.png);
+	background-size:514px 302px;
+	z-index:2;
+}
+.bg_content_4 {
+	top:120px;
+	left:-110px;
+	background-image:url(../images/common/bg_content_4.png);
+	background-size:1674px 806px;
+	z-index:12;
+}
+.logo {
+	display:block;
+	margin-bottom:-25px;
+	width:95px;
+	height:46px;
+	background-image:url(../images/common/logo.png);
+	background-repeat:no-repeat;
+	background-size:95px 46px;
+}
+.bottle {
+	position:absolute;
+	top:50px;
+	left:210px;
+	width:325px;
+	height:511px;
+	background-image:url(../images/common/bottle.png);
+	background-repeat:no-repeat;
+	background-size:325px 511px;
+	z-index:11;
+}
+.wrapp_content {
+	position: relative;
+	top: 150px;
+	left: 135px;
+	width: 435px;
+	height:300px;
+	color:#362f2d;
+}
+.wrapp_content h1{
+	line-height:0;
+	}
+.wrapp_content h2{
+	line-height:0;
+	}
