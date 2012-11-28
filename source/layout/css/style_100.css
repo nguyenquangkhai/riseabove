@@ -38,9 +38,12 @@ nav ul li a {
 nav ul li a:hover {
 	color: yellow;
 }
+nav ul li a.active {
+	color: yellow;
+}
 nav ul li {
 	display:inline-block;
-	padding: 10px 25px;
+	padding: 10px 40px;
 }
 .wrapper {
 	position:relative;
@@ -69,7 +72,7 @@ nav ul li {
 }
 .bg_content_1, .bg_content_2, .bg_content_3, .bg_content_4 {
 	position:absolute;
-	height:800px;
+	height:100%;
 	background-repeat:no-repeat;
 	z-index:0;
 }
@@ -140,8 +143,8 @@ nav ul li {
 	margin:0 auto;
 }
 .wrapp_content h1{
-	line-height:0;
+	line-height:10px;
 	}
 .wrapp_content h2{
-	line-height:0;
+	line-height:20px;
 	}
