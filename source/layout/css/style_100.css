@@ -82,7 +82,7 @@ nav ul li {
 	left:0;
 	background-image:url(../images/common/bg_content_1.jpg);
 	background-size:1822px 732px;
-	background-position-x:0;
+	background-position-x:-100px;
 	z-index:0;
 }
 .bg_content_2 {

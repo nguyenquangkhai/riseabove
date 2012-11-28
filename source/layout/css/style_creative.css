@@ -1,5 +1,6 @@
 .bg_content_1 {
 	background-image:url(../images/common/bg_content_creative_1.jpg);
+	background-position-x:-100px;
 }
 .bg_content_3 {
 	background-image:none;
