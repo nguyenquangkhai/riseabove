@@ -1,0 +1,10 @@
+﻿@font-face {  
+	  font-family: "FFF";  
+	  src: url('font/Gravinamregular.eot'); /* IE */  
+	  src: local("FFF"), url('font/Gravinamregular.ttf') format("truetype"); /* non-IE */  
+	}
+
+.setfont{
+	font-family:FFF;
+	color: blue;
+}

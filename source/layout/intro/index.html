@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<title></title>
+		<link href="styles/style.css" rel="stylesheet" type="text/css" />
+		<link href="styles/cssfont.css" rel="stylesheet" type="text/css" />		
+		
+		<link href="styles/stylesite.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" language="javascript" src="js/modernizr.js"></script>
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-36622557-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>		
+	</head>
+	<body>
+		<div id="webcontent">
+			<div id="toppage">				
+				
+				<div class="menu-top">
+					<!-- ul class="sf-menu">
+						<li> <a href="#"> Giới Thiệu </a></li>
+						<li> <a href="#"> Kiến tạo </a>	</li>
+						<li class="logo"> <a href="#"> Martell </a></li>
+						<li> <a href="#"> Bộ Sưu Tập </a></li>
+						<li> <a href="#"> Liên Hệ </a></li>						
+					</ul -->
+					<ul class="sf-menu">
+						<li> <a></a></li>
+						<li> <a></a></li>
+						<li class="logo"> <a> Martell </a></li>
+						<li> <a></a></li>
+						<li> <a></a></li>						
+					</ul>
+				</div>	
+		
+			</div>
+			<div id="mainpage">
+				<div class="tree-cs">
+				</div>
+					
+				<div class="description">
+					<p class="quote">					
+					</p>
+					<p>Martell V.S.O.P – Hơn cả kiệt tác…</p>
+					<p>
+						Một thông điệp của sự sáng tạo và đam mê vô tận, Martell V.S.O.P sẽ đưa bạn vào hành trình kiến tạo đầy hứng khởi để cùng tạo nên cho riêng mỗi người những kiệt tác độc đáo của nghệ thuật chưng cất cognac đến từ nước Pháp hoa lệ và lãng mạn.
+					</p>
+					<p>
+						Kiệt tác Martell V.S.O.P do chính bạn kiến tạo là thông điệp vô cùng ý nghĩa dành cho những người thân thương nhất. Một lời chúc chân thành, ấm áp và đầy tinh tế sẽ là một món quà tao nhã bất ngờ dành cho những ngày cuối năm se lạnh.
+					</p>
+					<p>
+						Hãy cùng Martell V.S.O.P chờ đón những phiên bản đặc biệt do chính bạn tạo nên vào dịp Giáng Sinh 2012!
+					</p>
+					<p>
+						Nhập email hoặc số điện thoại của bạn ngay để trở thành một trong những người đầu tiên kiến tạo kiệt tác Martell V.S.O.P tại Việt Nam.
+					</p>
+				</div>
+				<form id="submit_form" class="form" method="post" action="get_contact.php">
+					
+					<div class="settingrow">
+						<input id="txtphone" name="phone" type="textbox" class="textbox" placeholder="Số điện thoại"/>
+					</div>
+					<div class="settingrow">
+						<input id="txtemail" name="email" type="textbox" class="textbox" placeholder="Email"/>
+					</div>
+					<div class="settingrow">
+						<input type="submit" class="btn-submit" value=""/>
+					</div>
+						
+
+				</form>
+			</div>
+			<div id="bottompage">
+				<div class="footer">
+					
+					
+				</div>
+			</div>
+		</div>
+		<div id="audio_holder">
+			<audio id="audio_player">
+			   <source src="media/FuguettaOnWeWishYouAMerryChristma.mp3" type='audio/mpeg; codecs="mp3"'>
+			   <source src="" type='audio/ogg; codecs="vorbis"'>
+			</audio>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+		<script type="text/javascript" language="javascript" src="js/jquery.form.js"></script>
+		<script type="text/javascript">
+			var audio = new Audio();
+			audio.loop = true;
+			audio.src = Modernizr.audio.mp3 ? 'media/FuguettaOnWeWishYouAMerryChristma.mp3' : 
+						Modernizr.audio.ogg ? 'media/FuguettaOnWeWishYouAMerryChristma.ogg' : '';
+            //audio.play();
+		</script>
+		<script> 
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+			$("#submit_form input[type=textbox]").each(function(){
+				var o = $(this);
+				o.keydown(function(){
+					if(audio.paused){
+						audio.play();
+					}
+				})
+			});
+            // bind 'myForm' and provide a simple callback function 
+            $('#submit_form').ajaxForm(function(response) { 
+				if(response == "ok")
+					alert("Đã đăng ký thành công. Chúng tôi sẽ thông báo đến bạn sớm nhất."); 
+				$('#submit_form')[0].reset();
+            }); 
+        }); 
+    </script> 
+	</body>
+</html>

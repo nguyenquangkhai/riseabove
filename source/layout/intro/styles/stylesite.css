@@ -1,0 +1,28 @@
+
+.menu-top { width: 961px; height: 78px;  margin: 0px auto; position: relative; z-index: 99; background-image: url('images/topmenu_bg.png'); background-color: transparent; background-position: no-repeat; }
+.sf-menu { float: left;  margin-left: 2px; margin-top: 15px;}
+
+.sf-menu { width: 879px; height: 40px; text-align: center; }
+.sf-menu li { float: none; display: inline; color: #fff; width: auto;  padding: 10px 40px;}
+.sf-menu li a  { text-transform: none; font-family: fff;  text-shadow: 1px 1px #555555; font-size: 17px; text-transform: uppercase;  line-height: 70px ;}
+.sf-menu li a:hover { color: #e8b975; cursor: pointer; }
+
+.sf-menu .logo a { width: 131px; height: 63px; display: inline-block; text-indent: -30000px; background-image: url('images/logo.png'); background-color: transparent; background-position: no-repeat; }
+
+.tree-cs { width: 387px; height: 683px; position: absolute; top: -90px; left: -135px; background-image: url('images/chrismast_tree.png'); background-color: transparent; background-repeat: no-repeat;}
+
+#mainpage { text-align: center;}
+.description { text-align: center; width: 70%; margin: 20px auto; text-align: justify;}
+.description .title { text-align: center;}
+
+.description .quote { width: 461px; height: 41px; margin: 0 auto; padding: 10px 0; background-image: url('images/quote.png'); background-color: transparent; background-repeat: no-repeat;}
+.description p{
+	margin-bottom:15px;
+}
+
+.form { margin-top: 50px;}
+.form .settingrow { margin: 15px 0px;}
+.form .settingrow input { border: none;}
+.form .settingrow .title { color: #c9ad67; text-transform: uppercase;}
+.form .settingrow .textbox{  width: 190px; height: 32px; color: #707070; padding: 0 5px;   background-image: url('images/textbox.png'); background-color: transparent; background-repeat: no-repeat;}
+.form .btn-submit { width: 86px; height: 31px; cursor: pointer;  background-image: url('images/submit.png'); background-color: transparent; background-repeat: no-repeat;}
