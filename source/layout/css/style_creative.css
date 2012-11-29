@@ -1,6 +1,6 @@
 .bg_content_1 {
 	background-image:url(../images/common/bg_content_creative_1.jpg);
-	background-position-x:-100px;
+	background-position:-100px 0;
 }
 .bg_content_3 {
 	background-image:none;
@@ -9,7 +9,7 @@
 .bg_content_4 {
 	background-image:url(../images/common/bg_content_creative_4.png);
 	background-size:1674px 806px;
-	background-position-x:100%;
+	background-position:100% 0;
 }
 .bottle {
 	position:relative;
@@ -26,11 +26,12 @@
 .wrapp_content {
 	position: relative;
 	text-align:center;
-	top: -5px;
+	top: -30px;
 	left: 20px;
 	width: 500px;
 	height:auto;
 	color:#fff;
+	background-image:none;
 	margin:0 auto;
 }
 .title_creative{
@@ -52,8 +53,8 @@
 	}
 .arrow_creative{
 	position:absolute;
-	top:230px;
-	right:-70px;
+	top:375px;
+	right:60px;
 	width:33px;
 	height:75px;
 	background-image:url(../images/common/arrow_creative.png);
