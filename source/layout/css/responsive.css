@@ -1,0 +1,118 @@
+@media only screen and (max-width: 1280px) {
+.bg_content_1 {
+	width:1305px;
+	background-size:1822px 732px;
+	background-position-x:-100px;
+}
+.bg_content_2 {
+	width:1295px;
+	background-size:1357px 175px;
+	background-position-x: 10%;
+}
+.bg_content_3 {
+	width:1290px;
+	background-size:829px 487px;
+	background-position:top center;
+}
+.bg_content_4 {
+	width:1285px;
+	background-size:1674px 806px;
+	background-position-x:77%;
+}
+.wrapper {
+	position:relative;
+	top:0;
+	left:0;
+	width:1280px;
+	height:100%;
+	overflow:hidden;
+}
+.parallax-viewport {
+	width: 1280px;
+	max-width: 1280px;
+}
+
+}
+
+@media only screen and (max-width: 1024px) {
+.bg_content_1 {
+	width:1049px;
+	background-size:1822px 732px;
+	background-position-x:-100px;
+}
+.bg_content_2 {
+	width:1039px;
+	background-size:1357px 175px;
+	background-position-x: 10%;
+}
+.bg_content_3 {
+	width:1034px;
+	background-size:829px 487px;
+	background-position:top center;
+}
+.bg_content_4 {
+	width:1029px;
+	background-size:1674px 806px;
+	background-position-x:77%;
+}
+.wrapper {
+	position:relative;
+	top:0;
+	left:0;
+	width:1024px;
+	height:100%;
+	overflow:hidden;
+}
+.parallax-viewport {
+	width: 1024px;
+	max-width: 1024px;
+}
+
+.bottle{
+	left:-100px;
+	}
+}
+
+@media only screen and (max-width: 740px) {
+.bg_content_1 {
+	width:765px;
+	background-size:1822px 732px;
+	background-position-x:-100px;
+}
+.bg_content_2 {
+	width:755px;
+	background-size:1357px 175px;
+	background-position-x: 10%;
+}
+.bg_content_3 {
+	width:750px;
+	background-size:829px 487px;
+	background-position:top center;
+}
+.bg_content_4 {
+	width:745px;
+	background-size:1674px 806px;
+	background-position-x:77%;
+}
+.wrapper {
+	position:relative;
+	top:0;
+	left:0;
+	width:740px;
+	height:100%;
+	overflow:hidden;
+}
+.parallax-viewport {
+	width: 740px;
+	max-width: 740px;
+}
+}
+
+@media only screen and (max-width: 570px) {
+
+}
+
+/** iPhone only **/
+@media screen and (max-device-width: 480px) {
+
+}
