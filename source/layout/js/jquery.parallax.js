@@ -491,3 +491,10 @@
 	});
 
 }(jQuery));
+
+// Reload_onsize
+function Reload()
+{
+    window.location.href = window.location.href
+}
+window.onresize = Reload;
