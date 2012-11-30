@@ -72,6 +72,7 @@ nav ul li {
 }
 .bg_content_1 {
 	width:110%;
+	height:740px;
 	top:25px;
 	left:0;
 	background-image:url(../images/common/bg_content_1.jpg);
@@ -79,7 +80,7 @@ nav ul li {
 	z-index:0;
 }
 .bg_content_2 {
-	width:102%;
+	width:104%;
 	top:105px;
 	left:0;
 	background-image:url(../images/common/bg_content_2.png);
@@ -95,6 +96,7 @@ nav ul li {
 }
 .bg_content_4 {
 	width:101%;
+	height:102%;
 	top:120px;
 	left:0;
 	background-image:url(../images/common/bg_content_4.png);
