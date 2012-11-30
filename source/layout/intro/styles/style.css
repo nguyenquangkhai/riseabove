@@ -3,9 +3,9 @@
     margin:0;padding:0;  
     font-family:tahoma ;
 	background-position: center top;
-	background-color: #000;
-	background-image: url('images/main_bg.jpg'); 
-	background-repeat: repeat;
+	background-color: #090c1d;
+	background-image: url('images/bg.jpg'); 
+	background-repeat: no-repeat;
 	color: #fff;
 	font-size: 15px;
 }
@@ -17,6 +17,6 @@ p { padding: 0px; margin: 0px;}
     width:100%;   
 }
 
-#toppage { width: 100%; min-height: 127px; margin: 0 auto; background-image: url('images/header_bg.png'); background-color: transparent; background-repeat: repeat-x;}
-#bottompage { width: 100%; min-height: 126px; margin: 10px auto 0; background-image: url('images/footer_bg.png'); background-color: transparent; background-repeat: no-repeat;}
-#mainpage { width: 1024px; margin: 0 auto; min-height: 535px; position: relative;}
+#toppage { width: 100%; min-height: 127px; margin: 0 auto; }
+#bottompage { width: 100%; min-height: 126px; position: relative;}
+#mainpage { width: 1024px; margin: 0 auto; min-height: 487px; position: relative;}
