@@ -1,11 +1,22 @@
+@media only screen and (max-width: 1590px) {
+	.bottle {
+	left:10%;
+}
+.bg_content_5 {
+	background-position:175% 120px;
+}
+	}
 @media only screen and (max-width: 1280px) {
+html, body {
+	height:auto;
+	}
 .bg_content_1 {
-	/*width:1305px;*/
+	height:740px;
 	background-size:1822px 732px;
 	background-position:-100px 0;
 }
 .bg_content_2 {
-	/*width:1295px;*/
+	top:105px;
 	background-size:1357px 175px;
 	background-position: 10% 0;
 }
@@ -17,68 +28,48 @@
 .bg_content_4 {
 	/*width:1285px;*/
 	background-size:1674px 806px;
-	background-position:77% 0;
+	background-position:77% 120px;
 }
+.bg_content_5 {
+	background-position:75% 120px;
 }
-
-@media only screen and (max-width: 1024px) {
-.bg_content_1 {
-	/*width:1049px;*/
-	background-size:1822px 732px;
-	background-position:-100px 0;
-}
-.bg_content_2 {
-	/*width:1039px;*/
-	background-size:1357px 175px;
-	background-position: 10% 0;
-}
-.bg_content_3 {
-	/*width:1034px;*/
-	background-size:719px 487px;
-	background-position:top center;
-}
-.bg_content_4 {
-	/*width:1029px;*/
-	background-size:1674px 806px;
-	background-position:77% 0;
-}
-/*.bottle{
-	left:-390px;
-	}*/
-}
-@media only screen and (max-width: 960px) {
-	.bottle{
-	left:-425px;
+.parallax-viewport {
+	height: 810px;
+	min-height:810px;
 	}
+.bottle {
+	position:relative;
+	top:25px;
+	left:-392px;
+	width:266px;
+	height:756px;
+	background-image:url(../images/common/bottle_ori.png);
+	background-repeat:no-repeat;
+	background-size:266px 756px;
+	z-index:11;
+	margin:0 auto;
+}
+.bell{
+	position:relative;
+	top:215px;
+	left:295px;
+	width:252px;
+	height:256px;
+	background-image:url(../images/common/bell.png);
+	background-repeat:no-repeat;
+	background-size:252px 256px;
+	margin:0 auto;
 	}
-@media only screen and (max-width: 740px) {
-.bg_content_1 {
-	width:765px;
-	background-size:1822px 732px;
-	background-position:-100px 0;
-}
-.bg_content_2 {
-	width:755px;
-	background-size:1357px 175px;
-	background-position: 10% 0;
-}
-.bg_content_3 {
-	width:750px;
+.wrapp_content {
+	position: relative;
+	top: 120px;
+	left: -50px;
+	width: 435px;
+	height: 340px;
+	padding:147px 154px 0 130px;
 	background-size:719px 487px;
-	background-position:top center;
+	background-repeat:no-repeat;
+	color:#362f2d;
+	margin:0 auto;
 }
-.bg_content_4 {
-	width:745px;
-	background-size:1674px 806px;
-	background-position:77% 0;
-}
-}
-
-@media only screen and (max-width: 570px) {
-
-}
-
-/** iPhone only **/
-@media screen and (max-device-width: 480px) {
-
 }

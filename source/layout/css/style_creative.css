@@ -6,27 +6,21 @@
 	background-image:none;
 	z-index:13;
 }
-.bg_content_4 {
+.bg_content_5 {
+	width:101%;
+	height:102%;
+	top:150px;
+	left:0;
 	background-image:url(../images/common/bg_content_creative_4.png);
 	background-size:1674px 806px;
-	background-position:100% 0;
-}
-.bottle {
-	position:relative;
-	top:25px;
-	left:-392px;
-	width:266px;
-	height:756px;
-	background-image:url(../images/common/bottle_ori.png);
+	background-position: -28% 115%;
 	background-repeat:no-repeat;
-	background-size:266px 756px;
-	z-index:11;
-	margin:0 auto;
+	z-index:12;
 }
-.wrapp_content {
+.wrapp_creative_content {
 	position: relative;
 	text-align:center;
-	top: -30px;
+	top: 15%;
 	left: 20px;
 	width: 500px;
 	height:auto;
