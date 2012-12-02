@@ -104,6 +104,7 @@ nav ul li {
 	background-image:url(../images/common/bg_content_4.png);
 	background-size:1674px 806px;
 	background-position:38% 190px;
+	background-repeat:no-repeat;
 	z-index:12;
 }
 .logo {
