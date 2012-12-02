@@ -24,7 +24,7 @@ html, body {
 }
 
 .bg_content_5 {
-	background-position:205% 120px;
+	background-position:140% 120px;
 }
 .parallax-viewport {
 	height: 810px;
@@ -34,13 +34,13 @@ html, body {
 	position:relative;
 	top:25px;
 	left:-35%;
-	width:266px;
-	height:756px;
-	background-image:url(../images/common/bottle_ori.png);
-	background-repeat:no-repeat;
-	background-size:266px 756px;
 	z-index:11;
-	margin:0 auto;
+}
+.bottle_1 {
+	position:relative;
+	top:70px;
+	left:-320px;
+	z-index:11;
 }
 .bell {
 	position:relative;
@@ -92,7 +92,7 @@ html, body {
 }
 
 .bg_content_5 {
-	background-position:90% 120px;
+	background-position:75% 120px;
 }
 .parallax-viewport {
 	height: 810px;
@@ -102,13 +102,14 @@ html, body {
 	position:relative;
 	top:25px;
 	left:-392px;
-	width:266px;
-	height:756px;
-	background-image:url(../images/common/bottle_ori.png);
-	background-repeat:no-repeat;
-	background-size:266px 756px;
 	z-index:11;
 	margin:0 auto;
+}
+.bottle_1 {
+	position:relative;
+	top:70px;
+	left:-320px;
+	z-index:11;
 }
 .bell {
 	position:relative;
