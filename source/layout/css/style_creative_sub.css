@@ -1,0 +1,119 @@
+.bg_content_1 {
+	background-image:url(../images/common/bg_content_creative_1.jpg);
+	background-position:-100px 0;
+}
+.bg_content_3 {
+	background-image:none;
+	z-index:13;
+}
+.bg_content_5 {
+	width:101%;
+	height:102%;
+	top:150px;
+	left:0;
+	background-image:url(../images/common/bg_content_creative_4.png);
+	background-size:1514px 1030px;
+	background-position:38% 190px;
+	background-repeat:no-repeat;
+	z-index:12;
+}
+.wrapp_creative_content_sub {
+	position: relative;
+	text-align:center;
+	top: 15%;
+	left: -29px;
+	width: 1000px;
+	height:auto;
+	color:#fff;
+	background-image:none;
+	margin:0 auto;
+	background-color:rgba(0,0,255,0.5);
+}
+.title_creative_sub{
+	position:relative;
+	left:185px;
+	width:542px;
+	height:45px;
+	margin-bottom:30px;
+	}
+.creative_left_sub{
+	position:relative;
+	float:left;
+	width:400px;
+	background-color:rgba(0,255,255,0.5);
+	}	
+.creative_right_sub{
+	position:relative;
+	float:right;
+	width:400px;
+	background-color:rgba(0,255,255,0.5);
+	}
+	
+.title_left_sub{
+	margin-bottom:10px;
+}
+.title_left_sub h1{
+	font-weight:normal;}
+.content_creative_sub li{
+	display:inline-block;
+	width:87px;
+	height:87px;
+	margin: 0px 15px;
+	}
+.content_creative_sub_1 li{
+	display:inline-block;
+	width:106px;
+	height:104px;
+	margin-bottom:5px;
+	}
+.arrow_creative_sub{
+	position:absolute;
+	top:230px;
+	right:-70px;
+	width:33px;
+	height:75px;
+	background-image:url(../images/common/arrow_creative.png);
+	background-size:33px 75px;
+	background-repeat:no-repeat;
+	z-index:15;}
+.arrow_creative_sub:hover{
+	opacity:0.5;}
+	
+.bottle_2 {
+	position:absolute;
+	left:-10px;
+	width:228px;
+	height:720px;
+	background-image:url(../images/common/bottle_ori_1.png);
+	background-repeat:no-repeat;
+	background-size:228px 720px;
+	z-index:11;
+	margin:0 auto;
+	bottom: 35px;
+}
+.form_right_sub{
+	margin:20px auto;
+	width:360px;
+	}
+.form_right_sub textarea{
+	margin-left:-3px;
+	width:100%;
+	height:120px;
+	border-radius:5px; 
+	}
+.form_right_sub button{
+	margin-top:10px;
+	float:right;
+	width:103px;
+	height:30px;
+	-webkit-appearance:none;
+	background-image:url(../images/common/btn_submit.png);
+	background-repeat:no-repeat;
+	background-size:103px 30px;
+	border:none;
+	background-color:rgba(255,255,255,0);
+	}
+.form_right_sub button:hover{
+	opacity:0.7;
+	}
+
