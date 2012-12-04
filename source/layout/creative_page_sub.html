@@ -9,6 +9,9 @@
 <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/style_creative_sub.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
+<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 </head>
 
 <body >
@@ -69,13 +72,26 @@
               <h1>TYPE YOUR TEXT</h1>
             </div>
             <form class="form_right_sub">
-            	<textarea name="" title="fafd"></textarea>
-                <button type="button" value="Submit" title="" ></button>
+              <textarea name="" title="fafd"></textarea>
+              <button type="button" value="Submit" title="" ></button>
             </form>
           </li>
           <div class="clear"></div>
           <div class="space30"></div>
-          
+          <style type="text/css">
+.content_creative_sub_4 {
+	width:260px;
+	height:300px;
+	float:left;
+}
+.content_creative_sub_4 {
+	border:1px dashed #09C;
+	padding:0 10px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+		</style>
           <li>
             <div class="title_left_sub">
               <h1>CHOOSE OUR QUOTE</h1>
@@ -97,7 +113,7 @@
   </article>
 </section>
 <footer> </footer>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> --> 
 <script src="js/jquery.event.frame.js"></script> 
 <script src="js/jquery.parallax.js"></script> 
 <script>
@@ -107,6 +123,19 @@
       mouseport: jQuery('#parallax')
     });
   });
-  </script>
+  </script> 
+<!-- custom scrollbars plugin --> 
+<script src="js/jquery.mCustomScrollbar.js"></script> 
+<script>
+		(function($){
+			$(window).load(function(){
+				/* custom scrollbar fn call */
+				$(".content_3").mCustomScrollbar({
+					scrollEasing:"easeOutQuint",
+					autoDraggerLength:false
+				});
+			});
+		})(jQuery);
+	</script>
 </body>
 </html>
