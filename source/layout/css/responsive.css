@@ -36,6 +36,13 @@ html, body {
 .bg_content_4.martell  {
 	background-position:-60px 120px;
 }
+.bg_content_4.contact  {
+	background-position:-200px 120px;
+}
+.bg_content_4.gallery{
+	background-size:1722px 734px;
+	background-position:-200px 120px;
+}
 .parallax-viewport {
 	height: 810px;
 	min-height:810px;
@@ -57,6 +64,12 @@ html, body {
 	top:80px;
 	left:-10px;
 	z-index:11;
+}
+.bottle_3 {
+	position:relative;
+	top:80px;
+	left:315px;
+	z-index:14;
 }
 .bell {
 	position:relative;
@@ -80,6 +93,17 @@ html, body {
 	background-repeat:no-repeat;
 	color:#362f2d;
 	margin:0 auto;
+}
+.wrapp_content.contact {
+	top: 145px;
+}
+.wrapp_content.gallery{
+	width: 1000px;
+	left:auto;
+	top:190px;
+	bottom:0;
+	height:50px;
+	padding:0;
 }
 }
 @media only screen and (max-width: 1333px) {
@@ -114,12 +138,18 @@ html, body {
 	background-size:1674px 806px;
 	background-position:55% 120px;
 }
-
 .bg_content_4.creative  {
 	background-position:-360px  120px;
 }
 .bg_content_4.martell  {
 	background-position:-100px 120px;
+}
+.bg_content_4.contact  {
+	background-position:-200px 120px;
+}
+.bg_content_4.gallery{
+	background-size:1722px 734px;
+	background-position:-200px 120px;
 }
 .parallax-viewport {
 	height: 810px;
@@ -144,6 +174,12 @@ html, body {
 	left:-10px;
 	z-index:11;
 }
+.bottle_3 {
+	position:relative;
+	top:80px;
+	left:315px;
+	z-index:14;
+}
 .bell {
 	position:relative;
 	top:215px;
@@ -166,5 +202,16 @@ html, body {
 	background-repeat:no-repeat;
 	color:#362f2d;
 	margin:0 auto;
+}
+.wrapp_content.contact {
+	top: 145px;
+}
+.wrapp_content.gallery{
+	width: 1000px;
+	left:auto;
+	top:190px;
+	bottom:0;
+	height:50px;
+	padding:0;
 }
 }

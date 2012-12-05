@@ -1,0 +1,231 @@
+.bg_content_1 {
+	background-image:url(../images/common/bg_content_contact_1.jpg);
+	background-position:-150px 0;
+}
+.bg_content_2 {
+	width:104%;
+	top:13%;
+	left:0;
+	background-image:url(../images/common/bg_content_sub_2.png);
+	background-size:1333px 349px;
+	background-position: 30% 0;
+	z-index:3;
+}
+.bg_content_3 {
+	background-image:none;
+	z-index:13;
+}
+.bg_content_4 {
+	width:101%;
+	height:102%;
+	top:150px;
+	left:0;
+	background-image:url(../images/common/bg_content_contact_4.png);
+	background-size:1520px 744px;
+	background-position:38% 190px;
+	background-repeat:no-repeat;
+	z-index:12;
+}
+.wrapp_content {
+	position: relative;
+	top:23%;
+	left: -50px;
+	width: 435px;
+	height: 340px;
+	padding:147px 154px 0 130px;
+	background-image:url(../images/common/bg_content_contact_3.png);
+	background-size:719px 487px;
+	background-repeat:no-repeat;
+	color:#362f2d;
+	margin:0 auto;
+}
+.title_creative_sub {
+	position:relative;
+	left:185px;
+	width:542px;
+	height:45px;
+	margin-bottom:30px;
+}
+.creative_left_sub {
+	position:relative;
+	float:left;
+	width:400px;/*	background-color:rgba(0,255,255,0.5);*/
+	}
+.creative_right_sub {
+	position:relative;
+	float:right;
+	width:400px;/*	background-color:rgba(0,255,255,0.5);*/
+	}
+.title_left_sub {
+	margin-bottom:10px;
+}
+.title_left_sub h1 {
+	font-weight:normal;
+}
+.content_creative_sub li {
+	display:inline-block;
+	width:87px;
+	height:87px;
+	margin: 0px 15px;
+}
+.content_creative_sub_4 li {
+	width:378px;
+	padding:10px 0;
+	margin-left:10px;
+	border-bottom:dashed 1px #FFFFFF;
+}
+.content_creative_sub_1 li {
+	display:inline-block;
+	width:106px;
+	height:104px;
+	margin-bottom:5px;
+}
+.arrow_creative_sub {
+	position:absolute;
+	top:230px;
+	right:-70px;
+	width:33px;
+	height:75px;
+	background-image:url(../images/common/arrow_creative.png);
+	background-size:33px 75px;
+	background-repeat:no-repeat;
+	z-index:15;
+}
+.arrow_creative_sub, .arrow_creative_sub_1 {
+	position:absolute;
+	top:230px;
+	width:33px;
+	height:75px;
+	background-image:url(../images/common/arrow_creative_sub.png);
+	background-size:33px 75px;
+	background-repeat:no-repeat;
+	z-index:15;
+}
+.ar_sub_1, .ar_sub_2 {
+	position:absolute;
+	top:90px;
+	width:39px;
+	height:39px;
+	background-image:url(../images/common/ar_sub_1.png);
+	background-size:39px 39px;
+	background-repeat:no-repeat;
+	z-index:15;
+}
+.ar_sub_1 {
+	-webkit-transform:rotate(180deg);
+	left:-2px;
+}
+.ar_sub_2 {
+	right:-2px;
+}
+.ar_sub_1:hover, .ar_sub_2:hover {
+	background-image:url(../images/common/ar_sub_2.png);
+}
+.arrow_creative_sub {
+	right:-70px;
+}
+.arrow_creative_sub_1 {
+	-webkit-transform:rotate(180deg);
+	left:-60px;
+}
+.arrow_creative_sub:hover, .arrow_creative_sub_1:hover {
+	opacity:0.5;
+}
+.bottle_3 {
+	position:absolute;
+	left:315px;
+	width:228px;
+	height:720px;
+	background-image:url(../images/common/bottle_ori_1.png);
+	background-repeat:no-repeat;
+	background-size:228px 720px;
+	z-index:14;
+	margin:0 auto;
+	bottom: 35px;
+}
+.form_right_sub {
+	margin:20px auto;
+	width:360px;
+}
+.form_right_sub textarea {
+	margin-left:-3px;
+	width:100%;
+	height:120px;
+	border-radius:5px;
+	border-color:#003300;
+}
+.form_right_sub button {
+	margin-top:10px;
+	float:right;
+	width:103px;
+	height:30px;
+	-webkit-appearance:none;
+	background-image:url(../images/common/btn_submit.png);
+	background-repeat:no-repeat;
+	background-size:103px 30px;
+	border:none;
+	background-color:rgba(255,255,255,0);
+}
+.form_right_sub button:hover {
+	opacity:0.7;
+}
+.wrapp_content.contact input, .wrapp_content.contact textarea {
+	border:none;
+	background:none;
+	width:200px;
+}
+.contact_form, .contact_name, .contact_address, .contact_tell, .contact_email {
+	position:absolute;
+	left:120px;
+}
+.contact_to, .contact_name_1, .contact_address_1, .contact_tell_1, .contact_email_1 {
+	position:absolute;
+	left:400px;
+}
+.contact_form {
+	top:70px;
+}
+.contact_name {
+	top:104px;
+}
+.wrapp_content.contact .contact_address {
+	top:136px;
+	left:58px;
+	width:260px;
+}
+.contact_tell {
+	top:182px;
+}
+.contact_email {
+	top:204px;
+}
+.contact_to {
+	top:249px;
+}
+.contact_name_1 {
+	top:302px;
+}
+.wrapp_content.contact .contact_address_1 {
+	top:333px;
+	left:336px;
+	width:260px;
+}
+.contact_tell_1 {
+	top:379px;
+}
+.contact_email_1 {
+	top:402px;
+}
+.contact_submit {
+	position:absolute;
+	display:block;
+	bottom:-10px;
+	right:95px;
+	width:150px;
+	height:40px;
+	background:inherit;
+	background-image: url(images/common/button_payment.png);
+	background-repeat:no-repeat;
+	background-size:150px 40px;
+	border:none;
+}
