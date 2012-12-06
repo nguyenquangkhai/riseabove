@@ -1,5 +1,4 @@
-
-.footer  { width: 1440px; margin: 0 auto ; min-height: 126px; position: fixed; bottom: 0px; background-image: url('images/footer_bg.png'); background-color: transparent; background-repeat: no-repeat;}
+.footer  { width: 100%; margin: 0 auto ; min-height: 126px; position: fixed; bottom: 0px; background-image: url('images/footer_bg.png'); background-color: transparent; background-repeat: no-repeat; background-size: cover;}
 .menu-top { width: 961px; height: 78px;  margin: 0px auto; position: relative; z-index: 99; }
 .sf-menu { float: left;  margin-left: 2px; margin-top: 15px;}
 
@@ -24,5 +23,36 @@
 .form .settingrow { margin: 15px 0px;}
 .form .settingrow input { border: none;}
 .form .settingrow .title { color: #c9ad67; text-transform: uppercase;}
-.form .settingrow .textbox{  width: 190px; height: 32px; color: #ccc; padding: 0 5px;   background-image: url('images/textbox.png'); background-color: transparent; background-repeat: no-repeat;}
+.form .settingrow .textbox{  width: 190px; height: 32px; color: #000; padding: 0 5px;   background-image: url('images/textbox.png'); background-color: transparent; background-repeat: no-repeat;}
 .form .btn-submit { width: 86px; height: 31px; cursor: pointer;  background-image: url('images/submit.png'); background-color: transparent; background-repeat: no-repeat;}
+
+.player_pause{ background:url('images/player_pause.png') no-repeat;position:fixed; bottom:40px; right:30px; height:32px; width:32px;cursor:pointer}
+.player_play { background:url('images/player_play.png') !important }
+
+.simple_overlay { 
+    display:none;
+    z-index:10000;
+    background-color:#333;
+	width:800px;
+    max-height:400px;
+    border:1px solid #666;
+    -moz-box-shadow:0 0 90px 5px #000;
+    -webkit-box-shadow: 0 0 90px #000;
+	font-size: 12px;
+	padding:8px;
+}
+ 
+.simple_overlay .close {
+    background-image:url(images/close.png);
+    position:absolute;
+    right:-15px;
+    top:-15px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
+.simple_overlay .contentWrap{
+	max-height:400px;
+	overflow-y: scroll;
+}
