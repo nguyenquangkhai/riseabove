@@ -67,32 +67,38 @@
 /* custom styling */
 
 /* content_3 scrollbar */
-.content_creative_sub_4 .mCustomScrollBox .mCSB_scrollTools{
+.scroll_bar .mCustomScrollBox .mCSB_scrollTools{
 	padding:10px 0;
 	-webkit-box-sizing:border-box; 
 	-moz-box-sizing:border-box; 
 	box-sizing:border-box;
 }
-.content_creative_sub_4 .mCSB_scrollTools .mCSB_draggerRail{
+.scroll_bar .mCSB_scrollTools .mCSB_draggerRail{
 	width:4px;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
 	background-color:#003300;
 }
-.content_creative_sub_4 .mCSB_scrollTools .mCSB_dragger{
+.scroll_bar .mCSB_scrollTools .mCSB_dragger{
 	height:17px;
 }
-.content_creative_sub_4 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+.scroll_bar .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	width:17px;
 	background-image:url(../images/common/scrollbar_thumb.png);
 	background-size:17px 17px;
 }
 
 /*scrollbar*/
-.content_creative_sub_4 {
+.scroll_bar {
 	width:400px;
 	height:220px;
+	text-align:left;
+	float:left;
+}
+.scroll_bar.about{
+	position:relative;
+	width:100%;
 	text-align:left;
 	float:left;
 }

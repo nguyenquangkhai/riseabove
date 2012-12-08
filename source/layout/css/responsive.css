@@ -43,6 +43,9 @@ html, body {
 	background-size:1722px 734px;
 	background-position:-200px 120px;
 }
+.bg_content_4.about{
+	background-position:-70px 145px;
+}
 .parallax-viewport {
 	height: 810px;
 	min-height:810px;
@@ -150,6 +153,9 @@ html, body {
 .bg_content_4.gallery{
 	background-size:1722px 734px;
 	background-position:-200px 120px;
+}
+.bg_content_4.about{
+	background-position:-70px 145px;
 }
 .parallax-viewport {
 	height: 810px;
