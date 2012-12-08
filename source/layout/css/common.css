@@ -1,0 +1,123 @@
+html, body {
+	height:100%;
+	}
+.bg_header {
+	position:relative;
+	top:0;
+	left:0;
+	margin-bottom: -115px;
+	width:100%;
+	height:127px;
+	background-image:url(../images/common/bg_header.png);
+	background-repeat:no-repeat;
+	background-size:100% 127px;
+	z-index:10;
+}
+footer {
+	position:relative;
+	top:0;
+	left:0px;
+	margin-top: -124px;
+	width:100%;
+	height:124px;
+	background-image:url(../images/common/bg_footer.png);
+	background-repeat:no-repeat;
+	background-size:100% 124px;
+	z-index:10;
+}
+nav {
+	position:absolute;
+	top:0px;
+	left:0;
+	width:100%;
+	height:120px;
+	text-align:center;
+	padding-top: 10px;
+	z-index:15;
+}
+nav ul li a {
+	color:#FFFFFF;
+}
+nav ul li a:hover {
+	color: yellow;
+}
+nav ul li a.active {
+	color: yellow;
+}
+nav ul li {
+	display:inline-block;
+	padding: 10px 40px;
+}
+.wrapper {
+	position:relative;
+	top:0;
+	left:0;
+}
+.parallax-viewport {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	min-height:100%;
+	position: relative;     /* relative, absolute, fixed */
+	overflow: hidden;
+}
+
+.parallax-layer {
+	position: absolute;
+}
+
+.logo {
+	display:block;
+	margin-bottom:-25px;
+	width:131px;
+	height:63px;
+	background-image:url(../images/common/logo.png);
+	background-repeat:no-repeat;
+	background-size:131px 63px;
+}
+	
+.ball_chir{
+	position:absolute;
+	bottom: -45px;
+	left:125px;
+	width:361px;
+	height:272px;
+	background-image:url(../images/common/ball_chir.png);
+	background-repeat:no-repeat;
+	background-size:361px 272px;
+	z-index:11;
+	}
+.wrapp_content {
+	position: relative;
+	top:23%;
+	left: -50px;
+	width: 435px;
+	height: 340px;
+	padding:147px 154px 0 130px;
+	background-image:url(../images/common/bg_content_3.png);
+	background-size:719px 487px;
+	background-repeat:no-repeat;
+	color:#362f2d;
+	margin:0 auto;
+}
+.wrapp_content h1{
+	line-height:10px;
+	}
+.wrapp_content h2{
+	line-height:20px;
+	}
+/*space*/
+.space10{
+	width:100%;
+	height:10px;
+	}
+.space20{
+	width:100%;
+	height:20px;
+	}
+.space30{
+	width:100%;
+	height:30px;
+	}
+.content_creative_sub, .content_creative_sub_1{
+	position:relative;}
