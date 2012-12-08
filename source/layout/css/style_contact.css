@@ -224,8 +224,22 @@
 	width:150px;
 	height:40px;
 	background:inherit;
-	background-image: url(images/common/button_payment.png);
+	background-image: url(../images/common/button_payment.png);
 	background-repeat:no-repeat;
 	background-size:150px 40px;
 	border:none;
 }
+.btn_facebook, .btn_twitter{
+	position:absolute;
+	bottom:115px;
+	left:175px;
+	width:35px;
+	height:35px;
+	background-image: url(../images/common/icon_facebook.png);
+	background-repeat:no-repeat;
+	background-size:35px 35px;
+	}
+.btn_twitter{
+	bottom:75px;
+	background-image: url(../images/common/icon_twitter.png);
+	}
