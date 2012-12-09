@@ -1,4 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<? 
+include("database.php");
+?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -74,18 +77,16 @@
 								<img src="images/creative/title_creative.png" width="465" height="45"/>
 							</div>
 							<ul id="template_chosen" class="content_creative">
-								<li data-templateId="1" rel="#template_1"><img src="images/creative/img_1.jpg" width="119" height="183"/>
-								</li>
-								<li data-templateId="2" rel="#template_2"><img src="images/creative/img_2.jpg" width="119" height="183"/>
-								</li>
-								<li data-templateId="3" rel="#template_3"><img src="images/creative/img_3.jpg" width="119" height="183"/>
-								</li>
-								<li data-templateId="4" rel="#template_4"><img src="images/creative/img_1.jpg" width="119" height="183"/>
-								</li>
-								<li data-templateId="5" rel="#template_5"><img src="images/creative/img_3.jpg" width="119" height="183"/>
-								</li>
-								<li data-templateId="6" rel="#template_6"><img src="images/creative/img_2.jpg" width="119" height="183"/>
-								</li>
+								<?
+									$template_list = mysql_query("SELECT * FROM template_master");
+									while($row = mysql_fetch_array($template_list)){
+								?>
+									<li data-templateId="<?= $row['id_template_master'] ?>" rel="#template_<?= $row['id_template_master'] ?>">
+										<img src="images/creative/template/<?= $row['template_name'] ?>.jpg" width="119" height="183"/>
+									</li>			
+								<?
+									}
+								?>
 							</ul>
 							<div class="info_creative">
 
@@ -105,24 +106,17 @@
 										<h1>CHỌN CHỦ ĐỀ</h1>
 									</div>
 									<ul id="topic_chosen" class="content_creative_sub">
-										<li data-topic-id="1">
-											<img src="images/creative/items.png" width="87" height="86"/>
+										<?
+											$topic_list = mysql_query("SELECT * FROM topic_master");
+											
+											while($row = mysql_fetch_array($topic_list)){
+										?>
+										<li data-topic-id="<?= $row['id_topic_master'] ?>">
+											<img src="images/creative/topic/<?= $row['topic_name'] ?>.png" width="87" height="86"/>
 										</li>
-										<li data-topic-id="2">
-											<img src="images/creative/items.png" width="87" height="86"/>
-										</li>
-										<li data-topic-id="3">
-											<img src="images/creative/items.png" width="87" height="86"/>
-										</li>
-										<li data-topic-id="4">
-											<img src="images/creative/items.png" width="87" height="86"/>
-										</li>
-										<li data-topic-id="5">
-											<img src="images/creative/items.png" width="87" height="86"/>
-										</li>
-										<li data-topic-id="6">
-											<img src="images/creative/items.png" width="87" height="86"/>
-										</li>
+										<?
+											}
+										?>
 									</ul>
 								</li>
 								<div class="space30"></div>
@@ -132,33 +126,30 @@
 										<h1>CHỌN HÌNH</h1>
 									</div>
 									<ul id="image_chosen" class="content_creative_sub_1">
-										<div class="ar_sub_1"></div>
-										<div class="ar_sub_2"></div>
-										<li data-image-id="1">
-											<img src="images/creative/kind_of/1.png" width="106" height="104"/>
-										</li>
-										<li data-image-id="2">
-											<img src="images/creative/kind_of/2.png" width="106" height="104"/>
-										</li>
-										<li data-image-id="3">
-											<img src="images/creative/kind_of/3.png" width="106" height="104"/>
-										</li>
-										<li data-image-id="4">
-											<img src="images/creative/kind_of/4.png" width="106" height="104"/>
-										</li>
-										<li data-image-id="5">
-											<img src="images/creative/kind_of/5.png" width="106" height="104"/>
-										</li>
-										<li data-image-id="6">
-											<img src="images/creative/kind_of/6.png" width="106" height="104"/>
-										</li>
+										<?
+											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = 1");
+											$length = mysql_fetch_lengths($topic_list);
+											if($length > 6){
+										?>
+											<div class="ar_sub_1"></div>
+											<div class="ar_sub_2"></div>
+										<?
+											}
+											while($row = mysql_fetch_array($image_list)){
+										?>
+											<li data-image-id="<?= $row['id_image_master'] ?>">
+												<img src="images/creative/images/<?= $row['id_topic_master']?>_<?= $row['id_image_master'] ?>.png" width="106" height="104"/>
+											</li>
+										<?
+											}
+										?>
 									</ul>
 								</li>
 							</ol>
 							<ol class="creative_right_sub">
 								<li>
 									<div class="title_left_sub">
-										<h1>TYPE YOUR TEXT</h1>
+										<h1>LỜI CHÚC CỦA BẠN</h1>
 									</div>
 									<form class="form_right_sub">
 										<textarea name="" title="" placeholder="Type your text here...."></textarea>
@@ -171,30 +162,20 @@
 								</style>
 								<li>
 									<div class="title_left_sub">
-										<h1>CHOOSE OUR QUOTE</h1>
+										<h1>CHỌN MẪU LỜI CHÚC CÓ SẴN</h1>
 									</div>
 									<ul id="quote" class="content_creative_sub_4 scroll_bar">
+										<?
+											$quote_list = mysql_query("SELECT * FROM quote_master");
+											while($row = mysql_fetch_array($quote_list)){
+										?>
 										<li>
-											<span>1. You are special, you are unique; may your Christmas be also as special and unique as you are! </span>
+											<span><?= $row['id_quote_master'] ?>. <?= $row['quote_content'] ?></span>
 										</li>
-										<li>
-											<span>2. You are special, you are unique; may your Christmas be also as special and unique as you are! </span>
-										</li>
-										<li>
-											<span>3. You are special, you are unique; may your Christmas be also as special and unique as you are! </span>
-										</li>
-										<li>
-											<span>4. You are special, you are unique; may your Christmas be also as special and unique as you are! </span>
-										</li>
-										<li>
-											<span>5. You are special, you are unique; may your Christmas be also as special and unique as you are! </span>
-										</li>
-										<li>
-											<span>6. You are special, you are unique; may your Christmas be also as special and unique as you are! </span>
-										</li>
-										<li>
-											<span>7. You are special, you are unique; may your Christmas be also as special and unique as you are! </span>
-										</li>
+										<?
+											}
+											mysql_close($con);
+										?>
 									</ul>
 								</li>
 							</ol>
@@ -207,12 +188,12 @@
 							<form action="" method="" name="">
 								<input class="contact_form" type="text" value="" name=""/>
 								<input class="contact_name" type="text" value="" name=""/>
-								<textarea class="contact_address" type="text" maxlength="63" value="" name="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</textarea>
+								<textarea class="contact_address" type="text" maxlength="63" value="" name=""></textarea>
 								<input class="contact_tell" type="text" value="" name=""/>
 								<input class="contact_email" type="text" value="" name=""/>
 								<input class="contact_to" type="text" value="" name=""/>
 								<input class="contact_name_1" type="text" value="" name=""/>
-								<textarea class="contact_address_1" type="text" maxlength="63" value="" name="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</textarea>
+								<textarea class="contact_address_1" type="text" maxlength="63" value="" name=""></textarea>
 								<input class="contact_tell_1" type="text" value="" name=""/>
 								<input class="contact_email_1" type="text" value="" name=""/>
 								<button class="contact_submit" type="submit" value="" name=""></button>
@@ -262,13 +243,6 @@
 					autoDraggerLength : false
 				});
 
-				/*$("#arrow_from1_to2").click(function() {
-					$content1.hide();
-					$content3.hide();
-					$content2.show();
-					$(".slider").addClass("step2");
-				}).unbind("click");*/
-				
 				$("#arrow_from2_to1").click(function() {
 					$content1.show();
 					$content2.hide();
@@ -277,7 +251,8 @@
 				});
 				
 				$("#arrow_from2_to3").click(function() {
-					
+					if($("#master_image").val() == "" || $("#master_text1").val() == "")
+						return;
 					$content1.hide();
 					$content2.hide();
 					$content3.show();
@@ -322,12 +297,24 @@
 					
 					$("#master_topic").val(topic_id);
 					$.ajax({
-						url:"get_image_by_topic.php",
+						url:"get_topic_images.php",
 						data:({topic_id:topic_id}),
 						type:"post",
 						dataType:"json",
 						success:function(data){
-							
+							var image_holder = document.getElementById("image_chosen");
+							while ( image_holder.firstChild ) image_holder.removeChild( image_holder.firstChild );
+							data.forEach(function(obj,index){
+								var li = document.createElement('li');
+								li.setAttribute("data-image-id",obj.id);
+								var img = new Image();
+								img.src = "images/creative/images/"+obj.topic_id+"_"+obj.id+".png";
+								img.width = 106;
+								img.height = 104;
+								li.appendChild(img);
+								image_holder.appendChild(li);
+								console.log(obj.topic_id +"_"+obj.id);
+							});
 						}
 					});
 				});
