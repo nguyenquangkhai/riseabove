@@ -17,21 +17,11 @@
 			<div class="bg_header"></div>
 			<nav>
 				<ul>
-					<li>
-						<a href="home_page.html"> TRANG CHỦ </a>
-					</li>
-					<li>
-						<a class="active" href="creative_page.html"> CREATIVE </a>
-					</li>
-					<li>
-						<a class="logo" href="creative_page_sub.html"></a>
-					</li>
-					<li>
-						<a href="gallery_page.html"> GALLERY </a>
-					</li>
-					<li>
-						<a href="contact_page.html"> CONTACT </a>
-					</li>
+					<li> <a href="home_page.html"> TRANG CHỦ </a></li>
+			          <li> <a href="about_page.html"> GIỚI THIỆU </a></li>
+			          <li> <a class="logo"></a></li>
+			          <li> <a  class="active"> SÁNG TẠO </a> </li>
+			          <li> <a href="gallery_page.html"> BỘ SƯU TẬP </a></li>
 				</ul>
 			</nav>
 		</header>
@@ -145,22 +135,22 @@
 										<div class="ar_sub_1"></div>
 										<div class="ar_sub_2"></div>
 										<li data-image-id="1">
-											<a href="#"><img src="images/creative/kind_of/1.png" width="106" height="104"/></a>
+											<img src="images/creative/kind_of/1.png" width="106" height="104"/>
 										</li>
 										<li data-image-id="2">
-											<a href="#"><img src="images/creative/kind_of/2.png" width="106" height="104"/></a>
+											<img src="images/creative/kind_of/2.png" width="106" height="104"/>
 										</li>
 										<li data-image-id="3">
-											<a href="#"><img src="images/creative/kind_of/3.png" width="106" height="104"/></a>
+											<img src="images/creative/kind_of/3.png" width="106" height="104"/>
 										</li>
 										<li data-image-id="4">
-											<a href="#"><img src="images/creative/kind_of/4.png" width="106" height="104"/></a>
+											<img src="images/creative/kind_of/4.png" width="106" height="104"/>
 										</li>
 										<li data-image-id="5">
-											<a href="#"><img src="images/creative/kind_of/5.png" width="106" height="104"/></a>
+											<img src="images/creative/kind_of/5.png" width="106" height="104"/>
 										</li>
 										<li data-image-id="6">
-											<a href="#"><img src="images/creative/kind_of/6.png" width="106" height="104"/></a>
+											<img src="images/creative/kind_of/6.png" width="106" height="104"/>
 										</li>
 									</ul>
 								</li>
@@ -248,6 +238,7 @@
 				<input type="hidden" id="master_to_tel" name="to_tel"/>
 				<input type="hidden" id="master_to_mail" name="to_mail"/>
 			</form>
+			<input type="hidden" id="master_text_num" value="1"/>
 		</section>
 		<footer></footer>
 		<!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
@@ -268,7 +259,7 @@
 
 				$(".scroll_bar").mCustomScrollbar({
 					scrollEasing : "easeOutQuint",
-					//autoDraggerLength : false
+					autoDraggerLength : false
 				});
 
 				/*$("#arrow_from1_to2").click(function() {
@@ -313,10 +304,12 @@
 					
 					$(".text1").click(function(){
 						$(".form_right_sub textarea").val($("#master_text1").val()).focus();
+						$("#master_text_num").val(1);
 					});
 					
 					$(".text2").click(function(){
 						$(".form_right_sub textarea").val($("#master_text2").val()).focus();
+						$("#master_text_num").val(2);
 					});
 					
 					$("#master_template").val(tempId);
@@ -341,12 +334,20 @@
 				$("#image_chosen li").click(function(){
 					var obj = $(this);
 					var image_id = obj.data("image-id");
-					$("#master-image").val(image_id);
+					$("#master_image").val(image_id);
 				});
 				
 				$("#quote li").click(function(){
 					var text = $(this).text();
-					$(".form_right_sub textarea").val(text).focus()
+					$(".form_right_sub textarea").val("").val(text).focus();
+					var text_current = $("#master_text_num").val();
+					$("#master_text"+text_current).val(text);
+				});
+				
+				$(".form_right_sub textarea").keyup(function(){
+					var text = $(this).val();
+					var text_current = $("#master_text_num").val();
+					$("#master_text"+text_current).val(text);
 				});
 			});
 		</script>

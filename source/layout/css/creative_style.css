@@ -57,6 +57,9 @@ section{
 	background-image:url(../images/common/bg_content_contact_1.jpg);
 	background-position:-150px 0;
 }
+.mCSB_draggerContainer{
+	display:block !important;
+}
 
 .bottle {
 	position:relative;
