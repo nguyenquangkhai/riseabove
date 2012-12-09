@@ -3,10 +3,11 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width;minimum-scale=0.5,maximum-scale=1.0; user-scalable=1;" />
-		<title>Untitled Document</title>
+		<title>RiseAbove - Sáng tạo</title>
 		<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/text.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/bottle_template.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/creative_style.css" />
 		<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
 	</head>
@@ -17,7 +18,7 @@
 			<nav>
 				<ul>
 					<li>
-						<a href="home_page.html"> HOME </a>
+						<a href="home_page.html"> TRANG CHỦ </a>
 					</li>
 					<li>
 						<a class="active" href="creative_page.html"> CREATIVE </a>
@@ -36,7 +37,24 @@
 		</header>
 		<section>
 			<article class="wrapper parallax-viewport" id="parallax">
-				<div class="bottle slider"></div>
+				<div class="bottle slider">
+					<div class="bottle_template" id="template_1" style="display: none">
+						<div class="bottle_template_img"></div>
+						<div class="bottle_template_textlarge text1"></div>
+					</div>
+					<div class="bottle_template" id="template_2" style="display: none">
+						<div class="bottle_template_textlarge text1"></div>
+						<div class="bottle_template_img"></div>
+					</div>
+					<div class="bottle_template" id="template_3" style="display: none">
+						<div class="bottle_template_textsmall text1"></div>
+						<div class="bottle_template_img"></div>
+						<div class="bottle_template_textsmall text2"></div>
+					</div>
+					<div class="bottle_template" id="template_4" style="display: none"></div>
+					<div class="bottle_template" id="template_5" style="display: none"></div>
+					<div class="bottle_template" id="template_6" style="display: none"></div>
+				</div>
 				<div class="bg_content_1_holder">
 					<div class="bg_content_1_slider slider">
 						<div class="bg_content_1 step1"></div>
@@ -65,18 +83,18 @@
 							<div class="title_creative">
 								<img src="images/creative/title_creative.png" width="465" height="45"/>
 							</div>
-							<ul class="content_creative">
-								<li><img src="images/creative/img_1.jpg" width="119" height="183"/>
+							<ul id="template_chosen" class="content_creative">
+								<li data-templateId="1" rel="#template_1"><img src="images/creative/img_1.jpg" width="119" height="183"/>
 								</li>
-								<li><img src="images/creative/img_2.jpg" width="119" height="183"/>
+								<li data-templateId="2" rel="#template_2"><img src="images/creative/img_2.jpg" width="119" height="183"/>
 								</li>
-								<li><img src="images/creative/img_3.jpg" width="119" height="183"/>
+								<li data-templateId="3" rel="#template_3"><img src="images/creative/img_3.jpg" width="119" height="183"/>
 								</li>
-								<li><img src="images/creative/img_1.jpg" width="119" height="183"/>
+								<li data-templateId="4" rel="#template_4"><img src="images/creative/img_1.jpg" width="119" height="183"/>
 								</li>
-								<li><img src="images/creative/img_3.jpg" width="119" height="183"/>
+								<li data-templateId="5" rel="#template_5"><img src="images/creative/img_3.jpg" width="119" height="183"/>
 								</li>
-								<li><img src="images/creative/img_2.jpg" width="119" height="183"/>
+								<li data-templateId="6" rel="#template_6"><img src="images/creative/img_2.jpg" width="119" height="183"/>
 								</li>
 							</ul>
 							<div class="info_creative">
@@ -96,24 +114,24 @@
 									<div class="title_left_sub">
 										<h1>CHỌN CHỦ ĐỀ</h1>
 									</div>
-									<ul class="content_creative_sub">
-										<li>
-											<a href="#"><img src="images/creative/items.png" width="87" height="86"/></a>
+									<ul id="topic_chosen" class="content_creative_sub">
+										<li data-topic-id="1">
+											<img src="images/creative/items.png" width="87" height="86"/>
 										</li>
-										<li>
-											<a href="#"><img src="images/creative/items.png" width="87" height="86"/></a>
+										<li data-topic-id="2">
+											<img src="images/creative/items.png" width="87" height="86"/>
 										</li>
-										<li>
-											<a href="#"><img src="images/creative/items.png" width="87" height="86"/></a>
+										<li data-topic-id="3">
+											<img src="images/creative/items.png" width="87" height="86"/>
 										</li>
-										<li>
-											<a href="#"><img src="images/creative/items.png" width="87" height="86"/></a>
+										<li data-topic-id="4">
+											<img src="images/creative/items.png" width="87" height="86"/>
 										</li>
-										<li>
-											<a href="#"><img src="images/creative/items.png" width="87" height="86"/></a>
+										<li data-topic-id="5">
+											<img src="images/creative/items.png" width="87" height="86"/>
 										</li>
-										<li>
-											<a href="#"><img src="images/creative/items.png" width="87" height="86"/></a>
+										<li data-topic-id="6">
+											<img src="images/creative/items.png" width="87" height="86"/>
 										</li>
 									</ul>
 								</li>
@@ -121,27 +139,27 @@
 								<div class="clear"></div>
 								<li>
 									<div class="title_left_sub">
-										<h1>CHOOSE YOUR IMAGE</h1>
+										<h1>CHỌN HÌNH</h1>
 									</div>
-									<ul class="content_creative_sub_1">
+									<ul id="image_chosen" class="content_creative_sub_1">
 										<div class="ar_sub_1"></div>
 										<div class="ar_sub_2"></div>
-										<li>
+										<li data-image-id="1">
 											<a href="#"><img src="images/creative/kind_of/1.png" width="106" height="104"/></a>
 										</li>
-										<li>
+										<li data-image-id="2">
 											<a href="#"><img src="images/creative/kind_of/2.png" width="106" height="104"/></a>
 										</li>
-										<li>
+										<li data-image-id="3">
 											<a href="#"><img src="images/creative/kind_of/3.png" width="106" height="104"/></a>
 										</li>
-										<li>
+										<li data-image-id="4">
 											<a href="#"><img src="images/creative/kind_of/4.png" width="106" height="104"/></a>
 										</li>
-										<li>
+										<li data-image-id="5">
 											<a href="#"><img src="images/creative/kind_of/5.png" width="106" height="104"/></a>
 										</li>
-										<li>
+										<li data-image-id="6">
 											<a href="#"><img src="images/creative/kind_of/6.png" width="106" height="104"/></a>
 										</li>
 									</ul>
@@ -153,7 +171,7 @@
 										<h1>TYPE YOUR TEXT</h1>
 									</div>
 									<form class="form_right_sub">
-										<textarea name="" title="">Type your text here....</textarea>
+										<textarea name="" title="" placeholder="Type your text here...."></textarea>
 										<button type="button" value="Submit" title="" ></button>
 									</form>
 								</li>
@@ -165,7 +183,7 @@
 									<div class="title_left_sub">
 										<h1>CHOOSE OUR QUOTE</h1>
 									</div>
-									<ul class="content_creative_sub_4 scroll_bar">
+									<ul id="quote" class="content_creative_sub_4 scroll_bar">
 										<li>
 											<span>1. You are special, you are unique; may your Christmas be also as special and unique as you are! </span>
 										</li>
@@ -199,12 +217,12 @@
 							<form action="" method="" name="">
 								<input class="contact_form" type="text" value="" name=""/>
 								<input class="contact_name" type="text" value="" name=""/>
-								<textarea class="contact_address" type="text" value="" name="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</textarea>
+								<textarea class="contact_address" type="text" maxlength="63" value="" name="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</textarea>
 								<input class="contact_tell" type="text" value="" name=""/>
 								<input class="contact_email" type="text" value="" name=""/>
 								<input class="contact_to" type="text" value="" name=""/>
 								<input class="contact_name_1" type="text" value="" name=""/>
-								<textarea class="contact_address_1" type="text" value="" name="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</textarea>
+								<textarea class="contact_address_1" type="text" maxlength="63" value="" name="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</textarea>
 								<input class="contact_tell_1" type="text" value="" name=""/>
 								<input class="contact_email_1" type="text" value="" name=""/>
 								<button class="contact_submit" type="submit" value="" name=""></button>
@@ -214,9 +232,28 @@
 				</div>
 			</article>
 		</section>
+		<section style="display: none">
+			<form id="master_form">
+				<input type="hidden" id="master_template" name="template"/>
+				<input type="hidden" id="master_topic" name="topic"/>
+				<input type="hidden" id="master_image" name="image"/>
+				<input type="hidden" id="master_text1" name="text_1"/>
+				<input type="hidden" id="master_text2" name="text_2"/>
+				<input type="hidden" id="master_from_name" name="from_name"/>
+				<input type="hidden" id="master_from_add" name="from_add"/>
+				<input type="hidden" id="master_from_tel" name="from_tel"/>
+				<input type="hidden" id="master_from_mail" name="from_mail"/>
+				<input type="hidden" id="master_to_name" name="to_name"/>
+				<input type="hidden" id="master_to_add" name="to_add"/>
+				<input type="hidden" id="master_to_tel" name="to_tel"/>
+				<input type="hidden" id="master_to_mail" name="to_mail"/>
+			</form>
+		</section>
 		<footer></footer>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script -->
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/jquery.event.frame.js"></script>
 		<script src="js/jquery.parallax.js"></script>
 		<script src="js/jquery.mCustomScrollbar.js"></script>
@@ -231,15 +268,15 @@
 
 				$(".scroll_bar").mCustomScrollbar({
 					scrollEasing : "easeOutQuint",
-					autoDraggerLength : false
+					//autoDraggerLength : false
 				});
 
-				$("#arrow_from1_to2").click(function() {
+				/*$("#arrow_from1_to2").click(function() {
 					$content1.hide();
 					$content3.hide();
 					$content2.show();
 					$(".slider").addClass("step2");
-				});
+				}).unbind("click");*/
 				
 				$("#arrow_from2_to1").click(function() {
 					$content1.show();
@@ -260,6 +297,56 @@
 					$content2.show();
 					$content3.hide();
 					$(".slider").removeClass("step3");
+				});
+				
+				$("#template_chosen li").click(function(){
+					var obj = $(this).attr("rel");
+					$(".bottle_template").hide();
+					$(obj).show();
+					var tempId = $(this).data("templateid");
+					$("#arrow_from1_to2").unbind("click").bind("click", function(){
+						$content1.hide();
+						$content3.hide();
+						$content2.show();
+						$(".slider").addClass("step2");
+					});
+					
+					$(".text1").click(function(){
+						$(".form_right_sub textarea").val($("#master_text1").val()).focus();
+					});
+					
+					$(".text2").click(function(){
+						$(".form_right_sub textarea").val($("#master_text2").val()).focus();
+					});
+					
+					$("#master_template").val(tempId);
+				});
+				
+				$("#topic_chosen li").click(function(){
+					var obj = $(this);
+					var topic_id = obj.data("topic-id");
+					
+					$("#master_topic").val(topic_id);
+					$.ajax({
+						url:"get_image_by_topic.php",
+						data:({topic_id:topic_id}),
+						type:"post",
+						dataType:"json",
+						success:function(data){
+							
+						}
+					});
+				});
+				
+				$("#image_chosen li").click(function(){
+					var obj = $(this);
+					var image_id = obj.data("image-id");
+					$("#master-image").val(image_id);
+				});
+				
+				$("#quote li").click(function(){
+					var text = $(this).text();
+					$(".form_right_sub textarea").val(text).focus()
 				});
 			});
 		</script>

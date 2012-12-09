@@ -61,7 +61,8 @@ section{
 .bottle {
 	position:relative;
 	width:228px;
-	height:720px;
+	height:420px;
+	padding-top: 300px;
 	background-image:url(../images/common/bottle_ori_1_back.png);
 	background-repeat:no-repeat;
 	background-size:228px 720px;
@@ -289,8 +290,9 @@ section{
 	}
 .form_right_sub textarea{
 	margin-left:-3px;
-	min-width:360px;
-	min-height:120px;
+	min-height:100px;
+	max-height:100px;
+	padding:10px;
 	max-width:360px;
 	max-height:120px;
 	border-radius:5px;
@@ -448,10 +450,10 @@ section{
 .form_right_sub button:hover {
 	opacity:0.7;
 }
-.wrapp_content.contact input, .wrapp_content.contact textarea {
+.wrapp_content input, .wrapp_content textarea  {
 	border:none;
 	background:none;
-	width:200px;
+	width:210px;
 }
 .contact_form, .contact_name, .contact_address, .contact_tell, .contact_email {
 	position:absolute;
@@ -459,27 +461,47 @@ section{
 }
 .contact_to, .contact_name_1, .contact_address_1, .contact_tell_1, .contact_email_1 {
 	position:absolute;
-	left:400px;
+	left:390px;
 }
-.contact_form {
+.wrapp_content .contact_form {
 	top:70px;
+	width:210px;
+	left:110px;
 }
-.contact_name {
-	top:104px;
+.wrapp_content .contact_name {
+ 	top:104px;
+	width:205px;
+	left:115px;
 }
-.wrapp_content.contact .contact_address {
-	top:136px;
-	left:58px;
-	width:260px;
+
+.wrapp_content.contact .contact_address, .wrapp_content.contact .contact_address_1  {
+ 	top:136px;
+ 	left:58px;
+	height:40px;
+	max-height:40px;
+	min-width:260px;
+	line-height:20px;
 }
-.contact_tell {
-	top:182px;
+
+.wrapp_content.contact .contact_address_1 {top:333px;
+	left:336px;
+ }
+
+.wrapp_content .contact_tell {
+ 	top:182px;
+	width:230px;
+	left:90px;
 }
-.contact_email {
-	top:204px;
+
+.wrapp_content .contact_email {
+ 	top:240px;
+	width:215px;
+	left:1050px;	 
 }
-.contact_to {
-	top:249px;
+
+.wrapp_content .contact_to {
+	width:230px;
+	left:370px;
 }
 .contact_name_1 {
 	top:302px;
@@ -495,7 +517,7 @@ section{
 .contact_email_1 {
 	top:402px;
 }
-.contact_submit {
+.wrapp_content .contact_submit{
 	position:absolute;
 	display:block;
 	bottom:-10px;
