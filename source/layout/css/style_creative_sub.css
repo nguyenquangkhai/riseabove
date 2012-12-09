@@ -153,9 +153,10 @@
 .form_right_sub textarea{
 	margin-left:-3px;
 	min-width:360px;
-	min-height:120px;
 	max-width:360px;
-	max-height:120px;
+	min-height:100px;
+	max-height:100px;
+	padding:10px;
 	border-radius:5px;
 	border:1px solid #666;
 	}

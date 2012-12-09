@@ -169,10 +169,11 @@
 .form_right_sub button:hover {
 	opacity:0.7;
 }
-.wrapp_content.contact input, .wrapp_content.contact textarea {
+.wrapp_content input, .wrapp_content textarea {
+	resize:none;
 	border:none;
 	background:none;
-	width:200px;
+	width:210px;
 }
 .contact_form, .contact_name, .contact_address, .contact_tell, .contact_email {
 	position:absolute;
@@ -180,43 +181,61 @@
 }
 .contact_to, .contact_name_1, .contact_address_1, .contact_tell_1, .contact_email_1 {
 	position:absolute;
-	left:400px;
+	left:390px;
 }
-.contact_form {
+.wrapp_content .contact_form {
 	top:70px;
+	width:210px;
+	left:110px;
 }
-.contact_name {
+.wrapp_content .contact_name {
 	top:104px;
+	width:205px;
+	left:115px;
 }
-.wrapp_content.contact .contact_address {
+.wrapp_content.contact .contact_address, .wrapp_content.contact .contact_address_1  {
 	top:136px;
 	left:58px;
-	width:260px;
-}
-.contact_tell {
-	top:182px;
-}
-.contact_email {
-	top:204px;
-}
-.contact_to {
-	top:249px;
-}
-.contact_name_1 {
-	top:302px;
+	height:40px;
+	max-height:40px;
+	min-width:260px;
+	max-width:260px;
+	line-height:20px;
 }
 .wrapp_content.contact .contact_address_1 {
 	top:333px;
 	left:336px;
-	width:260px;
 }
-.contact_tell_1 {
+.wrapp_content .contact_tell {
+	top:182px;
+	width:230px;
+	left:90px;
+}
+.wrapp_content .contact_email {
+	top:204px;
+	width:215px;
+	left:105px;
+}
+.wrapp_content .contact_to {
+	top:249px;
+	width:230px;
+	left:370px;
+}
+.wrapp_content .contact_name_1 {
+	top:302px;
+	left:px;
+}
+.wrapp_content .contact_tell_1 {
 	top:379px;
+	width:230px;
+	left:370px;
 }
-.contact_email_1 {
+.wrapp_content .contact_email_1 {
 	top:402px;
+	width:215px;
+	left:385px;
 }
-.contact_submit {
+.wrapp_content .contact_submit {
 	position:absolute;
 	display:block;
 	bottom:-10px;
