@@ -80,7 +80,7 @@ section{
 /*************** BACKGROUND 2 ***************/
 .bg_content_2_holder{
 	width:104%;
-	height:810px;
+	height:101%;
 	position:absolute;
 	overflow:hidden;
 	z-index:2;
@@ -538,8 +538,8 @@ section{
 /************** BACKGROUND 4 **************/
 .bg_content_4_holder{
 	position: absolute;
-	width: 101%;
-	height: 102%;
+	width: 105%;
+	height: 107%;
 	top:0px;
 	left:0px;
 	z-index: 2;
@@ -646,10 +646,11 @@ section{
 	}
 	
 	.bg_content_4{		width:1674px; height: 806px; }
+	.bg_content_4_slider{	width:5022px;}
 	
 	.bg_content_4.step1{		background-size: 1674px 806px;		background-position: -220px 120px;	}
 	.bg_content_4.step2{		background-position: -10px 160px;	}
-	/*.bg_content_4.step3{		background-position: -200px 120px;	}*/
+	.bg_content_4.step3{		background-position: -90px 120px;	}
 	
 	
 	.bg_content_4_slider.step2{ 
@@ -662,6 +663,7 @@ section{
 		-moz-transform:translateX(-3348px);
 		transform: translateX(-3348px);
 	}
+	
 }
 
 
