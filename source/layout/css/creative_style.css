@@ -69,7 +69,7 @@ section{
 	background-image:url(../images/common/bottle_ori_1_back.png);
 	background-repeat:no-repeat;
 	background-size:228px 720px;
-	z-index:11;
+	z-index:2;
 	margin:0 auto;
 	bottom: 35px;
 	-webkit-transition:all 1.0s ease-in-out;
@@ -83,7 +83,7 @@ section{
 	height:101%;
 	position:absolute;
 	overflow:hidden;
-	z-index:2;
+	z-index:1;
 }
 .bg_content_2{
 	width:1333px;
@@ -626,7 +626,7 @@ section{
 		background-position: -150px 0;
 	}
 	
-	.bottle, .bottle.step1 { top:80px; left:-320px;}
+	.bottle, .bottle.step1 { top:80px; left:-340px;}
 	.bottle.step2{top:80px;	left:-10px;}
 	.bottle.step3{top:80px; left:315px;}
 	
@@ -645,7 +645,7 @@ section{
 		transform: translateX(-2666px);
 	}
 	
-	.bg_content_4{		width:1674px; height: 806px; }
+	.bg_content_4{		width:1674px; height: 1030px; }
 	.bg_content_4_slider{	width:5022px;}
 	
 	.bg_content_4.step1{		background-size: 1674px 806px;		background-position: -220px 120px;	}

@@ -11,7 +11,7 @@ html, body {
 	background-image:url(../images/common/bg_header.png);
 	background-repeat:no-repeat;
 	background-size:100% 127px;
-	z-index:10;
+	z-index:2;
 }
 footer {
 	position:relative;
@@ -23,7 +23,7 @@ footer {
 	background-image:url(../images/common/bg_footer.png);
 	background-repeat:no-repeat;
 	background-size:100% 124px;
-	z-index:10;
+	z-index:0;
 }
 nav {
 	position:absolute;
