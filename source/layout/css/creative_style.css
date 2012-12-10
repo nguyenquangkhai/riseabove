@@ -64,12 +64,12 @@ section{
 .bottle {
 	position:relative;
 	width:228px;
-	height:420px;
-	padding-top: 300px;
+	height:330px;
+	padding-top: 390px;
 	background-image:url(../images/common/bottle_ori_1_back.png);
 	background-repeat:no-repeat;
 	background-size:228px 720px;
-	z-index:2;
+	z-index:3;
 	margin:0 auto;
 	bottom: 35px;
 	-webkit-transition:all 1.0s ease-in-out;
@@ -291,7 +291,8 @@ section{
 	margin:20px auto;
 	width:360px;
 	}
-.form_right_sub textarea{
+.form_right_sub textarea,
+.form_right_sub .textarea{
 	margin-left:-3px;
 	min-height:100px;
 	max-height:100px;
@@ -300,6 +301,7 @@ section{
 	max-height:120px;
 	border-radius:5px;
 	border:1px solid #666;
+	color:#000;
 	}
 .form_right_sub button{
 	margin-top:10px;
@@ -317,6 +319,20 @@ section{
 	opacity:0.7;
 	}
 	
+.decor_img{
+	max-width:106px;
+	max-height:104px;
+}
+
+#image_chosen{
+	overflow:hidden;
+	height: 210px;
+}
+
+#image_chosen li{
+	float: left;
+	margin: 0 10px;
+}
 /**************** CONTENT 3 ********************/
 .bg_content_3.step3{
 	margin-top: 145px;

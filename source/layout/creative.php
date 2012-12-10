@@ -32,21 +32,29 @@ include("database.php");
 			<article class="wrapper parallax-viewport" id="parallax">
 				<div class="bottle slider">
 					<div class="bottle_template" id="template_1" style="display: none">
-						<div class="bottle_template_img"></div>
-						<div class="bottle_template_textlarge text1"></div>
+						<div data-order="0" class="bottle_template_imglarge bottle_template_img"></div>
+						<div data-limit="40" data-order="0" class="bottle_template_textlarge text"></div>
 					</div>
 					<div class="bottle_template" id="template_2" style="display: none">
-						<div class="bottle_template_textlarge text1"></div>
-						<div class="bottle_template_img"></div>
+						<div data-limit="40" data-order="0" class="bottle_template_textlarge text"></div>
+						<div data-order="0" class="bottle_template_imglarge bottle_template_img"></div>
 					</div>
 					<div class="bottle_template" id="template_3" style="display: none">
-						<div class="bottle_template_textsmall text1"></div>
-						<div class="bottle_template_img"></div>
-						<div class="bottle_template_textsmall text2"></div>
+						<div data-limit="20" style="height: 85px;" data-order="0" class="bottle_template_textsmall text"></div>
+						<div data-order="0" style="height: 75px;" class="bottle_template_imglarge bottle_template_img"></div>
+						<div data-limit="20" style="height: 85px;" data-order="1" class="bottle_template_textsmall text"></div>
 					</div>
-					<div class="bottle_template" id="template_4" style="display: none"></div>
-					<div class="bottle_template" id="template_5" style="display: none"></div>
-					<div class="bottle_template" id="template_6" style="display: none"></div>
+					<div class="bottle_template" id="template_4" style="display: none">
+						<div data-order="0" class="bottle_template_imgsmall bottle_template_img"></div>
+						<div data-limit="20" data-order="0" class="bottle_template_textsmall text"></div>
+						<div data-order="1" class="bottle_template_imgsmall bottle_template_img"></div>
+					</div>
+					<div class="bottle_template" id="template_5" style="display: none">
+						<div data-limit="80" data-order="0" class="bottle_template_textfull text"></div>
+					</div>
+					<div class="bottle_template" id="template_6" style="display: none">
+						<div data-order="0" class="bottle_template_imgfull bottle_template_img"></div>
+					</div>
 				</div>
 				<div class="bg_content_1_holder">
 					<div class="bg_content_1_slider slider">
@@ -125,20 +133,23 @@ include("database.php");
 									<div class="title_left_sub">
 										<h1>CHỌN HÌNH</h1>
 									</div>
+									
 									<ul id="image_chosen" class="content_creative_sub_1">
+										<div class="ar_sub_1"></div>
+										<div class="ar_sub_2"></div>
 										<?
-											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = 1");
-											$length = mysql_fetch_lengths($topic_list);
+											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = 1 LIMIT 0,6");
+											$length = mysql_fetch_lengths($image_list);
+											echo $length;
 											if($length > 6){
 										?>
-											<div class="ar_sub_1"></div>
-											<div class="ar_sub_2"></div>
+											
 										<?
 											}
 											while($row = mysql_fetch_array($image_list)){
 										?>
 											<li data-image-id="<?= $row['id_image_master'] ?>">
-												<img src="images/creative/images/<?= $row['id_topic_master']?>_<?= $row['id_image_master'] ?>.png" width="106" height="104"/>
+												<img class="decor_img" src="images/creative/images/<?= $row['id_topic_master']?>_<?= $row['id_image_master'] ?>.png" />
 											</li>
 										<?
 											}
@@ -152,7 +163,10 @@ include("database.php");
 										<h1>LỜI CHÚC CỦA BẠN</h1>
 									</div>
 									<form class="form_right_sub">
-										<textarea name="" title="" placeholder="Type your text here...."></textarea>
+										<div id="wish" contenteditable="true" class="textarea" style="background-color: #fff; text-align: left">
+											
+										</div>
+										<!-- textarea name="" title="" maxlength="30" placeholder="Type your text here...."></textarea -->
 										<button type="button" value="Submit" title="" ></button>
 									</form>
 								</li>
@@ -166,11 +180,11 @@ include("database.php");
 									</div>
 									<ul id="quote" class="content_creative_sub_4 scroll_bar">
 										<?
-											$quote_list = mysql_query("SELECT * FROM quote_master");
+											$quote_list = mysql_query("SELECT * FROM quote_master LIMIT 0,6");
 											while($row = mysql_fetch_array($quote_list)){
 										?>
 										<li>
-											<span><?= $row['id_quote_master'] ?>. <?= $row['quote_content'] ?></span>
+											<span><?= $row['quote_content'] ?></span>
 										</li>
 										<?
 											}
@@ -207,9 +221,10 @@ include("database.php");
 			<form id="master_form">
 				<input type="hidden" id="master_template" name="template"/>
 				<input type="hidden" id="master_topic" name="topic"/>
-				<input type="hidden" id="master_image" name="image"/>
-				<input type="hidden" id="master_text1" name="text_1"/>
-				<input type="hidden" id="master_text2" name="text_2"/>
+				<input type="hidden" id="master_image0" name="image"/>
+				<input type="hidden" id="master_image1" name="image"/>
+				<input type="hidden" id="master_text0" name="text_1"/>
+				<input type="hidden" id="master_text1" name="text_2"/>
 				<input type="hidden" id="master_from_name" name="from_name"/>
 				<input type="hidden" id="master_from_add" name="from_add"/>
 				<input type="hidden" id="master_from_tel" name="from_tel"/>
@@ -219,7 +234,8 @@ include("database.php");
 				<input type="hidden" id="master_to_tel" name="to_tel"/>
 				<input type="hidden" id="master_to_mail" name="to_mail"/>
 			</form>
-			<input type="hidden" id="master_text_num" value="1"/>
+			<input type="hidden" id="master_text_num" value="0"/>
+			<input type="hidden" id="master_image_num" value="0"/>
 		</section>
 		<footer></footer>
 		<!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
@@ -248,11 +264,20 @@ include("database.php");
 					$content2.hide();
 					$content3.hide();
 					$(".slider").removeClass("step2");
+					//reset param
+					$(".text").unbind("click");
+					$(".bottle_template_img").unbind("click");
+					$("#master_text_num").val(0);
+					$("#master_image_num").val(0);
+					var bottle_template = $(".bottle_template").not(":hidden");
+					var bottle_template_img = bottle_template.children(".bottle_template_img").html("");
+					bottle_template.removeClass("no-image");
+					$(".text").html("")
 				});
 				
 				$("#arrow_from2_to3").click(function() {
-					if($("#master_image").val() == "" || $("#master_text1").val() == "")
-						return;
+					//if($("#master_image0").val() == "" || $("#master_text0").val() == "")
+					//	return;
 					$content1.hide();
 					$content2.hide();
 					$content3.show();
@@ -278,14 +303,16 @@ include("database.php");
 						$(".slider").addClass("step2");
 					});
 					
-					$(".text1").click(function(){
-						$(".form_right_sub textarea").val($("#master_text1").val()).focus();
-						$("#master_text_num").val(1);
+					$(".text").click(function(){
+						var val = $(this).data("order");
+						//$(".form_right_sub textarea").val($("#master_text" + val).val()).focus();
+						$("#wish").text($("#master_text" + val).val()).focus();
+						$("#master_text_num").val(val);
 					});
 					
-					$(".text2").click(function(){
-						$(".form_right_sub textarea").val($("#master_text2").val()).focus();
-						$("#master_text_num").val(2);
+					$(".bottle_template_img").click(function(){
+						var val = $(this).data("order");
+						$("#master_image_num").val(val);
 					});
 					
 					$("#master_template").val(tempId);
@@ -323,20 +350,37 @@ include("database.php");
 					var obj = $(this);
 					var image_id = obj.data("image-id");
 					$("#master_image").val(image_id);
+					var image_num = $("#master_image_num").val();
+					var bottle_template = $(".bottle_template").not(":hidden");
+					var bottle_template_img = bottle_template.children(".bottle_template_img").eq(image_num);
+					bottle_template.addClass("no-image");
+					var img = new Image();
+					img.src = obj.children("img").attr("src");
+					bottle_template_img.html("").append(img);
+					$("#master_image" + image_num).val(image_id);
 				});
 				
 				$("#quote li").click(function(){
 					var text = $(this).text();
-					$(".form_right_sub textarea").val("").val(text).focus();
+					$("#wish").text("").text(text).focus();
 					var text_current = $("#master_text_num").val();
+					$("#master_text"+text_current).val(text);
+					$(".bottle_template").not(":hidden").children(".text").eq(text_current).html(text);
+				});
+				
+				$("#wish").keyup(function(){
+					var text = $(this).text();
+					var text_current = $("#master_text_num").val();
+					$(".bottle_template").not(":hidden").children(".text").eq(text_current).html(text);
 					$("#master_text"+text_current).val(text);
 				});
 				
-				$(".form_right_sub textarea").keyup(function(){
+				/*$(".form_right_sub textarea").keyup(function(){
 					var text = $(this).val();
 					var text_current = $("#master_text_num").val();
+					$(".bottle_template").not(":hidden").children(".text").eq(text_current).html(text);
 					$("#master_text"+text_current).val(text);
-				});
+				});*/
 			});
 		</script>
 	</body>

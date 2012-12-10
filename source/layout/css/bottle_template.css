@@ -1,41 +1,78 @@
 .bottle_template{
-	width: 80px;
-	height:123px;
+	width: 160px;
+	height:253px;
 	margin:0 auto;
-	background-size:80px 123px !important;
+	background-size:160px 253px !important;
+}
+
+.bottle_template.no-image{
+	background-image:none !important;
+	background-color:#fff !important;
 }
 
 .bottle_template#template_1{
-	background:url(../images/creative/img_1.jpg) no-repeat;
+	background:url(../images/creative/template/template1.jpg) no-repeat;
 }
 
 .bottle_template#template_2{
-	background:url(../images/creative/img_2.jpg) no-repeat top left;
+	background:url(../images/creative/template/template2.jpg) no-repeat top left;
 }
 
 .bottle_template#template_3{
-	background:url(../images/creative/img_3.jpg) no-repeat top left;
+	background:url(../images/creative/template/template3.jpg) no-repeat top left;
 }
 
 .bottle_template#template_4{
-	background:url(../images/creative/img_4.jpg) no-repeat top left;
+	background:url(../images/creative/template/template4.jpg) no-repeat top left;
 }
 
 .bottle_template#template_5{
-	background:url(../images/creative/img_5.jpg) no-repeat top left;
+	background:url(../images/creative/template/template5.jpg) no-repeat top left;
 }
 
-.bottle_template .bottle_template_img{
-	width:80px;
-	height:60px;
+.bottle_template#template_6{
+	background:url(../images/creative/template/template6.jpg) no-repeat top left;
 }
+
+.bottle_template img{
+	max-width: 160px !important;
+	display: block;
+	margin: 0 auto;
+}
+
+.bottle_template .bottle_template_imglarge{
+	width:160px;
+	height:125px;
+}
+.bottle_template .bottle_template_imglarge img{	max-height: 125px !important;}
+
+.bottle_template .bottle_template_imgsmall{
+	width:160px;
+	height:90px;
+}
+.bottle_template .bottle_template_imgsmall img{	max-height: 90px !important;}
+
+.bottle_template .bottle_template_imgfull{
+	width:160px;
+	height:253px;
+}
+.bottle_template .bottle_template_imgfull img{	max-height: 213px !important;}
 
 .bottle_template .bottle_template_textlarge{
-	width:80px;
-	height:60px;
+	width:160px;
+	height:125px;
 }
 
 .bottle_template .bottle_template_textsmall{
-	width:80px;
-	height:30px;
+	width:160px;
+	height:50px;
+}
+
+.bottle_template .bottle_template_textfull{
+	width:160px;
+	height:253px;
+}
+
+.bottle_template .text{
+	color:#000;
 }
