@@ -139,7 +139,7 @@ section{
 	width:450px;
 	margin:0 auto;
 	margin-bottom:10px;
-	color:#000;
+	color:#081744;
 	font-size:larger;
 }
 .content_creative li{
@@ -180,7 +180,7 @@ section{
 	text-align:center;
 	top: 15%;
 	left: -29px;
-	width: 1010px;
+	width: 1030px;
 	height:auto;
 	color:#fff;
 	background-image:none;
@@ -189,7 +189,7 @@ section{
 }
 .title_creative_sub{
 	position:relative;
-	left:185px;
+	left:200px;
 	width:542px;
 	height:45px;
 	margin-bottom:30px;
@@ -377,6 +377,7 @@ section{
 }
 .title_left_sub h1 {
 	font-weight:normal;
+	font-size: 18px;
 }
 .content_creative_sub li {
 	display:inline-block;
@@ -413,7 +414,7 @@ section{
 	top:230px;
 	width:33px;
 	height:75px;
-	background-image:url(../images/common/arrow_creative_sub.png);
+	background-image:url(../images/common/arrow_creative.png);
 	background-size:33px 75px;
 	background-repeat:no-repeat;
 	z-index:15;

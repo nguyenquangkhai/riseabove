@@ -7,7 +7,7 @@
 .sf-menu li a  { text-transform: none; font-family: fff;  text-shadow: 1px 1px #555555; font-size: 17px; text-transform: uppercase;  line-height: 70px ;}
 .sf-menu li a:hover { color: #e8b975; cursor: pointer; }
 
-.sf-menu .logo a { width: 131px; height: 63px; display: inline-block; text-indent: -30000px; background-image: url('images/logo.png'); background-color: transparent; background-position: no-repeat; }
+.sf-menu .logo a { width: 131px; height: 63px; display: inline-block; text-indent: -30000px; background-image: url('images/logo.png'); background-color: transparent; background-repeat: no-repeat; }
 
 #mainpage { text-align: center;}
 

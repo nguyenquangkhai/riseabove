@@ -144,6 +144,9 @@ include("database.php");
 									</div>
 									
 									<ul id="image_chosen" class="content_creative_sub_1">
+										<!-- div class="loader" style="display:none;position: absolute;top: 0; left: 0; width: 400px; height: 210px;background-color: #EEE;opacity: 0.8; border-radius: 5px" >
+											<img style="margin-top: 100px;" src="images/loader.gif" />
+										</div -->
 										<?
 											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = 4");
 											$length = mysql_num_rows ($image_list);
@@ -171,9 +174,9 @@ include("database.php");
 									</div>
 									<form class="form_right_sub">
 										<div id="wish" contenteditable="true" class="textarea" style="background-color: #fff; text-align: left">
-											
+											From Martell with love
 										</div>
-										<span id="counter_master" style="display:none; position: absolute; margin: -20px 0 0 300px; color:#BE3636"><span id="counter_cur"></span>/<span id="counter_hold"></span></span>
+										<span id="counter_master" style="display:none; position: absolute; margin: -20px 0 0 275px; color:#BE3636">Limit <span id="counter_cur"></span>/<span id="counter_hold"></span></span>
 									</form>
 								</li>
 								<div class="clear"></div>
@@ -185,6 +188,9 @@ include("database.php");
 										<h1>CHỌN CÂU CHÚC DÀNH CHO NGƯỜI THÂN</h1>
 									</div>
 									<ul id="quote" class="content_creative_sub_4 scroll_bar" style="width:400px; height: 220px;">
+										<!-- div class="loader" style="display:none;position: absolute;top: 0; left: 0; width: 400px; height: 220px;background-color: #EEE;opacity: 0.8; border-radius: 5px" >
+											<img style="margin: 100px 0 0 185px;" src="images/loader.gif" />
+										</div -->
 										<?
 											$quote_list = mysql_query("SELECT * FROM quote_master WHERE id_topic_master = 4");
 											while($row = mysql_fetch_array($quote_list)){
@@ -558,6 +564,12 @@ include("database.php");
 		</script>
 		<script>
 			jQuery(window).load(function() {
+				$(".loader").ajaxStart(function(){
+					$(this).show();
+				});
+				$(".loader").ajaxStop(function(){
+					$(this).hide();
+				});
 				/*$('#parallax .parallax-layer').parallax({
 					mouseport : jQuery('#parallax')
 				});*/
@@ -602,14 +614,6 @@ include("database.php");
 					$(".bottle_template").hide();
 					$(obj).show();
 					var tempId = $(this).data("templateid");
-					$("#arrow_from1_to2").unbind("click").bind("click", function(){
-						$content1.fadeOut("slow");
-						$content2.fadeIn("slow");
-						$(".slider").addClass("step2");
-						addScrollBar1();
-						addScrollBar2();
-					});
-					
 					$(".text").click(function(){
 						var val = $(this).data("order");
 						$("#wish").text($("#master_text" + val).val()).focus();
@@ -620,6 +624,16 @@ include("database.php");
 						var val = $(this).data("order");
 						$("#master_image_num").val(val);
 					});
+					
+					
+					$("#arrow_from1_to2").unbind("click").bind("click", function(){
+						$content1.fadeOut("slow");
+						$content2.fadeIn("slow");
+						$(".slider").addClass("step2");
+						addScrollBar1();
+						addScrollBar2();
+					});
+					
 					
 					$("#master_template").val(tempId);
 				});
@@ -638,7 +652,7 @@ include("database.php");
 							var images = data.images;
 							var quotes = data.quotes;
 							var image_holder = $("#image_chosen .jspPane");
-							image_holder.html("");
+							image_holder.children("li").remove();
 							images.forEach(function(obj,index){
 								var li = $('<li>',{'data-image-id':obj.id});
 								var img = $('<img>',{'src':"images/creative/images/"+obj.topic_id+"/"+obj.id+".png",
@@ -646,7 +660,7 @@ include("database.php");
 								image_holder.append(li);
 							});
 							var quotes_holder = $("#quote .jspPane");
-							quotes_holder.html("");
+							quotes_holder.children("li").remove();
 							quotes.forEach(function(obj, index){
 								var li = $('<li>');
 								var span = $('<span>').text(obj.content).appendTo(li);
@@ -688,15 +702,17 @@ include("database.php");
 					if($("#counter_master").is(":hidden")){
 						$("#counter_master").show().delay(1000).fadeOut("slow");
 					}
-					bottle_template_text.addClass("no-image");
 					if(text.length > 0 && text.length <= limit){
 						bottle_template_text.text(text);
 					}else if(text.length > limit){
-						$(this).text(text.substring(0,limit));
-						return;
+						text = text.substring(0,limit);
+						$(this).text(text);
 					}
+					if(text.length != 0)
+						bottle_template_text.addClass("no-image");
 					else
-						bottle_template_text.text(text).removeClass("no-image");
+						bottle_template_text.removeClass("no-image");
+					bottle_template_text.text(text);
 					$("#master_text"+text_current).val(text);
 				});
 				
