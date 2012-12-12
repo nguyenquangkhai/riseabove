@@ -4,11 +4,13 @@
 	  src: local("FFF"), url('../fonts/Gravinamregular.ttf') format("truetype"); /* non-IE */  
 	}
 .setfont{
-	font-family:"Gravinamregular";
+	/*font-family:"Gravinamregular";*/
+	font-family:"Myriad Pro";
 	color: blue;
 }
 body{
-	font-family:"Gravinamregular";
+	/*font-family:"Gravinamregular";*/
+	font-family:"Myriad Pro";
 	color:#FFFFFF;
 	}
 a:focus {

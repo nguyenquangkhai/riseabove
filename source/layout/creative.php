@@ -1,10 +1,12 @@
-<? 
+﻿<?
 include("database.php");
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+		<meta http-equiv="EXPIRES" content="0">
 		<meta name="viewport" content="width=device-width;minimum-scale=0.5,maximum-scale=1.0; user-scalable=1;" />
 		<title>RiseAbove - Sáng tạo</title>
 		<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
@@ -12,6 +14,7 @@ include("database.php");
 		<link rel="stylesheet" type="text/css" media="all" href="css/common.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/bottle_template.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/creative_style.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/jquery.jscrollpane.codrops2.css" />
 		<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
 	</head>
 
@@ -32,28 +35,34 @@ include("database.php");
 			<article class="wrapper parallax-viewport" id="parallax">
 				<div class="bottle slider">
 					<div class="bottle_template" id="template_1" style="display: none">
-						<div data-order="0" class="bottle_template_imglarge bottle_template_img"></div>
-						<div data-limit="40" data-order="0" class="bottle_template_textlarge text"></div>
+						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
+						<div data-limit="120" data-order="0" class="bottle_template_textlarge text">
+						</div>
 					</div>
 					<div class="bottle_template" id="template_2" style="display: none">
-						<div data-limit="40" data-order="0" class="bottle_template_textlarge text"></div>
-						<div data-order="0" class="bottle_template_imglarge bottle_template_img"></div>
+						<div data-limit="120" data-order="0" class="bottle_template_textlarge text">
+						</div>
+						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
 					</div>
 					<div class="bottle_template" id="template_3" style="display: none">
-						<div data-limit="20" style="height: 85px;" data-order="0" class="bottle_template_textsmall text"></div>
-						<div data-order="0" style="height: 75px;" class="bottle_template_imglarge bottle_template_img"></div>
-						<div data-limit="20" style="height: 85px;" data-order="1" class="bottle_template_textsmall text"></div>
+						<div data-limit="60" data-order="0" class="bottle_template_textsmall text">
+						</div>
+						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
+						<div data-limit="60" data-order="1" class="bottle_template_textsmall text">
+						</div>
 					</div>
 					<div class="bottle_template" id="template_4" style="display: none">
-						<div data-order="0" class="bottle_template_imgsmall bottle_template_img"></div>
-						<div data-limit="20" data-order="0" class="bottle_template_textsmall text"></div>
-						<div data-order="1" class="bottle_template_imgsmall bottle_template_img"></div>
+						<div data-order="0" class="bottle_template_imgsmall bottle_template_img image_holder"></div>
+						<div data-limit="60" data-order="0" class="bottle_template_textsmall text">
+						</div>
+						<div data-order="1" class="bottle_template_imgsmall bottle_template_img image_holder"></div>
 					</div>
 					<div class="bottle_template" id="template_5" style="display: none">
-						<div data-limit="80" data-order="0" class="bottle_template_textfull text"></div>
+						<div data-limit="220" data-order="0" class="bottle_template_textfull text">
+						</div>
 					</div>
 					<div class="bottle_template" id="template_6" style="display: none">
-						<div data-order="0" class="bottle_template_imgfull bottle_template_img"></div>
+						<div data-order="0" class="bottle_template_imgfull bottle_template_img image_holder"></div>
 					</div>
 				</div>
 				<div class="bg_content_1_holder">
@@ -70,7 +79,7 @@ include("database.php");
 						<div class="bg_content_2"></div>
 					</div>
 				</div>
-				<div class="bg_content_4_holder parallax-layer">
+				<div class="bg_content_4_holder">
 					<div class="bg_content_4_slider slider">
 						<div class="bg_content_4 step1"></div>
 						<div class="bg_content_4 step2"></div>
@@ -97,7 +106,7 @@ include("database.php");
 								?>
 							</ul>
 							<div class="info_creative">
-
+								Hãy chọn bố cục thiết kế mà bạn mong muốn thể hiện.
 							</div>
 						</div>
 					</div>
@@ -111,7 +120,7 @@ include("database.php");
 							<ol class="creative_left_sub">
 								<li>
 									<div class="title_left_sub">
-										<h1>CHỌN CHỦ ĐỀ</h1>
+										<h1>CHỌN CHỦ ĐỀ BẠN YÊU THÍCH</h1>
 									</div>
 									<ul id="topic_chosen" class="content_creative_sub">
 										<?
@@ -120,7 +129,7 @@ include("database.php");
 											while($row = mysql_fetch_array($topic_list)){
 										?>
 										<li data-topic-id="<?= $row['id_topic_master'] ?>">
-											<img src="images/creative/topic/<?= $row['topic_name'] ?>.png" width="87" height="86"/>
+											<img src="images/creative/topic/<?= $row['topic_name'] ?>.png" width="72" height="73" title="<?= $row['topic_description'] ?>" alt="<?= $row['topic_description'] ?>" />
 										</li>
 										<?
 											}
@@ -131,25 +140,23 @@ include("database.php");
 								<div class="clear"></div>
 								<li>
 									<div class="title_left_sub">
-										<h1>CHỌN HÌNH</h1>
+										<h1>CHỌN HÌNH ẢNH CHO KIỆT TÁC</h1>
 									</div>
 									
 									<ul id="image_chosen" class="content_creative_sub_1">
-										<div class="ar_sub_1"></div>
-										<div class="ar_sub_2"></div>
 										<?
-											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = 1 LIMIT 0,6");
-											$length = mysql_fetch_lengths($image_list);
-											echo $length;
+											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = 4");
+											$length = mysql_num_rows ($image_list);
 											if($length > 6){
 										?>
-											
+											<!-- div class="ar_sub_1"></div>
+											<div class="ar_sub_2"></div -->
 										<?
 											}
 											while($row = mysql_fetch_array($image_list)){
 										?>
 											<li data-image-id="<?= $row['id_image_master'] ?>">
-												<img class="decor_img" src="images/creative/images/<?= $row['id_topic_master']?>_<?= $row['id_image_master'] ?>.png" />
+												<img class="decor_img" src="images/creative/images/<?= $row['id_topic_master'] ?>/<?= $row['id_image_master'] ?>.png" />
 											</li>
 										<?
 											}
@@ -160,14 +167,13 @@ include("database.php");
 							<ol class="creative_right_sub">
 								<li>
 									<div class="title_left_sub">
-										<h1>LỜI CHÚC CỦA BẠN</h1>
+										<h1>TỰ SÁNG TẠO NỘI DUNG</h1>
 									</div>
 									<form class="form_right_sub">
 										<div id="wish" contenteditable="true" class="textarea" style="background-color: #fff; text-align: left">
 											
 										</div>
-										<!-- textarea name="" title="" maxlength="30" placeholder="Type your text here...."></textarea -->
-										<button type="button" value="Submit" title="" ></button>
+										<span id="counter_master" style="display:none; position: absolute; margin: -20px 0 0 300px; color:#BE3636"><span id="counter_cur"></span>/<span id="counter_hold"></span></span>
 									</form>
 								</li>
 								<div class="clear"></div>
@@ -176,11 +182,11 @@ include("database.php");
 								</style>
 								<li>
 									<div class="title_left_sub">
-										<h1>CHỌN MẪU LỜI CHÚC CÓ SẴN</h1>
+										<h1>CHỌN CÂU CHÚC DÀNH CHO NGƯỜI THÂN</h1>
 									</div>
-									<ul id="quote" class="content_creative_sub_4 scroll_bar">
+									<ul id="quote" class="content_creative_sub_4 scroll_bar" style="width:400px; height: 220px;">
 										<?
-											$quote_list = mysql_query("SELECT * FROM quote_master LIMIT 0,6");
+											$quote_list = mysql_query("SELECT * FROM quote_master WHERE id_topic_master = 4");
 											while($row = mysql_fetch_array($quote_list)){
 										?>
 										<li>
@@ -197,34 +203,38 @@ include("database.php");
 						</div>
 					</div>
 					<div id="content3" class="bg_content_3 step3" style="display: none">
+						<div class="title_creative_step3"><img src="images/common/bg_content_about_3.png" width="465" height="45"/> </div>
 						<div class="wrapp_content contact">
 							<a id="arrow_from3_to2" class="arrow_creative_sub_1"></a>
-							<form action="" method="" name="">
-								<input class="contact_form" type="text" value="" name=""/>
-								<input class="contact_name" type="text" value="" name=""/>
-								<textarea class="contact_address" type="text" maxlength="63" value="" name=""></textarea>
-								<input class="contact_tell" type="text" value="" name=""/>
-								<input class="contact_email" type="text" value="" name=""/>
-								<input class="contact_to" type="text" value="" name=""/>
-								<input class="contact_name_1" type="text" value="" name=""/>
-								<textarea class="contact_address_1" type="text" maxlength="63" value="" name=""></textarea>
-								<input class="contact_tell_1" type="text" value="" name=""/>
-								<input class="contact_email_1" type="text" value="" name=""/>
-								<button class="contact_submit" type="submit" value="" name=""></button>
-							</form>
+								<!-- input class="contact_form" type="text" value=""/-->
+								<input id="from_name" class="contact_name" type="text" value=""/>
+								<div id="from_add" contenteditable="true" class="contact_address"></div>
+								<input id="from_tel" class="contact_tell" type="text" value=""/>
+								<div></div>
+								<input id="from_mail" class="contact_email" type="text" value=""/>
+								<div id="same_from_to">
+									<input type="checkbox" name="copy" />
+								</div>
+								<input id="to_name" class="contact_name_1" type="text" value=""/>
+								<div id="to_add" contenteditable="true" class="contact_address_1"></div>
+								<input id="to_tel" class="contact_tel_1" type="text" value=""/>
+								<input id="to_mail" class="contact_email_1" type="text" value=""/>
+								<button id="do_transaction" class="contact_submit" value=""></button>
 						</div>
 					</div>
 				</div>
 			</article>
 		</section>
 		<section style="display: none">
-			<form id="master_form">
+			<form id="master_form" action="buy.php" method="post">
 				<input type="hidden" id="master_template" name="template"/>
-				<input type="hidden" id="master_topic" name="topic"/>
-				<input type="hidden" id="master_image0" name="image"/>
-				<input type="hidden" id="master_image1" name="image"/>
+				<input type="hidden" id="master_topic" name="topic" value="1"/>
+				<input type="hidden" id="master_image0" name="image_1"/>
+				<input type="hidden" id="master_image1" name="image_2"/>
 				<input type="hidden" id="master_text0" name="text_1"/>
 				<input type="hidden" id="master_text1" name="text_2"/>
+				<input type="hidden" id="master_from" name="from"/>
+				<input type="hidden" id="master_to" name="to"/>
 				<input type="hidden" id="master_from_name" name="from_name"/>
 				<input type="hidden" id="master_from_add" name="from_add"/>
 				<input type="hidden" id="master_from_tel" name="from_tel"/>
@@ -244,50 +254,346 @@ include("database.php");
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/jquery.event.frame.js"></script>
 		<script src="js/jquery.parallax.js"></script>
-		<script src="js/jquery.mCustomScrollbar.js"></script>
+		<!-- script src="js/jquery.mCustomScrollbar.js"></script -->
+		<script src="js/jquery.form.js"></script>
+		<!-- the mousewheel plugin -->
+		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+		<!-- the jScrollPane script -->
+		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" src="js/scroll-startstop.events.jquery.js"></script>
+		<script type="text/javascript">
+			function addScrollBar1(){
+			
+				// the element we want to apply the jScrollPane
+				var $el					= $('#quote').show().jScrollPane({
+					verticalGutter 	: -16
+				}),
+						
+				// the extension functions and options 	
+					extensionPlugin 	= {
+						
+						extPluginOpts	: {
+							// speed for the fadeOut animation
+							mouseLeaveFadeSpeed	: 500,
+							// scrollbar fades out after hovertimeout_t milliseconds
+							hovertimeout_t		: 1000,
+							// if set to false, the scrollbar will be shown on mouseenter and hidden on mouseleave
+							// if set to true, the same will happen, but the scrollbar will be also hidden on mouseenter after "hovertimeout_t" ms
+							// also, it will be shown when we start to scroll and hidden when stopping
+							useTimeout			: false,
+							// the extension only applies for devices with width > deviceWidth
+							deviceWidth			: 980
+						},
+						hovertimeout	: null, // timeout to hide the scrollbar
+						isScrollbarHover: false,// true if the mouse is over the scrollbar
+						elementtimeout	: null,	// avoids showing the scrollbar when moving from inside the element to outside, passing over the scrollbar
+						isScrolling		: false,// true if scrolling
+						addHoverFunc	: function() {
+							
+							// run only if the window has a width bigger than deviceWidth
+							if( $(window).width() <= this.extPluginOpts.deviceWidth ) return false;
+							
+							var instance		= this;
+							
+							// functions to show / hide the scrollbar
+							$.fn.jspmouseenter 	= $.fn.show;
+							$.fn.jspmouseleave 	= $.fn.fadeOut;
+							
+							// hide the jScrollPane vertical bar
+							var $vBar			= this.getContentPane().siblings('.jspVerticalBar').hide();
+							
+							/*
+							 * mouseenter / mouseleave events on the main element
+							 * also scrollstart / scrollstop - @James Padolsey : http://james.padolsey.com/javascript/special-scroll-events-for-jquery/
+							 */
+							$el.bind('mouseenter.jsp',function() {
+								
+								// show the scrollbar
+								$vBar.stop( true, true ).jspmouseenter();
+								
+								if( !instance.extPluginOpts.useTimeout ) return false;
+								
+								// hide the scrollbar after hovertimeout_t ms
+								clearTimeout( instance.hovertimeout );
+								instance.hovertimeout 	= setTimeout(function() {
+									// if scrolling at the moment don't hide it
+									if( !instance.isScrolling )
+										$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+								}, instance.extPluginOpts.hovertimeout_t );
+								
+								
+							}).bind('mouseleave.jsp',function() {
+								
+								// hide the scrollbar
+								if( !instance.extPluginOpts.useTimeout )
+									$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+								else {
+								clearTimeout( instance.elementtimeout );
+								if( !instance.isScrolling )
+										$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+								}
+								
+							});
+							
+							if( this.extPluginOpts.useTimeout ) {
+								
+								$el.bind('scrollstart.jsp', function() {
+								
+									// when scrolling show the scrollbar
+									clearTimeout( instance.hovertimeout );
+									instance.isScrolling	= true;
+									$vBar.stop( true, true ).jspmouseenter();
+									
+								}).bind('scrollstop.jsp', function() {
+									
+									// when stop scrolling hide the scrollbar (if not hovering it at the moment)
+									clearTimeout( instance.hovertimeout );
+									instance.isScrolling	= false;
+									instance.hovertimeout 	= setTimeout(function() {
+										if( !instance.isScrollbarHover )
+											$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+									}, instance.extPluginOpts.hovertimeout_t );
+									
+								});
+								
+								// wrap the scrollbar
+								// we need this to be able to add the mouseenter / mouseleave events to the scrollbar
+								var $vBarWrapper	= $('<div/>').css({
+									position	: 'absolute',
+									left		: $vBar.css('left'),
+									top			: $vBar.css('top'),
+									right		: $vBar.css('right'),
+									bottom		: $vBar.css('bottom'),
+									width		: $vBar.width(),
+									height		: $vBar.height()
+								}).bind('mouseenter.jsp',function() {
+									
+									clearTimeout( instance.hovertimeout );
+									clearTimeout( instance.elementtimeout );
+									
+									instance.isScrollbarHover	= true;
+									
+									// show the scrollbar after 100 ms.
+									// avoids showing the scrollbar when moving from inside the element to outside, passing over the scrollbar								
+									instance.elementtimeout	= setTimeout(function() {
+										$vBar.stop( true, true ).jspmouseenter();
+									}, 100 );	
+									
+								}).bind('mouseleave.jsp',function() {
+									
+									// hide the scrollbar after hovertimeout_t
+									clearTimeout( instance.hovertimeout );
+									instance.isScrollbarHover	= false;
+									instance.hovertimeout = setTimeout(function() {
+										// if scrolling at the moment don't hide it
+										if( !instance.isScrolling )
+											$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+									}, instance.extPluginOpts.hovertimeout_t );
+									
+								});
+								
+								$vBar.wrap( $vBarWrapper );
+							
+							}
+						
+						}
+						
+					},
+					
+					// the jScrollPane instance
+					jspapi 			= $el.data('jsp');
+					
+				// extend the jScollPane by merging	
+				$.extend( true, jspapi, extensionPlugin );
+				jspapi.addHoverFunc();
+			
+			};
+			
+			function addScrollBar2(){
+			
+				// the element we want to apply the jScrollPane
+				var $el					= $('#image_chosen').show().jScrollPane({
+					verticalGutter 	: -16
+				}),
+						
+				// the extension functions and options 	
+					extensionPlugin 	= {
+						
+						extPluginOpts	: {
+							// speed for the fadeOut animation
+							mouseLeaveFadeSpeed	: 500,
+							// scrollbar fades out after hovertimeout_t milliseconds
+							hovertimeout_t		: 1000,
+							// if set to false, the scrollbar will be shown on mouseenter and hidden on mouseleave
+							// if set to true, the same will happen, but the scrollbar will be also hidden on mouseenter after "hovertimeout_t" ms
+							// also, it will be shown when we start to scroll and hidden when stopping
+							useTimeout			: false,
+							// the extension only applies for devices with width > deviceWidth
+							deviceWidth			: 980
+						},
+						hovertimeout	: null, // timeout to hide the scrollbar
+						isScrollbarHover: false,// true if the mouse is over the scrollbar
+						elementtimeout	: null,	// avoids showing the scrollbar when moving from inside the element to outside, passing over the scrollbar
+						isScrolling		: false,// true if scrolling
+						addHoverFunc	: function() {
+							
+							// run only if the window has a width bigger than deviceWidth
+							if( $(window).width() <= this.extPluginOpts.deviceWidth ) return false;
+							
+							var instance		= this;
+							
+							// functions to show / hide the scrollbar
+							$.fn.jspmouseenter 	= $.fn.show;
+							$.fn.jspmouseleave 	= $.fn.fadeOut;
+							
+							// hide the jScrollPane vertical bar
+							var $vBar			= this.getContentPane().siblings('.jspVerticalBar').hide();
+							
+							/*
+							 * mouseenter / mouseleave events on the main element
+							 * also scrollstart / scrollstop - @James Padolsey : http://james.padolsey.com/javascript/special-scroll-events-for-jquery/
+							 */
+							$el.bind('mouseenter.jsp',function() {
+								
+								// show the scrollbar
+								$vBar.stop( true, true ).jspmouseenter();
+								
+								if( !instance.extPluginOpts.useTimeout ) return false;
+								
+								// hide the scrollbar after hovertimeout_t ms
+								clearTimeout( instance.hovertimeout );
+								instance.hovertimeout 	= setTimeout(function() {
+									// if scrolling at the moment don't hide it
+									if( !instance.isScrolling )
+										$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+								}, instance.extPluginOpts.hovertimeout_t );
+								
+								
+							}).bind('mouseleave.jsp',function() {
+								
+								// hide the scrollbar
+								if( !instance.extPluginOpts.useTimeout )
+									$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+								else {
+								clearTimeout( instance.elementtimeout );
+								if( !instance.isScrolling )
+										$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+								}
+								
+							});
+							
+							if( this.extPluginOpts.useTimeout ) {
+								
+								$el.bind('scrollstart.jsp', function() {
+								
+									// when scrolling show the scrollbar
+									clearTimeout( instance.hovertimeout );
+									instance.isScrolling	= true;
+									$vBar.stop( true, true ).jspmouseenter();
+									
+								}).bind('scrollstop.jsp', function() {
+									
+									// when stop scrolling hide the scrollbar (if not hovering it at the moment)
+									clearTimeout( instance.hovertimeout );
+									instance.isScrolling	= false;
+									instance.hovertimeout 	= setTimeout(function() {
+										if( !instance.isScrollbarHover )
+											$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+									}, instance.extPluginOpts.hovertimeout_t );
+									
+								});
+								
+								// wrap the scrollbar
+								// we need this to be able to add the mouseenter / mouseleave events to the scrollbar
+								var $vBarWrapper	= $('<div/>').css({
+									position	: 'absolute',
+									left		: $vBar.css('left'),
+									top			: $vBar.css('top'),
+									right		: $vBar.css('right'),
+									bottom		: $vBar.css('bottom'),
+									width		: $vBar.width(),
+									height		: $vBar.height()
+								}).bind('mouseenter.jsp',function() {
+									
+									clearTimeout( instance.hovertimeout );
+									clearTimeout( instance.elementtimeout );
+									
+									instance.isScrollbarHover	= true;
+									
+									// show the scrollbar after 100 ms.
+									// avoids showing the scrollbar when moving from inside the element to outside, passing over the scrollbar								
+									instance.elementtimeout	= setTimeout(function() {
+										$vBar.stop( true, true ).jspmouseenter();
+									}, 100 );	
+									
+								}).bind('mouseleave.jsp',function() {
+									
+									// hide the scrollbar after hovertimeout_t
+									clearTimeout( instance.hovertimeout );
+									instance.isScrollbarHover	= false;
+									instance.hovertimeout = setTimeout(function() {
+										// if scrolling at the moment don't hide it
+										if( !instance.isScrolling )
+											$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+									}, instance.extPluginOpts.hovertimeout_t );
+									
+								});
+								
+								$vBar.wrap( $vBarWrapper );
+							
+							}
+						
+						}
+						
+					},
+					
+					// the jScrollPane instance
+					jspapi 			= $el.data('jsp');
+					
+				// extend the jScollPane by merging	
+				$.extend( true, jspapi, extensionPlugin );
+				jspapi.addHoverFunc();
+			
+			};
+		</script>
 		<script>
-			jQuery(document).ready(function() {
-				$('#parallax .parallax-layer').parallax({
+			jQuery(window).load(function() {
+				/*$('#parallax .parallax-layer').parallax({
 					mouseport : jQuery('#parallax')
-				});
+				});*/
+				$('#master_form').resetForm();
 				$content1 = $("#content1");
 				$content2 = $("#content2");
 				$content3 = $("#content3");
 
-				$(".scroll_bar").mCustomScrollbar({
+				/*$(".scroll_bar").mCustomScrollbar({
 					scrollEasing : "easeOutQuint",
 					autoDraggerLength : false
-				});
+				});*/
 
 				$("#arrow_from2_to1").click(function() {
-					$content1.show();
-					$content2.hide();
-					$content3.hide();
+					$content1.fadeIn();
+					$content2.fadeOut();
+					$content3.fadeOut();
 					$(".slider").removeClass("step2");
 					//reset param
-					$(".text").unbind("click");
+					$(".text");
 					$(".bottle_template_img").unbind("click");
 					$("#master_text_num").val(0);
 					$("#master_image_num").val(0);
 					var bottle_template = $(".bottle_template").not(":hidden");
-					var bottle_template_img = bottle_template.children(".bottle_template_img").html("");
-					bottle_template.removeClass("no-image");
-					$(".text").html("")
+					bottle_template.children(".bottle_template_img,.text").unbind("click").text("").removeClass("no-image");
 				});
 				
 				$("#arrow_from2_to3").click(function() {
-					//if($("#master_image0").val() == "" || $("#master_text0").val() == "")
-					//	return;
-					$content1.hide();
-					$content2.hide();
-					$content3.show();
+					$content2.fadeOut("slow");
+					$content3.fadeIn("slow");
 					$(".slider").addClass("step3");
 				});
 				
 				$("#arrow_from3_to2").click(function() {
-					$content1.hide();
-					$content2.show();
-					$content3.hide();
+					$content2.fadeIn("slow");
+					$content3.fadeOut("slow");
 					$(".slider").removeClass("step3");
 				});
 				
@@ -297,15 +603,15 @@ include("database.php");
 					$(obj).show();
 					var tempId = $(this).data("templateid");
 					$("#arrow_from1_to2").unbind("click").bind("click", function(){
-						$content1.hide();
-						$content3.hide();
-						$content2.show();
+						$content1.fadeOut("slow");
+						$content2.fadeIn("slow");
 						$(".slider").addClass("step2");
+						addScrollBar1();
+						addScrollBar2();
 					});
 					
 					$(".text").click(function(){
 						var val = $(this).data("order");
-						//$(".form_right_sub textarea").val($("#master_text" + val).val()).focus();
 						$("#wish").text($("#master_text" + val).val()).focus();
 						$("#master_text_num").val(val);
 					});
@@ -329,58 +635,130 @@ include("database.php");
 						type:"post",
 						dataType:"json",
 						success:function(data){
-							var image_holder = document.getElementById("image_chosen");
-							while ( image_holder.firstChild ) image_holder.removeChild( image_holder.firstChild );
-							data.forEach(function(obj,index){
-								var li = document.createElement('li');
-								li.setAttribute("data-image-id",obj.id);
-								var img = new Image();
-								img.src = "images/creative/images/"+obj.topic_id+"_"+obj.id+".png";
-								img.width = 106;
-								img.height = 104;
-								li.appendChild(img);
-								image_holder.appendChild(li);
-								console.log(obj.topic_id +"_"+obj.id);
+							var images = data.images;
+							var quotes = data.quotes;
+							var image_holder = $("#image_chosen .jspPane");
+							image_holder.html("");
+							images.forEach(function(obj,index){
+								var li = $('<li>',{'data-image-id':obj.id});
+								var img = $('<img>',{'src':"images/creative/images/"+obj.topic_id+"/"+obj.id+".png",
+													'class':"decor_img"}).appendTo(li);
+								image_holder.append(li);
 							});
+							var quotes_holder = $("#quote .jspPane");
+							quotes_holder.html("");
+							quotes.forEach(function(obj, index){
+								var li = $('<li>');
+								var span = $('<span>').text(obj.content).appendTo(li);
+								li.appendTo(quotes_holder);
+							});
+							addScrollBar1();
+							addScrollBar2();
 						}
 					});
 				});
 				
-				$("#image_chosen li").click(function(){
+				$("#image_chosen li").live("click",function(){
 					var obj = $(this);
 					var image_id = obj.data("image-id");
 					$("#master_image").val(image_id);
 					var image_num = $("#master_image_num").val();
 					var bottle_template = $(".bottle_template").not(":hidden");
 					var bottle_template_img = bottle_template.children(".bottle_template_img").eq(image_num);
-					bottle_template.addClass("no-image");
-					var img = new Image();
-					img.src = obj.children("img").attr("src");
+					bottle_template_img.addClass("no-image");
+					var img = $("<img>",{'src':obj.children("img").attr("src")});
 					bottle_template_img.html("").append(img);
 					$("#master_image" + image_num).val(image_id);
 				});
 				
-				$("#quote li").click(function(){
-					var text = $(this).text();
+				$("#quote li").live('click',function(){
+					var text = $.trim($(this).text());
 					$("#wish").text("").text(text).focus();
-					var text_current = $("#master_text_num").val();
-					$("#master_text"+text_current).val(text);
-					$(".bottle_template").not(":hidden").children(".text").eq(text_current).html(text);
+					
+					$("#wish").trigger("keyup");
 				});
 				
-				$("#wish").keyup(function(){
-					var text = $(this).text();
+				$("#wish").keyup(function (){
+					var text = $.trim($(this).text());
 					var text_current = $("#master_text_num").val();
-					$(".bottle_template").not(":hidden").children(".text").eq(text_current).html(text);
+					var bottle_template_text = $(".bottle_template").not(":hidden").children(".text").eq(text_current);
+					var limit = bottle_template_text.data("limit");
+					$("#counter_hold").text(limit);
+					$("#counter_cur").text(text.length);
+					if($("#counter_master").is(":hidden")){
+						$("#counter_master").show().delay(1000).fadeOut("slow");
+					}
+					bottle_template_text.addClass("no-image");
+					if(text.length > 0 && text.length <= limit){
+						bottle_template_text.text(text);
+					}else if(text.length > limit){
+						$(this).text(text.substring(0,limit));
+						return;
+					}
+					else
+						bottle_template_text.text(text).removeClass("no-image");
 					$("#master_text"+text_current).val(text);
 				});
 				
-				/*$(".form_right_sub textarea").keyup(function(){
-					var text = $(this).val();
-					var text_current = $("#master_text_num").val();
-					$(".bottle_template").not(":hidden").children(".text").eq(text_current).html(text);
-					$("#master_text"+text_current).val(text);
-				});*/
+				$("#from_name").keyup(function(){
+					var obj = $(this);
+					$("#master_from_name").val(obj.val());
+				});
+				
+				$("#from_add").keyup(function(){
+					var obj = $(this);
+					$("#master_from_add").val(obj.text());
+				});
+				
+				$("#from_tel").keyup(function(){
+					var obj = $(this);
+					$("#master_from_tel").val(obj.val());
+				});
+				
+				$("#from_mail").keyup(function(){
+					var obj = $(this);
+					$("#master_from_mail").val(obj.val());
+				});
+				
+				$("#to_name").keyup(function(){
+					var obj = $(this);
+					$("#master_to_name").val(obj.val());
+				});
+				
+				$("#to_add").keyup(function(){
+					var obj = $(this);
+					$("#master_to_add").val(obj.text());
+				});
+				
+				$("#to_tel").keyup(function(){
+					var obj = $(this);
+					$("#master_to_tel").val(obj.val());
+				});
+				
+				$("#to_mail").keyup(function(){
+					var obj = $(this);
+					$("#master_to_mail").val(obj.val());
+				});
+				
+				$("#same_from_to > :checkbox").change(function(){
+					if($(this).is(":checked")){
+						$("#to_name").val($("#from_name").val()).trigger("keyup");
+						$("#to_add").text($("#from_add").text()).trigger("keyup");
+						$("#to_tel").val($("#from_tel").val()).trigger("keyup")
+						$("#to_mail").val($("#from_mail").val()).trigger("keyup")
+					}
+				});
+				$("#same_from_to").click(function(){
+					if(!$(this).children(":checkbox").is(":checked")){
+						$(this).children(":checkbox").prop("checked",true).trigger("change");
+					}else{
+						$(this).children(":checkbox").prop("checked",false);
+					};
+				});
+				
+				$("#do_transaction").click(function(){
+			       $('#master_form').submit();
+				});
 			});
 		</script>
 	</body>

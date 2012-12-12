@@ -49,10 +49,6 @@ nav ul li {
 	padding: 10px 40px;
 }
 
-textarea{
-	font-family: Gravinamregular;
-}
-
 .wrapper {
 	position:relative;
 	top:0;
@@ -92,19 +88,6 @@ textarea{
 	background-size:361px 272px;
 	z-index:11;
 	}
-.wrapp_content {
-	position: relative;
-	top:23%;
-	left: -50px;
-	width: 435px;
-	height: 340px;
-	padding:147px 154px 0 130px;
-	background-image:url(../images/common/bg_content_3.png);
-	background-size:719px 487px;
-	background-repeat:no-repeat;
-	color:#362f2d;
-	margin:0 auto;
-}
 .wrapp_content h1{
 	line-height:10px;
 	}

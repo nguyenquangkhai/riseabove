@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      #myCanvas {
+        border: 1px solid #9C9898;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="228" height="720"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var imageObj = new Image();
+      imageObj.src = 'images/common/bottle_ori_1_back.png';
+		var template = new Image();
+		template.src = 'images/creative/template/template1.jpg';
+      imageObj.onload = function() {
+        context.drawImage(imageObj, 0, 0);
+        context.drawImage(template, 34, 390, 160, 253);
+      };
+    </script>
+  </body>
+</html>
