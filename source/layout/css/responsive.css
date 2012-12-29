@@ -3,22 +3,20 @@ html, body {
 	height:auto;
 }
 .bg_content_1 {
-	height:740px;
-	background-size:1822px 732px;
-	background-position:-150px 0;
+height:656px;
+background-position:0 115px;
 }
 .bg_content_1.gallery {
 	background-position:-220px 0;
 }
 .bg_content_1.creative {
-	height:740px;
-	background-size:1822px 732px;
+	height:656px;
+	background-size:1505px 656px;
 	background-position:-95px 0;
 }
 .bg_content_1.martell{
-	height:740px;
-	background-size:1822px 732px;
-	background-position:-200px  0;
+	height:656px;
+	background-size:1505px 656px;
 }
 .bg_content_2 {
 	top:105px;
@@ -49,17 +47,20 @@ html, body {
 .bg_content_4.about{
 	background-position:-70px 145px;
 }
-.parallax-viewport {
+/*.parallax-viewport {
 	height: 810px;
 	min-height:810px;
-}
+}*/
 .bottle {
 	position:relative;
-	top:25px;
-	left:-32%;
-	z-index:11;
+	top:60px;
+	left:-24%;
+	z-index:1;
 }
-.bottle_1 {
+.bottle.martell{
+	left:0%;
+}
+/*.bottle_1 {
 	position:relative;
 	top:80px;
 	left:-320px;
@@ -76,8 +77,8 @@ html, body {
 	top:80px;
 	left:315px;
 	z-index:14;
-}
-.bell {
+}*/
+/*.bell {
 	position:relative;
 	top:215px;
 	left:325px;
@@ -87,7 +88,7 @@ html, body {
 	background-repeat:no-repeat;
 	background-size:252px 256px;
 	margin:0 auto;
-}
+}*/
 .wrapp_content {
 	position: relative;
 	top: 120px;
@@ -117,9 +118,8 @@ html, body {
 	height:auto;
 }
 .bg_content_1 {
-	height:740px;
-	background-size:1822px 732px;
-	background-position:-150px  0;
+height:656px;
+background-position:0 115px;
 }
 .bg_content_1.gallery {
 	background-position:-220px 0;
@@ -130,9 +130,8 @@ html, body {
 	background-position:-115px 0;
 }
 .bg_content_1.martell{
-	height:740px;
-	background-size:1822px 732px;
-	background-position:-400px 0;
+	height:656px;
+	background-size:1505px 656px;
 }
 .bg_content_2 {
 	top:105px;
@@ -163,18 +162,22 @@ html, body {
 .bg_content_4.about{
 	background-position:-70px 145px;
 }
-.parallax-viewport {
+/*.parallax-viewport {
 	height: 810px;
 	min-height:810px;
-}
+}*/
 .bottle {
 	position:relative;
-	top:25px;
-	left:-415px;
-	z-index:11;
+	height:605px;
+	top:15px;
+	left: -26%;
+	z-index:1;
 	margin:0 auto;
 }
-.bottle_1 {
+.bottle.martell{
+	left:0%;
+}
+/*.bottle_1 {
 	position:relative;
 	top:80px;
 	left:-320px;
@@ -191,7 +194,7 @@ html, body {
 	top:80px;
 	left:315px;
 	z-index:14;
-}
+}*/
 .bell {
 	position:relative;
 	top:215px;
