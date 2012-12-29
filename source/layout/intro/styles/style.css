@@ -4,7 +4,7 @@
     font-family:tahoma ;
 	background-position: center top;
 	background-color: #090c1d;
-	background-image: url('images/bg.jpg'); 
+	background-image: url('images/main_bg.jpg'); 
 	background-repeat: no-repeat;
 	color: #fff;
 	font-size: 15px;
@@ -21,3 +21,39 @@ p { padding: 0px; margin: 0px;}
 #toppage { width: 100%; min-height: 127px; margin: 0 auto; }
 #bottompage { width: 100%; min-height: 126px; position: relative;}
 #mainpage { width: 1024px; margin: 0 auto; min-height: 487px; position: relative;}
+
+.bg_header {
+	position:relative;
+	top:0;
+	left:0;
+	width:100%;
+	height:127px;
+	background-image:url(images/header_bg.png);
+	background-repeat:no-repeat;
+	background-size:100% 127px;
+	z-index:2;
+}
+nav {
+	position:absolute;
+	top:0px;
+	left:0;
+	width:100%;
+	height:120px;
+	text-align:center;
+	padding-top: 10px;
+	z-index:15;
+}
+nav ul li {
+	display:inline-block;
+	padding: 10px 40px;
+}
+
+.logo {
+	display:block;
+	margin-bottom:-25px;
+	width:131px;
+	height:63px;
+	background-image:url(images/logo.png);
+	background-repeat:no-repeat;
+	background-size:131px 63px;
+}

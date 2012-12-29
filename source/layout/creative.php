@@ -234,7 +234,7 @@ include("database.php");
 		<section style="display: none">
 			<form id="master_form" action="buy.php" method="post">
 				<input type="hidden" id="master_template" name="template"/>
-				<input type="hidden" id="master_topic" name="topic" value="1"/>
+				<input type="hidden" id="master_topic" name="topic" value="4"/>
 				<input type="hidden" id="master_image0" name="image_1"/>
 				<input type="hidden" id="master_image1" name="image_2"/>
 				<input type="hidden" id="master_text0" name="text_1"/>

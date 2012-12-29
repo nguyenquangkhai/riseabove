@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>HTML5 Canvas - Text</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="228" height="720"></canvas>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/bottle_render.js"></script>
+	<script type="text/javascript">
+		$.fn.serializeObject = function() {
+			var o = {};
+			var a = this.serializeArray();
+			$.each(a, function() {
+				if(o[this.name] !== undefined) {
+					if(!o[this.name].push) {
+						o[this.name] = [o[this.name]];
+					}
+					o[this.name].push(this.value || '');
+				} else {
+					o[this.name] = this.value || '';
+				}
+			});
+			return o;
+		};
+		
+		init();
+
+		var canvas, context;
+
+		var config = {
+			bottle_width : 228,
+			bottle_height : 330,
+			text_color : "#E8B876",
+			text_font : "Italic 15.5px serif",
+			text_align:"center",
+			max_width : 130,
+			template_y : 390,
+			template_x : 49,
+			small_height : 90,
+			medium_height : 125,
+			large_height : 253,
+		}
+
+		var textArray = [];
+		var imgArray = [];
+		var bottle = new Image();
+		var form_info;
+
+		var template_id = 1;
+
+		function init() {
+			canvas = document.getElementById('myCanvas');
+			context = canvas.getContext('2d');
+			bottle.src = 'images/common/bottle_ori_1_back.png';
+			bottle.onload = function() {
+				context.drawImage(bottle, 0, 0);
+				
+			};
+			//form_info = $('#master_form').serializeObject();
+			//drawImage(context);
+			//drawText(context);
+		}
+
+		function drawImage(context) {
+			var image = new Image();
+			image.src = 'images/creative/images/1/1001.png';
+			image.onload = function() {
+				var height = image.height > config.medium_height ? config.medium_height : image.height;
+				var width = (height * image.width) / image.height;
+				var x = (config.max_width - image.width) / 2;
+				var y = (config.medium_height - height) / 2;
+				image.height = height;
+				image.width = width;
+				context.drawImage(image, config.template_x + x, config.template_y + y);
+			}
+		}
+
+		function drawText(context) {
+			context.fillStyle = config.text_color;
+			context.textAlign = config.text_align;
+			context.font = "Italic 15.5px serif";
+			wrapText(context, "Chúc bạn có một Giáng Sinh đong đầy an bình và tình yêu.", config.template_x, config.template_y, config.max_width, 17);
+		}
+
+		function wrapText(context, text, x, y, maxWidth, lineHeight) {
+			var words = text.split(' ');
+			var line = '';
+
+			for(var n = 0; n < words.length; n++) {
+				var testLine = line + words[n] + ' ';
+				var metrics = context.measureText(testLine);
+				var testWidth = metrics.width;
+				if(testWidth > maxWidth) {
+					context.fillText(line, x, y);
+					line = words[n] + ' ';
+					y += lineHeight;
+				} else {
+					line = testLine;
+				}
+			}
+			context.fillText(line, x, y);
+		}
+	</script>
+</body>
+</html>
