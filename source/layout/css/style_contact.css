@@ -33,7 +33,7 @@
 	width: 435px;
 	height: 340px;
 	padding:147px 154px 0 130px;
-	background-image:url(../images/common/bg_content_contact_3.png);
+	background-image:url(../images/new_year/bg_content_contact_3.png);
 	background-size:719px 487px;
 	background-repeat:no-repeat;
 	color:#362f2d;
@@ -184,7 +184,7 @@
 	left:390px;
 }
 .wrapp_content .contact_form {
-	top:70px;
+	top:35px;
 	width:210px;
 	left:110px;
 }
@@ -261,4 +261,14 @@
 .btn_twitter{
 	bottom:75px;
 	background-image: url(../images/common/icon_twitter.png);
+	}
+.title_contact{
+	position:relative;
+	top:140px;
+	width:395px;
+	height:42px;
+	background-image:url(../images/new_year/title_martell.png);
+	background-repeat:no-repeat;
+	background-size:395px 42px;
+	margin:0 auto;
 	}
