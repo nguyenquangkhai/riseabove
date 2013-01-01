@@ -3,14 +3,18 @@ html, body {
 	height:auto;
 }
 .bg_content_1 {
+	width:100%;
 height:656px;
 background-position:0 115px;
 }
 .bg_content_1.gallery {
-	background-position:-220px 0;
+	width:1505px;
+height:656px;
+background-position:0 95px;
 }
 .bg_content_1.creative {
-	height:656px;
+		width:1505px;
+height:656px;;
 	background-size:1505px 656px;
 	background-position:-95px 0;
 }
@@ -22,7 +26,7 @@ background-position:0 115px;
 	top:105px;
 }
 .bg_content_3 {
-	/*width:1290px;*/
+	left: -90px;
 	background-size:719px 487px;
 	background-position:top center;
 }
@@ -53,12 +57,22 @@ background-position:0 115px;
 }*/
 .bottle {
 	position:relative;
-	top:60px;
+	top:67px;
 	left:-24%;
 	z-index:1;
 }
 .bottle.martell{
-	left:0%;
+	left:-2%;
+}
+.bottle.contact{
+	top:67px;
+	left:28%;
+}
+.bottle.about{
+	left:-26%;
+	}
+.bottle.home {
+	left:-26%;
 }
 /*.bottle_1 {
 	position:relative;
@@ -101,10 +115,6 @@ background-position:0 115px;
 	color:#362f2d;
 	margin:0 auto;
 }
-.wrapp_content.contact {
-	top: 145px;
-	left: -20px;
-}
 .wrapp_content.gallery{
 	width: 1000px;
 	left:auto;
@@ -119,20 +129,24 @@ html, body {
 	height:auto;
 }
 .bg_content_1 {
-height:656px;
-background-position:0 115px;
+width: 1350px;
+height: 656px;
+background-position: -55px 115px;
 }
 .bg_content_1.gallery {
-	background-position:-220px 0;
+width: 1350px;
+height:656px;
+background-position:0 95px;
 }
 .bg_content_1.creative {
-	height:740px;
+width: 1350px;
+height:656px;
 	background-size:1822px 732px;
 	background-position:-115px 0;
 }
 .bg_content_1.martell{
+	width: 1350px;
 	height:656px;
-	background-size:1505px 656px;
 }
 .bg_content_2 {
 	top:105px;
@@ -169,15 +183,22 @@ background-position:0 115px;
 }*/
 .bottle {
 	position:relative;
-	height:605px;
-	top:15px;
+	height:656px;
+	top:67px;
 	left: -26%;
 	z-index:1;
 	margin:0 auto;
 }
 .bottle.martell{
-	left:0%;
+	left:-2%;
 }
+.bottle.contact{
+	top:67px;
+	left:32%;
+}
+.bottle.about{
+	left:-30%;
+	}
 /*.bottle_1 {
 	position:relative;
 	top:80px;
@@ -218,10 +239,6 @@ background-position:0 115px;
 	background-repeat:no-repeat;
 	color:#362f2d;
 	margin:0 auto;
-}
-.wrapp_content.contact {
-	top: 145px;
-	left: -20px;
 }
 .wrapp_content.gallery{
 	width: 1000px;

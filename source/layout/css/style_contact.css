@@ -1,5 +1,5 @@
 .bg_content_1 {
-	background-image:url(../images/common/bg_content_contact_1.jpg);
+	background-image:url(../images/new_year/bg_content_creative_sub.jpg);
 	background-position:-150px 0;
 }
 .bg_content_2 {
@@ -13,7 +13,7 @@
 }
 .bg_content_3 {
 	background-image:none;
-	z-index:13;
+	z-index:1;
 }
 .bg_content_4 {
 	width:101%;
@@ -181,35 +181,40 @@
 }
 .contact_to, .contact_name_1, .contact_address_1, .contact_tell_1, .contact_email_1 {
 	position:absolute;
-	left:390px;
+	left:440px;
 }
 .wrapp_content .contact_form {
 	top:35px;
 	width:210px;
 	left:110px;
+	
 }
 .wrapp_content .contact_name {
-	top:104px;
+	top:77px;
 	width:205px;
 	left:115px;
+	
 }
 .wrapp_content.contact .contact_address, .wrapp_content.contact .contact_address_1  {
-	top:136px;
+	top:118px;
 	left:58px;
 	height:40px;
 	max-height:40px;
 	min-width:260px;
 	max-width:260px;
 	line-height:20px;
+	
 }
 .wrapp_content.contact .contact_address_1 {
-	top:333px;
-	left:336px;
+	top:296px;
+	left:386px;
+	
 }
 .wrapp_content .contact_tell {
-	top:182px;
+	top:175px;
 	width:230px;
 	left:90px;
+	
 }
 .wrapp_content .contact_email {
 	top:204px;
@@ -217,35 +222,39 @@
 	left:105px;
 }
 .wrapp_content .contact_to {
-	top:249px;
+	top:192px;
 	width:230px;
-	left:370px;
+	left:419px;
+	
 }
 .wrapp_content .contact_name_1 {
-	top:302px;
-	left:px;
+	top:255px;
+	left:435pxpx;
+	
 }
 .wrapp_content .contact_tell_1 {
-	top:379px;
+	top:354px;
 	width:230px;
-	left:370px;
+	left:420px;
+	
 }
 .wrapp_content .contact_email_1 {
-	top:402px;
+	top:382px;
 	width:215px;
-	left:385px;
+	left:435px;
+	
 }
 .wrapp_content .contact_submit {
 	position:absolute;
 	display:block;
-	bottom:-10px;
-	right:95px;
-	width:150px;
-	height:40px;
+	bottom:10px;
+	right:75px;
+	width:131px;
+	height:67px;
 	background:inherit;
-	background-image: url(../images/common/button_payment.png);
+	background-image: url(../images/new_year/button_payment.png);
 	background-repeat:no-repeat;
-	background-size:150px 40px;
+	background-size:131px 67px;
 	border:none;
 }
 .btn_facebook, .btn_twitter{
@@ -264,7 +273,7 @@
 	}
 .title_contact{
 	position:relative;
-	top:140px;
+	top:125px;
 	width:395px;
 	height:42px;
 	background-image:url(../images/new_year/title_martell.png);
@@ -272,3 +281,22 @@
 	background-size:395px 42px;
 	margin:0 auto;
 	}
+.wrapp_content.contact {
+	top:120px;
+	left: -20px;
+}
+.arrow_creative{
+	position:absolute;
+	top: 170px;
+	left: -50px;
+	width:33px;
+	height:75px;
+	background-image:url(../images/new_year/arrow_creative.png);
+	background-size:33px 75px;
+	background-repeat:no-repeat;
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	transform:rotate(180deg);
+	z-index:15;}
+.arrow_creative:hover{
+	opacity:0.5;}

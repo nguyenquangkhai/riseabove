@@ -1,5 +1,5 @@
 .bg_content_1 {
-	background-image:url(../images/common/bg_content_gallery_1.jpg);
+	background-image:url(../images/new_year/bg_content_gallery.jpg);
 	background-position:-150px 0;
 }
 .bg_content_2 {
@@ -27,8 +27,8 @@
 	z-index:12;
 }
 .bg_content_5{
-	position:absolute;
-	bottom:0;
+	position:relative;
+	top:-472px;
 	text-align:center;
 	width:100%;
 	margin:0 auto;
@@ -55,7 +55,8 @@
 }
 .title_gallery{
 	position:relative;
-	left:210px;
+	top: -60px;
+	left: 300px;
 	width:542px;
 	height:45px;
 	}
@@ -182,4 +183,17 @@
 .form_right_sub button:hover{
 	opacity:0.7;
 	}
-
+footer{
+	height:100px;
+}
+.wrapp_sns{
+	top:45px;}
+.bottle_gallery{
+	display:inline-block;
+	line-height:0px;
+	margin:0 20px;}
+.bottle_gallery span{
+	display: block;
+margin-top: 10px;}
+.wrapper {
+	position:inherit;}

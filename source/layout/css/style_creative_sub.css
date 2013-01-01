@@ -30,8 +30,8 @@
 	position: relative;
 	text-align:center;
 	top: 22%;
-	left: -5px;
-	width: 1195px;
+	left:70px;
+	width: 1140px;
 	height:auto;
 	color:#fff;
 	background-image:none;
@@ -131,7 +131,7 @@
 	-webkit-transform:rotate(180deg);
 	-moz-transform:rotate(180deg);
 	transform:rotate(180deg);
-	left:-60px;
+	left:-25px;
 	}
 .arrow_creative_sub:hover, .arrow_creative_sub_1:hover{
 	opacity:0.5;}
