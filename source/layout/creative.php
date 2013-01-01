@@ -23,10 +23,10 @@ include("database.php");
 			<div class="bg_header"></div>
 			<nav>
 				<ul>
-					<li> <a href="home_page.html"> TRANG CHỦ </a></li>
-			          <li> <a href="about_page.html"> GIỚI THIỆU </a></li>
-			          <li> <a class="logo"></a></li>
-			          <li> <a  class="active"> SÁNG TẠO </a> </li>
+                	<li> <a class="logo"></a></li>
+					<li> <a href="home_page.html"> TRANG CHỦ </a></li>|
+			          <li> <a href="about_page.html"> GIỚI THIỆU </a></li>|
+			          <li> <a  class="active"> SÁNG TẠO </a> </li>|
 			          <li> <a href="gallery_page.html"> BỘ SƯU TẬP </a></li>
 				</ul>
 			</nav>
@@ -72,7 +72,7 @@ include("database.php");
 						<div class="bg_content_1 step3"></div>
 					</div>
 				</div>
-				<div class="bg_content_2_holder parallax-layer">
+				<!--<div class="bg_content_2_holder parallax-layer">
 					<div class="bg_content_2_slider slider">
 						<div class="bg_content_2"></div>
 						<div class="bg_content_2"></div>
@@ -85,14 +85,14 @@ include("database.php");
 						<div class="bg_content_4 step2"></div>
 						<div class="bg_content_4 step3"></div>
 					</div>
-				</div>
+				</div>-->s
 				<div class="bg_content_3_holder">
 					<div id="content1" class="bg_content_3 step1">
 						<div class="wrapp_creative_content">
 							<a id="arrow_from1_to2" class="arrow_creative"></a>
 							<div class="title_creative">
-								<img src="images/creative/title_creative.png" width="465" height="45"/>
-							</div>
+            	<img src="images/new_year/title_creative.png" width="491" height="97"/>
+            </div>
 							<ul id="template_chosen" class="content_creative">
 								<?
 									$template_list = mysql_query("SELECT * FROM template_master");
@@ -105,9 +105,10 @@ include("database.php");
 									}
 								?>
 							</ul>
-							<div class="info_creative">
+							<!---<div class="info_creative">
 								Hãy chọn bố cục thiết kế mà bạn mong muốn thể hiện.
 							</div>
+                            -->
 						</div>
 					</div>
 					<div id="content2" class="bg_content_3 step2" style="display: none">
@@ -253,7 +254,9 @@ include("database.php");
 			<input type="hidden" id="master_text_num" value="0"/>
 			<input type="hidden" id="master_image_num" value="0"/>
 		</section>
-		<footer></footer>
+		<footer><div class="wrapp_sns">
+    	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="#" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
+    </div> </footer>
 		<!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script -->
 		<script src="js/jquery-1.7.2.min.js"></script>
