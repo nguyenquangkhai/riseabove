@@ -26,7 +26,7 @@
 	background-repeat:no-repeat;
 	z-index:12;
 }
-.wrapp_content {
+/*.wrapp_content {
 	position: relative;
 	top:23%;
 	left: -50px;
@@ -38,7 +38,7 @@
 	background-repeat:no-repeat;
 	color:#362f2d;
 	margin:0 auto;
-}
+}*/
 .title_creative_sub {
 	position:relative;
 	left:185px;
@@ -50,12 +50,12 @@
 	position:relative;
 	float:left;
 	width:400px;/*	background-color:rgba(0,255,255,0.5);*/
-	}
+}
 .creative_right_sub {
 	position:relative;
 	float:right;
 	width:400px;/*	background-color:rgba(0,255,255,0.5);*/
-	}
+}
 .title_left_sub {
 	margin-bottom:10px;
 }
@@ -187,15 +187,13 @@
 	top:35px;
 	width:210px;
 	left:110px;
-	
 }
 .wrapp_content .contact_name {
 	top:77px;
 	width:205px;
 	left:115px;
-	
 }
-.wrapp_content.contact .contact_address, .wrapp_content.contact .contact_address_1  {
+.wrapp_content.contact .contact_address, .wrapp_content.contact .contact_address_1 {
 	top:118px;
 	left:58px;
 	height:40px;
@@ -203,18 +201,15 @@
 	min-width:260px;
 	max-width:260px;
 	line-height:20px;
-	
 }
 .wrapp_content.contact .contact_address_1 {
 	top:296px;
 	left:386px;
-	
 }
 .wrapp_content .contact_tell {
 	top:175px;
 	width:230px;
 	left:90px;
-	
 }
 .wrapp_content .contact_email {
 	top:204px;
@@ -225,24 +220,20 @@
 	top:192px;
 	width:230px;
 	left:419px;
-	
 }
 .wrapp_content .contact_name_1 {
 	top:255px;
 	left:435pxpx;
-	
 }
 .wrapp_content .contact_tell_1 {
 	top:354px;
 	width:230px;
 	left:420px;
-	
 }
 .wrapp_content .contact_email_1 {
 	top:382px;
 	width:215px;
 	left:435px;
-	
 }
 .wrapp_content .contact_submit {
 	position:absolute;
@@ -257,7 +248,7 @@
 	background-size:131px 67px;
 	border:none;
 }
-.btn_facebook, .btn_twitter{
+.btn_facebook, .btn_twitter {
 	position:absolute;
 	bottom:115px;
 	left:175px;
@@ -266,12 +257,12 @@
 	background-image: url(../images/common/icon_facebook.png);
 	background-repeat:no-repeat;
 	background-size:35px 35px;
-	}
-.btn_twitter{
+}
+.btn_twitter {
 	bottom:75px;
 	background-image: url(../images/common/icon_twitter.png);
-	}
-.title_contact{
+}
+.title_contact {
 	position:relative;
 	top:125px;
 	width:395px;
@@ -280,12 +271,12 @@
 	background-repeat:no-repeat;
 	background-size:395px 42px;
 	margin:0 auto;
-	}
+}
 .wrapp_content.contact {
-	top:120px;
+	top:125px;
 	left: -20px;
 }
-.arrow_creative{
+.arrow_creative {
 	position:absolute;
 	top: 170px;
 	left: -50px;
@@ -297,6 +288,28 @@
 	-webkit-transform:rotate(180deg);
 	-moz-transform:rotate(180deg);
 	transform:rotate(180deg);
-	z-index:15;}
-.arrow_creative:hover{
-	opacity:0.5;}
+	z-index:15;
+}
+.arrow_creative:hover {
+	opacity:0.5;
+}
+.add_form {
+	position: absolute;
+	top: 230px;
+	left: 270px;
+}
+.add_form_1 {
+	position: absolute;
+	top: 232px;
+	left: 395px;
+}
+.collection {
+	position: absolute;
+	top: 148px;
+	left: 410px;
+}
+.collection_1 {
+	position: absolute;
+	top: 150px;
+	left: 535px;
+}
