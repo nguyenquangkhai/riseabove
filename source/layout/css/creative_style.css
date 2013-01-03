@@ -19,23 +19,6 @@ section{
   	transition:all 1.0s ease-in-out;	
 }
 
-.bg_content_2_slider{
-	width:300%;
-	-webkit-transition:all 2.0s ease-in-out;
-  	-moz-transition:all 1.0s ease-in-out;
-  	-o-transition:all 1.0s ease-in-out;
-  	transition:all 1.0s ease-in-out;	
-}
-
-.bg_content_4_slider{
-	width:5022px;
-	-webkit-transition:all 1.5s ease-in-out;
-  	-moz-transition:all 1.5s ease-in-out;
-  	-o-transition:all 1.5s ease-in-out;
-  	transition:all 1.5s ease-in-out;	
-}
-
-
 .bg_content_1 {
 	width:100%;
 	height:100%;
@@ -45,17 +28,14 @@ section{
 
 .bg_content_1.step1 {
 	background-image:url(../images/new_year/bg_content_creative.jpg);
-	background-position:-100px 0;
 }
 
 .bg_content_1.step2 {
-	background-image:url(../images/common/bg_content_creative_sub_1.jpg);
-	background-position:-100px 0;
+	background-image:url(../images/new_year/bg_content_creative_sub.jpg);
 }
 
 .bg_content_1.step3 {
-	background-image:url(../images/common/bg_content_contact_1.jpg);
-	background-position:-150px 0;
+	background-image:url(../images/new_year/bg_content_contact_3.png);
 }
 .mCSB_draggerContainer{
 	display:block !important;
@@ -65,7 +45,7 @@ section{
 	left:20%;
 	width:351px;
 	height:656px;
-	padding-top: 390px;
+	padding-top: 260px;
 	background-image:url(../images/new_year/bottle_ori.png);
 	background-repeat:no-repeat;
 	background-size:351px 656px;
@@ -77,39 +57,13 @@ section{
   	-o-transition:all 1.0s ease-in-out;
   	transition:all 1.0s ease-in-out;
 }
-/*************** BACKGROUND 2 ***************/
-.bg_content_2_holder{
-	width:104%;
-	height:100%;
-	position:absolute;
-	overflow:hidden;
-	z-index:1;
-}
-.bg_content_2{
-	width:1333px;
-	height:349px;
-	top:13%;
-	left:0;
-	background-image:url(../images/common/bg_content_sub_2.png);
-	background-size:1333px 349px;
-	background-position: 30% 0;
-	float: left;
-}
-
-.bg_content_2.step1 {}
-
-.bg_content_2.step2 {}
-
-.bg_content_2.step3 {}
-
 /**************** CONTENT 3 ****************/
 .bg_content_3_holder{
-position: absolute;
-width: 100%;
-height: 656px;
-top: 40px;
-left: 90px;
-z-index: 2;
+	position: absolute;
+	width: 100%;
+	height: 656px;
+	top: 40px;
+	z-index: 2;
 }
 
 .bg_content_3.step1{
@@ -123,7 +77,7 @@ z-index: 2;
 	position: relative;
 	text-align:center;
 	top: 14%;
-	left: 20px;
+	left: 70px;
 	width: 500px;
 	height:auto;
 	color:#fff;
@@ -166,7 +120,7 @@ z-index: 2;
 /*********************** CONTENT 2 **************/
 /***********************************************/
 .bg_content_3.step2{
-	margin-top: 122px;
+	margin-top: 105px;
 }
 
 #quote{
@@ -177,9 +131,8 @@ z-index: 2;
 .wrapp_creative_content_sub {
 	position: relative;
 	text-align:center;
-	top: 15%;
-	left: -29px;
-	width: 1030px;
+	top: 22%;
+	width: 1140px;
 	height:auto;
 	color:#fff;
 	background-image:none;
@@ -208,6 +161,8 @@ z-index: 2;
 	
 .title_left_sub{
 	margin-bottom:10px;
+	color:#e5f6ff;
+	text-shadow:0 0 5px #01fcff;
 }
 .title_left_sub h1{
 	font-weight:normal;}
@@ -244,7 +199,7 @@ z-index: 2;
 	top:230px;
 	width:33px;
 	height:75px;
-	background-image:url(../images/common/arrow_creative_sub.png);
+	background-image:url(../images/new_year/arrow_creative_sub.png);
 	background-size:33px 75px;
 	background-repeat:no-repeat;
 	z-index:15;}
@@ -340,6 +295,16 @@ z-index: 2;
 	float: left;
 	margin: 0 10px;
 }
+
+.title_martell{
+	position:relative;
+		width:395px;
+	height:42px;
+	background-image:url(../images/new_year/title_martell.png);
+	background-repeat:no-repeat;
+	background-size:395px 42px;
+	margin-bottom:40px;
+	}
 /**************** CONTENT 3 ********************/
 .bg_content_3.step3{
 	margin-top: 125px;
@@ -376,7 +341,7 @@ z-index: 2;
 }
 .title_left_sub h1 {
 	font-weight:normal;
-	font-size: 18px;
+	/*font-size: 18px;*/
 }
 .content_creative_sub li {
 	display:inline-block;

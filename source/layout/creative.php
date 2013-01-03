@@ -72,20 +72,6 @@ include("database.php");
 						<div class="bg_content_1 step3"></div>
 					</div>
 				</div>
-				<!--<div class="bg_content_2_holder parallax-layer">
-					<div class="bg_content_2_slider slider">
-						<div class="bg_content_2"></div>
-						<div class="bg_content_2"></div>
-						<div class="bg_content_2"></div>
-					</div>
-				</div>
-				<div class="bg_content_4_holder">
-					<div class="bg_content_4_slider slider">
-						<div class="bg_content_4 step1"></div>
-						<div class="bg_content_4 step2"></div>
-						<div class="bg_content_4 step3"></div>
-					</div>
-				</div>-->s
 				<div class="bg_content_3_holder">
 					<div id="content1" class="bg_content_3 step1">
 						<div class="wrapp_creative_content">
@@ -105,19 +91,12 @@ include("database.php");
 									}
 								?>
 							</ul>
-							<!---<div class="info_creative">
-								Hãy chọn bố cục thiết kế mà bạn mong muốn thể hiện.
-							</div>
-                            -->
 						</div>
 					</div>
 					<div id="content2" class="bg_content_3 step2" style="display: none">
 						<div class="wrapp_creative_content_sub">
 							<a id="arrow_from2_to3" class="arrow_creative_sub"></a>
 							<a id="arrow_from2_to1" class="arrow_creative_sub_1"></a>
-							<div class="title_creative_sub">
-								<img src="images/creative/title_creative_sub.png" width="465" height="45"/>
-							</div>
 							<ol class="creative_left_sub">
 								<li>
 									<div class="title_left_sub">
@@ -170,6 +149,7 @@ include("database.php");
 							</ol>
 							<ol class="creative_right_sub">
 								<li>
+									<div class="title_martell"></div>
 									<div class="title_left_sub">
 										<h1>TỰ SÁNG TẠO NỘI DUNG</h1>
 									</div>
@@ -181,17 +161,12 @@ include("database.php");
 									</form>
 								</li>
 								<div class="clear"></div>
-								<div class="space30"></div>
-								<style type="text/css">
-								</style>
+								<div class="space10"></div>
 								<li>
 									<div class="title_left_sub">
 										<h1>CHỌN CÂU CHÚC DÀNH CHO NGƯỜI THÂN</h1>
 									</div>
-									<ul id="quote" class="content_creative_sub_4 scroll_bar" style="width:400px; height: 220px;">
-										<!-- div class="loader" style="display:none;position: absolute;top: 0; left: 0; width: 400px; height: 220px;background-color: #EEE;opacity: 0.8; border-radius: 5px" >
-											<img style="margin: 100px 0 0 185px;" src="images/loader.gif" />
-										</div -->
+									<ul id="quote" class="content_creative_sub_4 scroll_bar" style="width:400px; height: 160px;">
 										<?
 											$quote_list = mysql_query("SELECT * FROM quote_master WHERE id_topic_master = 4");
 											while($row = mysql_fetch_array($quote_list)){
