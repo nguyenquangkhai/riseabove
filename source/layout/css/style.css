@@ -44,10 +44,10 @@ nav ul li a {
 	color:#FFFFFF;
 }
 nav ul li a:hover {
-	color: yellow;
+	color: #e7b973;
 }
 nav ul li a.active {
-	color: yellow;
+	color: #e7b973;
 }
 nav ul li {
 	display:inline-block;
@@ -139,7 +139,7 @@ width:100%;
 	left:20%;
 	width:351px;
 	height:656px;
-	background-image:url(../images/new_year/bottle_ori.png);
+	background-image:url(../images/new_year/bottle.png);
 	background-repeat:no-repeat;
 	background-size:351px 656px;
 	z-index:1;

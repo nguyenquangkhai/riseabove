@@ -45,6 +45,7 @@
 	margin:15px 20px;
 	box-shadow:1px 1px 5px #333333;
 	}
+.content_creative li img{position: relative;}
 .arrow_creative{
 	position:absolute;
 	top:270px;

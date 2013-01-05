@@ -809,6 +809,20 @@ include('include/nganluong.microcheckout.class.php');
 			       //$('#master_form').submit();
 				   ajax_insert_user();
 				});
+				
+				$('#template_chosen li').hover(
+					function(e){
+						$('img', $(e.target).parent()).stop().animate({
+							top: -183
+						},200);
+					},
+					function(e){
+						$('img', $(e.target).parent()).stop().animate({
+							top: 0
+						},200);
+						return false;
+					}
+				);
 			});
 		</script>
 	</body>

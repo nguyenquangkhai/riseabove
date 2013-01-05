@@ -44,10 +44,10 @@ nav ul li a {
 	color:#FFFFFF;
 }
 nav ul li a:hover {
-	color: yellow;
+	color: #e7b973;
 }
 nav ul li a.active {
-	color: yellow;
+	color: #e7b973;
 }
 nav ul li {
 	display:inline-block;

@@ -51,27 +51,33 @@
         
         <div class="content_box">
             <div class="tabcontent scroll_bar about" id="cont-1-1">
-            	<p>Thành lập vào năm 1715, Martell trở thành thương hiệu cognac lâu đời nhất trên toàn thế giới. Đến đầu thế kỷ 19, V.S.O.P Médaillon chính thức ra mắt và ghi dấu ấn đặc biệt cho nghệ thuật chưng cất cognac trứ danh từ nước Pháp. Qua thời gian, kiệt tác V.S.O.P trở thành biểu tượng của một tổng hòa về hương vị tinh tế dịu êm trong sắc vàng hổ phách óng ánh quyến rũ. Sự tao nhã còn được thể hiện trong thiết kế của mẫu chai, với tông màu đỏ thịnh vượng và may mắn, tạo nên một lựa chọn tinh tế cho quà tặng cuối năm…</p><br/>
-				<p>Lần đầu tiên tại Việt Nam, sự kiện “From Martell with Love” sẽ mang kiệt tác này đến người thân yêu của bạn với những thông điệp và hình ảnh đầy ý nghĩa, như một lời chúc độc đáo mùa Giáng Sinh. Những sáng tạo của bạn sẽ được thể hiện trực tiếp ngay trên thân chai V.S.O.P Medallion bằng những nét khắc tinh xảo, hài hòa tạo nên một món quà hoàn mỹ của tình yêu, đam mê và xúc cảm.</p><br/>
+            	<p>
+					Thành lập vào năm 1715, Martell trở thành thương hiệu cognac lâu đời nhất trên toàn thế giới. Đến đầu thế kỷ 19, V.S.O.P Médaillon chính thức ra mắt và ghi dấu ấn đặc biệt cho nghệ thuật chưng cất cognac trứ danh từ nước Pháp. Qua thời gian, kiệt tác V.S.O.P trở thành biểu tượng của một tổng hòa về hương vị tinh tế dịu êm trong sắc vàng hổ phách óng ánh quyến rũ. Sự tao nhã còn được thể hiện trong thiết kế của mẫu chai, với tông màu đỏ thịnh vượng và may mắn, tạo nên một lựa chọn tinh tế cho quà tặng cuối năm…
+				</p><br/>
+				<p>
+					Lần đầu tiên tại Việt Nam, chương trình mừng Xuân 2013 “From Martell with Love” sẽ mang kiệt tác này đến người thân yêu của bạn với những thông điệp và hình ảnh đầy ý nghĩa, như một lời chúc Tết độc đáo cho năm mới 2013. Những sáng tạo của bạn sẽ được thể hiện trực tiếp ngay trên thân chai V.S.O.P Medallion bằng những nét khắc tinh xảo, hài hòa tạo nên một món quà hoàn mỹ của tình yêu, đam mê và xúc cảm.
+				</p><br/>
+				<p>
+					Vào ngày thứ 7 hàng tuần, chúng tôi sẽ <strong>tổ chức chương trình rút thăm may mắn</strong>, dựa vào những tác phẩm trong <strong>Bộ sưu tập</strong> và chọn ra <strong>một bạn may mắn nhất</strong> để gửi tặng chai Martell VSOP phiên bản đặc biệt theo đúng ý tưởng sáng tạo do bạn ấy thiết kế. Chúng tôi sẽ công bố giải hàng tuần trong mục “<strong>Bộ sưu tập</strong> ”và phiên bản nào có đính logo <strong>Martell</strong> và chữ “ <strong>Chúc năm mới may mắn</strong>” là người may mắn được nhận quà của chương trình. Chương trình này áp dụng cho cả người đặt hàng lẫn không đặt hàng phiên bản đặc biệt.
+				</p>				
 </div>
             <div class="tabcontent hide jp-container" id="cont-2-1">
             <p><b>I.	Cách thức tham dự:</b></p>
-<p>- Bước 1: Vào trang Kiến Tạo, lựa chọn bố cục của thông điệp mà bạn muốn thể hiện.</p>
-<p>- Bước 2: Chọn hình ảnh từ kho hình theo chủ đề của Giáng Sinh 2012. Lựa chọn thông điệp muốn gửi đến người thân yêu bằng các lời chúc được chọn lọc sẵn, hoặc tự sáng tạo thêm những thông điệp của riêng mình.</p> 
-<p>- Bước 3: Sau khi hoàn thành kiệt tác Martell V.S.O.P độc đáo của mình, bạn hãy điền thông tin người gửi và người nhận của món quà đặc biệt này. Tại đây bạn cũng có thể chọn Thanh toán để đặt hàng.</p>
-<p>- Martell V.S.O.P phiên bản đặc biệt có giá <b>1,000,000 vnd/chai</b> bao gồm tiền khắc hoạ tiết & tiền vận chuyển.</p>
-<!-- p>- Ngoài ra, có nút Share facebook & Add to gallery để bạn chia sẻ và lưu giữ những kiệt tác của mình thông qua Facebook & thư viện kiệt tác của Martell.</p -->
+<p>-	<u>Bước 1:</u> Vào trang <b>Sáng Tạo</b>, lựa chọn bố cục của thông điệp mà bạn muốn thể hiện.</p>
+<p>-	<u>Bước 2:</u> Chọn hình ảnh từ kho hình theo chủ đề của Tết mà bạn yêu thích. Lựa chọn thông điệp muốn gửi đến người thân yêu bằng các lời chúc Tết và những hình ảnh được cung cấp sẵn, hoặc tự sáng tạo thêm những thông điệp của riêng mình.</p> 
+<p>-	<u>Bước 3:</u> Sau khi hoàn thành sản phẩm Martell V.S.O.P độc đáo của riêng mình, bạn hãy điền thông tin người gửi và người nhận của món quà đặc biệt này. Tại đây bạn cũng có thể chọn <b>Thanh toán</b> để đặt hàng. Ngoài ra, có nút <b>Chia sẻ tác phẩm trên Facebook & bộ sưu tập</b> để bạn chia sẻ và lưu giữ những tác phẩm do chính bạn tạo ra.</p>
 <br/><br/>
-<p><b>II.	Cách thức chi trả:</b></p>
-<p>- Được thực hiện bởi hệ thống thanh toán trực tuyến <a href="http://nganluong.vn">NgânLượng.vn</a>, các bước chi trả tuyệt đối an toàn, nhanh chóng với kết nối online trực tiếp với hầu hết các ngân hàng lớn tại Việt Nam như VietComBank, TechComBank, Đông Á, VIB, SHB, Quânđội, BIDV, VietinBank, Sacombank… cũng như hệ thống thẻ Visa, Master card.
-(Tìm hiểu về hệ thống NgânLượng.vn)</p>
+			<p><b>II.	Cách thức chi trả:</b></p>
+<p>-	<b>Mỗi chai Martell VSOP phiên bản đặc biệt có giá: 1,300,000 vnđ</b> (Bao gồm phí thanh toán phát sinh (nếu có) và phí vận chuyển đến nơi người nhận)</p>
+<p>-	Được thực hiện bởi hệ thống thanh toán trực tuyến NgânLượng.vn, các bước chi trả tuyệt đối an toàn, nhanh chóng với kết nối online trực tiếp với hầu hết các ngân hàng lớn tại Việt Nam như VietComBank, TechComBank, Đông Á, VIB, SHB, Quân đội, BIDV, VietinBank, Sacombank…cũng như hệ thống thẻ Visa, Master card.
+(<a href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html"><u>Tìm hiểu về hệ thống NgânLượng.vn</u></a>)</p>
 <br/><br/>
-<p><b>III.	Cách thức giao hàng:</b></p>
-<p>- Sau khi hoàn thành việc thanh toán, đơn hàng của bạn sẽ được chúng tôi tiến hành khắc laser trên thân chai Martell VSOP theo ý tưởng bạn đã đề ra.
-<p>- Sau 4 – 5 ngày, việc khắc hoạ và phủ màu sẽ hoàn tất, đơn vị chyển phát nhanh sẽ chuyển món quà của bạn đến với người nhận theo địa chỉ bạn đã cung cấp.</p>
+			<p><b>III.	Cách thức giao hàng:</b></p>
+<p>-	Sau khi hoàn thành việc thanh toán, đơn hàng của bạn sẽ được chúng tôi tiến hành sản xuất  phiên bản Martell VSOP theo ý tưởng bạn đã đề ra.</p>
+<p>-	Sau 4 – 5 ngày phiên bản sẽ chyển phát nhanh món quà của bạn đến với người nhận theo địa chỉ bạn đã cung cấp.</p>
 <br/><br/>
 <p><b>IV.	Liênhệ:</b></p> 
-<p>-	Mọi chi tiết vui lòng liên hệ qua mail: <a href="mailto:info@riseabove.vn">info@riseabove.vn</a></p>
+<p>-	Mọi chi tiết vui lòng liên hệ qua mail: <a href="mailto:info@riseabove.vn"><u>info@riseabove.vn</u></a> </p>
 	
             </div>
             <div class="tabcontent hide jp-container" id="cont-3-1">
