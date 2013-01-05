@@ -1,5 +1,28 @@
 ﻿<?
 include("database.php");
+include('include/lib/nusoap.php');
+include('include/nganluong.microcheckout.class.php');
+
+	$inputs = array(
+		'receiver'		=> RECEIVER,
+		'order_code'	=> '',
+		'return_url'	=> $_return_url,
+		'cancel_url'	=> '',
+		'language'		=> 'vn'
+	);
+	$link_checkout = '';
+	$obj = new NL_MicroCheckout(MERCHANT_ID, MERCHANT_PASS, URL_WS);
+	$result = $obj->setExpressCheckoutDeposit($inputs);
+	if ($result != false) {
+		if ($result['result_code'] == '00') {
+			$link_checkout = $result['link_checkout'];
+			$link_checkout = str_replace('micro_checkout.php?token=', 'index.php?portal=checkout&page=micro_checkout&token_code=', $link_checkout);
+		} else {
+			die('Ma loi '.$result['result_code'].' ('.$result['result_description'].') ');
+		}
+	} else {
+		die('Loi ket noi toi cong thanh toan ngan luong');
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -540,7 +563,38 @@ include("database.php");
 			
 			};
 		</script>
+		<script language="javascript" src="include/nganluong.apps.mcflow.js"></script>
+		<script language="javascript">
+			var mc_flow = new NGANLUONG.apps.MCFlow({trigger:'do_transaction',url:'<?php echo @$link_checkout;?>'});
+		</script>
 		<script>
+		function ajax_insert_user() {
+			$.ajax({
+				url: "buy.php",
+				type: "POST",
+				data: {
+					template: $("#master_template").val(),
+					topic: $("#master_topic").val(),
+					image_1: $("#master_image0").val(),
+					image_2: $("#master_image1").val(),
+					text_1: $("#master_text0").val(),
+					text_2: $("#master_text1").val(),
+					from: $("#master_from").val(),
+					to: $("#master_to").val(),
+					from_name: $("#master_from_name").val(),
+					from_add: $("#master_from_add").val(),
+					from_tel: $("#master_from_tel").val(),
+					from_mail: $("#master_from_mail").val(),
+					to_name: $("#master_to_name").val(),
+					to_add: $("#master_to_add").val(),
+					to_tel: $("#master_to_tel").val(),
+					to_mail: $("#master_to_mail").val()
+				},
+				success: function(data){
+					console.log(data);
+				}
+			});
+		}
 			jQuery(window).load(function() {
 				$(".loader").ajaxStart(function(){
 					$(this).show();
@@ -751,7 +805,8 @@ include("database.php");
 				});
 				
 				$("#do_transaction").click(function(){
-			       $('#master_form').submit();
+			       //$('#master_form').submit();
+				   ajax_insert_user();
 				});
 			});
 		</script>
