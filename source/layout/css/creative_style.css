@@ -35,7 +35,7 @@ section{
 }
 
 .bg_content_1.step3 {
-	background-image:url(../images/new_year/bg_content_contact_3.png);
+	background-image:url(../images/new_year/bg_content_creative_sub.jpg);
 }
 .mCSB_draggerContainer{
 	display:block !important;
@@ -49,7 +49,7 @@ section{
 	background-image:url(../images/new_year/bottle_ori.png);
 	background-repeat:no-repeat;
 	background-size:351px 656px;
-	z-index:1;
+	z-index:3;
 	margin:0 auto;
 	bottom: 35px;
 	-webkit-transition:all 1.0s ease-in-out;
@@ -102,6 +102,7 @@ section{
 	height:183px;
 	margin:15px 20px;
 	box-shadow:1px 1px 5px #333333;
+	cursor:pointer;
 	}
 .arrow_creative{
 	position:absolute;
@@ -112,7 +113,8 @@ section{
 	background-image:url(../images/new_year/arrow_creative.png);
 	background-size:33px 75px;
 	background-repeat:no-repeat;
-	z-index:15;}
+	z-index:15;
+	cursor:pointer}
 .arrow_creative:hover{
 	opacity:0.5;}
 
@@ -132,7 +134,7 @@ section{
 	position: relative;
 	text-align:center;
 	top: 22%;
-	width: 1140px;
+	width: 1160px;
 	height:auto;
 	color:#fff;
 	background-image:none;
@@ -307,24 +309,28 @@ section{
 	}
 /**************** CONTENT 3 ********************/
 .bg_content_3.step3{
-	margin-top: 125px;
+	margin-top: 90px;
 }
 .wrapp_content.contact{
 	position: relative;
 	right: 75px;
 	width: 860px;
 	height: 497px;
-	background-image:url(../images/common/bg_content_contact_3.png);
+	background-image:url(../images/new_year/bg_content_contact_3.png);
 	background-repeat:no-repeat;
 	color:#362f2d;
 	margin:0 auto;
 }
-.title_creative_step3 {
-	margin:0 auto;
+.title_contact {
 	position: relative;
-	right: 60px;
-	width:465px;
-	height:45px;
+	margin-right: 50px;
+	width: 395px;
+	height: 42px;
+	background-image: url(../images/new_year/title_martell.png);
+	background-repeat: no-repeat;
+	background-size: 395px 42px;
+	margin: 0 auto;
+	margin-left: 350px;
 }
 .creative_left_sub {
 	position:relative;
@@ -348,18 +354,21 @@ section{
 	width:87px;
 	height:87px;
 	margin: 0px 15px;
+	cursor:pointer;
 }
 .content_creative_sub_4 li {
 	width:378px;
 	padding:10px 0;
 	margin-left:10px;
 	border-bottom:dashed 1px #FFFFFF;
+	cursor:pointer;
 }
 .content_creative_sub_1 li {
 	display:inline-block;
 	width:106px;
 	height:104px;
 	margin-bottom:5px;
+	cursor:pointer;
 }
 .arrow_creative_sub {
 	position:absolute;
@@ -367,7 +376,7 @@ section{
 	right:-70px;
 	width:33px;
 	height:75px;
-	background-image:url(../images/common/arrow_creative.png);
+	background-image:url(../images/new_year/arrow_creative.png);
 	background-size:33px 75px;
 	background-repeat:no-repeat;
 	z-index:15;
@@ -378,7 +387,7 @@ section{
 	top:230px;
 	width:33px;
 	height:75px;
-	background-image:url(../images/common/arrow_creative.png);
+	background-image:url(../images/new_year/arrow_creative.png);
 	background-size:33px 75px;
 	background-repeat:no-repeat;
 	z-index:15;
@@ -444,8 +453,10 @@ section{
 	border:none;
 	background:none;
 }
+
+/********************** CONTACT FORM ************************/
 #same_from_to{
-	margin:54px 0 0 405px;
+	margin:-10px 0 0 390px;
 	background: url(../images/common/same_address.png) top right no-repeat;
 	width: 140px;
 	height: 20px;
@@ -456,25 +467,27 @@ section{
 	text-indent: 65px;
 	line-height: 23px;
 	height: 39px;
+	font-size:13px;
+	font-family: 'Arial';
 }
 
 .wrapp_content .contact_name {
-	width: 230px;
-	margin: 82px 0 0 115px
+	width: 220px;
+	margin: 68px 0 0 115px;
 }
 
 .wrapp_content .contact_address {
-	width:275px;
+	width: 260px;
 	margin: 13px 0 0 70px;
 }
 
 .wrapp_content .contact_tell {
-	margin: 14px 0 0 153px;
-	width: 190px;
+	margin: 16px 0 0 83px;
+	width: 240px;
 }
 
 .wrapp_content .contact_email {
-	margin:7px 0 0 122px;
+	margin:7px 0 0 102px;
 	width: 220px;
 }
 
@@ -483,38 +496,38 @@ section{
 }
 
 .wrapp_content  .contact_name_1 {
-	width:240px;
+	width:230px;
 	margin: 10px 0 0 440px;
 }
 .wrapp_content.contact .contact_address_1 {
 	width: 280px;
 	height: 40px;
-	margin: 11px 0 0 400px;
+	margin: 13px 0 0 400px;
 }
 
 .wrapp_content.contact .contact_tel_1 {
 	width: 195px;
-	margin: 14px 0 0 485px;
+	margin: 14px 0 0 415px
 }
 
 
 .wrapp_content.contact .contact_email_1 {
 	width: 230px;
-	margin: 6px 0 0 450px;
+	margin: 6px 0 0 435px
 }
 
 .wrapp_content .contact_submit{
 	position:absolute;
 	display:block;
-	bottom:-10px;
-	right: 150px;
-	width:150px;
-	height:40px;
+	right: 180px;
+	width:131px;
+	height:67px;
 	background:inherit;
-	background-image: url(../images/common/button_payment.png);
+	background-image: url(../images/new_year/button_payment.png);
 	background-repeat:no-repeat;
-	background-size:150px 40px;
+	background-size:131px 67px;
 	border:none;
+	cursor:pointer;
 }
 
 
@@ -614,7 +627,7 @@ background-position:0 115px;
 		top:67px; left:-350px;
 		}
 	.bottle.step2{top:80px;	left:-10px;}
-	.bottle.step3{top:80px; left:335px;}
+	.bottle.step3{top:80px; left:360px;}
 	
 	.bg_content_2_holder{	top: 105px; }	
 	.bg_content_2_slider{	width:3999px;}

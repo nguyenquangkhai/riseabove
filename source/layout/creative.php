@@ -73,7 +73,7 @@ include("database.php");
 					</div>
 				</div>
 				<div class="bg_content_3_holder">
-					<div id="content1" class="bg_content_3 step1">
+					<div id="content1" class="bg_content_3 step1" >
 						<div class="wrapp_creative_content">
 							<a id="arrow_from1_to2" class="arrow_creative"></a>
 							<div class="title_creative">
@@ -185,7 +185,7 @@ include("database.php");
 						</div>
 					</div>
 					<div id="content3" class="bg_content_3 step3" style="display: none">
-						<div class="title_creative_step3"><img src="images/common/bg_content_about_3.png" width="465" height="45"/> </div>
+						<div class="title_contact"></div>
 						<div class="wrapp_content contact">
 							<a id="arrow_from3_to2" class="arrow_creative_sub_1"></a>
 								<!-- input class="contact_form" type="text" value=""/-->

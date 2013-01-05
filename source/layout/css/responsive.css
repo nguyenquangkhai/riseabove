@@ -124,6 +124,134 @@ height:656px;;
 	padding:0;
 }
 }
+
+@media only screen and (max-width: 1366px) {
+html, body {
+	height:auto;
+}
+.bg_content_1 {
+	width:100%;
+height:656px;
+background-position:0 115px;
+}
+.bg_content_1.gallery {
+	width:100%;
+height:656px;
+background-position:0 95px;
+}
+.bg_content_1.creative {
+		width:100%;
+height:656px;;
+	background-size:1505px 656px;
+	background-position:-95px 0;
+}
+.bg_content_1.martell{
+	height:656px;
+	background-size:1505px 656px;
+}
+.bg_content_2 {
+	top:105px;
+}
+.bg_content_3 {
+	left: -90px;
+	background-size:719px 487px;
+	background-position:top center;
+}
+.bg_content_4 {
+	/*width:1285px;*/
+	background-size:1674px 806px;
+	background-position:85% 120px;
+}
+.bg_content_4.creative {
+	background-position:-220px  120px;
+}
+.bg_content_4.martell  {
+	background-position:-60px 120px;
+}
+.bg_content_4.contact  {
+	background-position:-200px 120px;
+}
+.bg_content_4.gallery{
+	background-size:1722px 734px;
+	background-position:-200px 120px;
+}
+.bg_content_4.about{
+	background-position:-70px 145px;
+}
+/*.parallax-viewport {
+	height: 810px;
+	min-height:810px;
+}*/
+.bottle {
+	position:relative;
+	top:67px;
+	left:-24%;
+	z-index:1;
+}
+.bottle.martell{
+	left:-2%;
+}
+.bottle.contact{
+	top:67px;
+	left:28%;
+}
+.bottle.about{
+	left:-26%;
+	}
+.bottle.home {
+	left:-26%;
+}
+/*.bottle_1 {
+	position:relative;
+	top:80px;
+	left:-320px;
+	z-index:11;
+}
+.bottle_2 {
+	position:relative;
+	top:80px;
+	left:-10px;
+	z-index:11;
+}
+.bottle_3 {
+	position:relative;
+	top:80px;
+	left:315px;
+	z-index:14;
+}*/
+/*.bell {
+	position:relative;
+	top:215px;
+	left:325px;
+	width:252px;
+	height:256px;
+	background-image:url(../images/common/bell.png);
+	background-repeat:no-repeat;
+	background-size:252px 256px;
+	margin:0 auto;
+}*/
+.wrapp_content {
+	position: relative;
+	top: 120px;
+	left: -50px;
+	width: 435px;
+	height: 340px;
+	padding:147px 154px 0 130px;
+	background-size:719px 487px;
+	background-repeat:no-repeat;
+	color:#362f2d;
+	margin:0 auto;
+}
+.wrapp_content.gallery{
+	width: 1000px;
+	left:auto;
+	top:190px;
+	bottom:0;
+	height:50px;
+	padding:0;
+}
+}
+
 @media only screen and (max-width: 1333px) {
 html, body {
 	height:auto;

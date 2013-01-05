@@ -41,24 +41,28 @@
 .bottle_template .bottle_template_imglarge{
 	height:125px;
 	background:url(../images/creative/template/bird.png) no-repeat center;
+	cursor:pointer;
 }
 .bottle_template .bottle_template_imglarge img{	max-height: 125px !important;}
 
 .bottle_template .bottle_template_imgsmall{
 	height:90px;
 	background:url(../images/creative/template/bird.png) no-repeat center;
+	cursor:pointer;
 }
 .bottle_template .bottle_template_imgsmall img{	max-height: 90px !important;}
 
 .bottle_template .bottle_template_imgfull{
 	height:253px;
 	background:url(../images/creative/template/bird.png) no-repeat center;
+	cursor:pointer;
 }
 .bottle_template .bottle_template_imgfull img{	max-height: 213px !important;}
 
 .bottle_template .bottle_template_textlarge{
 	height:125px;
 	background:url(../images/creative/template/big_text.png) no-repeat center;
+	cursor:pointer;
 }
 
 .bottle_template_textsmall img{
@@ -68,6 +72,7 @@
 .bottle_template .bottle_template_textsmall{
 	height:60px;
 	background:url('../images/creative/template/small_text.png') no-repeat center;
+	cursor:pointer;
 }
 
 .bottle_template_textsmall img{
@@ -77,6 +82,7 @@
 .bottle_template .bottle_template_textfull{
 	height:253px;
 	background:url('../images/creative/template/huge_text.png') no-repeat center;
+	cursor:pointer;
 }
 
 .bottle_template_textfull{
