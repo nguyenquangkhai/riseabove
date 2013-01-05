@@ -1,9 +1,11 @@
+<? include('config.php'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width;minimum-scale=0.5,maximum-scale=1.0; user-scalable=1;" />
-<title>Untitled Document</title>
+<title><?=PAGE_TITLE?></title>
+<link href="<?=FALVICON_PATH?>" rel="shortcut icon"/> 
 <link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/text.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
@@ -18,10 +20,10 @@
   <nav>
     <ul>
     	<li> <a class="logo"></a></li>
-		<li> <a href="home_page.html"> TRANG CHỦ </a></li>|
-		<li> <a href="about_page.html"> GIỚI THIỆU </a></li>|
-		<li> <a href="creative.php"> SÁNG TẠO </a> </li>|
-		<li> <a class="active" href="gallery_page.html"> BỘ SƯU TẬP </a></li>
+		<li> <a href="trangchu.php"> TRANG CHỦ </a></li>|
+		<li> <a href="gioithieu.php"> GIỚI THIỆU </a></li>|
+		<li> <a href="sangtao.php"> SÁNG TẠO </a> </li>|
+		<li> <a class="active" href="gallery_page.php"> BỘ SƯU TẬP </a></li>
     </ul>
   </nav>
 </header>

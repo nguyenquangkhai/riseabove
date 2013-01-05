@@ -31,7 +31,8 @@ include('include/nganluong.microcheckout.class.php');
 		<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
 		<meta http-equiv="EXPIRES" content="0">
 		<meta name="viewport" content="width=device-width;minimum-scale=0.5,maximum-scale=1.0; user-scalable=1;" />
-		<title>RiseAbove - Sáng tạo</title>
+		<title><?=PAGE_TITLE?></title>
+		<link href="<?=FALVICON_PATH?>" rel="shortcut icon"/> 
 		<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/text.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/common.css" />
@@ -47,10 +48,10 @@ include('include/nganluong.microcheckout.class.php');
 			<nav>
 				<ul>
                 	<li> <a class="logo"></a></li>
-					<li> <a href="home_page.html"> TRANG CHỦ </a></li>|
-			          <li> <a href="about_page.html"> GIỚI THIỆU </a></li>|
+					<li> <a href="trangchu.php"> TRANG CHỦ </a></li>|
+			          <li> <a href="gioithieu.php"> GIỚI THIỆU </a></li>|
 			          <li> <a  class="active"> SÁNG TẠO </a> </li>|
-			          <li> <a href="gallery_page.html"> BỘ SƯU TẬP </a></li>
+			          <li> <a href="bosuutap.php"> BỘ SƯU TẬP </a></li>
 				</ul>
 			</nav>
 		</header>

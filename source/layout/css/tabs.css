@@ -3,6 +3,7 @@
 	text-align:left;
 	float:left;
 	z-index:1;
+	margin-left: 40px;
 }
 .tab-box a {
 	border:1px solid #DDD;
@@ -26,7 +27,7 @@
 }
 .content_box {
 	position:relative;
-	width:100%;
+	width:90%;
 	background-color:#fff;
 	border:1px solid #DDD;
 	padding:30px;
@@ -36,6 +37,7 @@
 	margin-top:-2px;
 	box-shadow:0 0 5px #FFFFFF;
 	z-index:0;
+	margin-left: 40px;
 }
 .tabcontent{
 	height:350px;

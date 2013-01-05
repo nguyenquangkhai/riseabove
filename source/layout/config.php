@@ -22,6 +22,9 @@ define('MERCHANT_PASS', '123456789');// Biến này là mật khẩu giao tiếp
 define('RECEIVER','nghiakt@peacesoft.net');// Email chính đăng ký trên Ngân Lượng
 
 define('URL_WS', 'https://www.nganluong.vn/micro_checkout_api.php?wsdl');
+
+define('PAGE_TITLE', 'Quà tặng tết');
+define('FALVICON_PATH', 'Quà tặng tết');
 /*
 $_host = "db.hostvn.net";
 $_username = "fasia_riseabove";
