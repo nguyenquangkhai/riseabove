@@ -201,7 +201,7 @@ include("database.php");
 								<div id="to_add" contenteditable="true" class="contact_address_1"></div>
 								<input id="to_tel" class="contact_tel_1" type="text" value=""/>
 								<input id="to_mail" class="contact_email_1" type="text" value=""/>
-								<button id="do_transaction" class="contact_submit" value=""></button>
+								<button id="do_transaction" class="contact_submit" value="" style="bottom: 50px; cursor: pointer;"></button>
 						</div>
 					</div>
 				</div>

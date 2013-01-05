@@ -1,6 +1,6 @@
 <?
 include('nganluong.php');
-include('databse.php');
+include('database.php');
 
 $transaction_info = $_REQUEST['transaction_info'];
 $order_code = $_REQUEST['order_code'];
