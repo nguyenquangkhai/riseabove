@@ -1,0 +1,57 @@
+      .ui-jcoverflip {
+        position: relative;
+      }
+      
+      .ui-jcoverflip--item {
+        position: absolute;
+        display: block;
+      }
+      
+      /* Basic sample CSS */
+      #flip {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+      
+      #flip .ui-jcoverflip--title {
+        position: absolute;
+        bottom: -30px;
+        width: 100%;
+        text-align: center;
+        color: #555;
+      }
+      
+      #flip img {
+        display: block;
+        border: 0;
+        outline: none;
+      }
+      
+      #flip a {
+        outline: none;
+      }
+      
+      
+      .content_gallery {
+        overflow: hidden;
+        position: relative;
+      }
+      
+	  .bg_content_5 > a{position: absolute; height: 75px; width: 33px; top: 250px;}
+	  .bg_content_5 > a.prev{    
+		background-image: url("../images/new_year/arrow_creative_ prev.png");
+		background-repeat: no-repeat;
+		background-size: 33px 75px;
+		left: 100px;
+	}
+	.bg_content_5 > a.next{    
+		background-image: url("../images/new_year/arrow_creative.png");
+		background-repeat: no-repeat;
+		background-size: 33px 75px;
+		right: 100px;
+	}
+	  
+      .ui-jcoverflip--item {
+        cursor: pointer;
+      }

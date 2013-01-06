@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/style_gallery.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/jcoverflip.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 </head>
@@ -31,9 +32,9 @@
 <section style="height: 656px;">
   <article class="wrapper parallax-viewport" id="parallax">
     <div class="bg_content_1 gallery"></div>
-    <div class="bg_content_3 gallery">
-      <div class="wrapp_content gallery">
-      <div class="title_gallery"><img src="images/new_year/title_martell.png" width="396" height="42"> </div>
+    <div class="bg_content_3 gallery" style="width: 396px; height:42px;">
+      <div class="wrapp_content gallery" style="width: 0px;">
+		<div class="title_gallery" style="left: 280px;"><img src="images/new_year/title_martell.png" width="396" height="42"> </div>
       	
       </div>
     </div>    
@@ -42,12 +43,16 @@
 <footer>
 	<div class="bg_content_5 gallery">        
 		<div class="content_gallery">
-           <div class="bottle_gallery 1"><img src="images/common/bottle_ori_1.png" width="111" height="351"><br><span>Design by Ankzu</span></div>
-           <div class="bottle_gallery 2"><img src="images/common/bottle_ori_1.png" width="134" height="423"><br><span>Design by Ankzu</span></div>
-           <div class="bottle_gallery 3"><img src="images/common/bottle_ori_1.png" width="158" height="499"><br><span>Design by Ankzu</span></div>            
-		   <div class="bottle_gallery 4"><img src="images/common/bottle_ori_1.png" width="134" height="423"><br><span>Design by Ankzu</span></div>
-           <div class="bottle_gallery 5"><img src="images/common/bottle_ori_1.png" width="111" height="351"><br><span>Design by Ankzu</span></div>
+			<ul id="flip">
+			  <li><img src="images/common/bottle_ori_1.png" /></li>
+			  <li><img src="images/common/bottle_ori_1.png" /></li>
+			  <li><img src="images/common/bottle_ori_1.png" /></li>
+			  <li><img src="images/common/bottle_ori_1.png" /></li>
+			  <li><img src="images/common/bottle_ori_1.png" /></li>
+			</ul>
         </div>
+		<a href="#" class="prev"></a>
+		<a href="#" class="next"></a>
     </div> 
     <div class="wrapp_sns">
     	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="#" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
@@ -63,6 +68,13 @@
     .parallax({
       mouseport: jQuery('#parallax')
     });
+	$('#flip').jcoverflip();
+	$('.prev').click(function(){
+		$('#flip').jcoverflip('previous');
+	});
+	$('.next').click(function(){
+		$('#flip').jcoverflip('next');
+	});
   });
   </script> 
 

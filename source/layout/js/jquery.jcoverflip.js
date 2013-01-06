@@ -1,6 +1,6 @@
 /*
  * jCoverflip - Present your featured content elegantly.
- * Version: 1.0.2
+ * Version: 1.1.0
  * Copyright 2010 New Signature
  * 
  * This program is free software: you can redistribute it and/or modify it under the terms of the 
@@ -34,6 +34,97 @@ var proxy = function( context, fn ){
 			}
 		};
 	};
+
+
+
+/**
+ * Get an array of keys for an object
+ */
+var objectKeys = function( obj ){
+	var r = [];
+	
+	for( var k in obj ){
+		r.push(k);
+	}
+	
+	return r;
+};
+
+
+
+
+/**
+ * jQuery Plugin Factory
+ *
+ * A simple framework for creating jQuery plugins that have several 'methods'.
+ * The result will be a plugin that you can initialize like this:
+ *    $('#foo').myplugin(param1, param2).show();
+ *
+ * Then you can call methods 'toggle' and 'bar' with you plugin like this:
+ *    $('#foo').myplugin('toggle', param1).myplugin('bar', param1, parma2).fadeIn();
+ *
+ * The methods can alos act as getters and return values:
+ *    var v = $('#foo').myplugin('current');
+ *
+ * 1) Most of the work is in creating the methods which is just an object of functions.
+ * 2) Any function name that starts with an underscore will not be exposed to the public.
+ * 3) When the plugin initializes, it will call the method named '_init'.
+ * 4) The 'this' object is for the each instance of the plugin.
+ * 5) To get the element that the plugin is for, use this.element to get it.
+ *
+ * @param $ - the jQuery instance to add the plugin to
+ * @param name - the name to call the plugin with
+ * @param methods - an object of functions to add as methods
+ *   Any method name that starts with an underscore will be private, it will not be exposed.
+ *   The method named '_init' will be called when initializing.
+ * @param getters - an array of methods that return values
+ */
+function jQueryPluginFactory( $, name, methods, getters ){
+  getters = getters instanceof Array ? getters : [];
+  var getters_obj = {};
+  for(var i=0; i<getters.length; i++){
+    getters_obj[getters[i]] = true;
+  }
+
+ 
+  // Create the object
+  var Plugin = function(element){
+    this.element = element;
+  };
+  Plugin.prototype = methods;
+ 
+  // Assign the plugin
+  $.fn[name] = function(){
+    var args = arguments;
+    var returnValue = this;
+   
+    this.each(function() {
+      var $this = $(this);
+      var plugin = $this.data('plugin-'+name);
+      // Init the plugin if first time
+      if( !plugin ){
+        plugin = new Plugin($this);
+        $this.data('plugin-'+name, plugin);
+        if(plugin._init){
+          plugin._init.apply(plugin, args);
+        }
+       
+      // call a method
+      } else if(typeof args[0] == 'string' && args[0].charAt(0) != '_' && typeof plugin[args[0]] == 'function'){
+        var methodArgs = Array.prototype.slice.call(args, 1);
+        var r = plugin[args[0]].apply(plugin, methodArgs);
+        // set the return value if method is a getter
+        if( args[0] in getters_obj ){
+          returnValue = r;
+        }
+      }
+     
+    });
+   
+    return returnValue; // returning the jQuery object
+  };
+}; 
+
 
 
 
@@ -383,7 +474,7 @@ animationqueue.AnimationStep.prototype = {
  */
 animationqueue.Animation = function( $element,  animateParams ){
 	this.$element = $element;
-	this.animateParams = animateParams;
+	this.animateParams = $.isArray(animateParams) ? animateParams : [ animateParams ];
 	this.isRunning = false;
 };
 
@@ -398,11 +489,54 @@ animationqueue.Animation.prototype = {
 		this.$element.stop( );
 		
 		if( time === 0 ){
-			this.$element.css( this.animateParams );
+			for( var i=0; i<this.animateParams.length; ++i ){
+				this.$element.css( this.animateParams[i] );
+			}
 			self.isRunning = false;
 		} else {
+			
+			// calculate the duration of each animation param
+			if( this.animateParams.length > 1 ){
+				var totalDur = 0; // total duration calculated
+				var withoutDur = 0; // the number without a duration set
+				var i=this.animateParams.length;
+				while( i-- != 0 ){
+					var dur = this.animateParams[i].animationDuration;
+					if( !isNaN( dur ) && dur >= 0 ){
+						totalDur += dur;
+					} else {
+						++withoutDur;
+						delete this.animateParams[i].animationDuration;
+					}
+				}
+				var emptyDurVal = 0;
+				// case for when the total duration is less than 1, and there are animations that can fill in the gap
+				if( withoutDur && totalDur < 1 ){
+					emptyDurVal = (1-totalDur) / withoutDur; // the duration for those without value set
+					totalDur = 1;
+				}
+				
+				i=this.animateParams.length;
+				// set the duration for each
+				while( i-- != 0 ){
+					if( !isNaN(this.animateParams[i].animationDuration) ){
+						this.animateParams[i].animationDuration = this.animateParams[i].animationDuration / totalDur;
+					} else {
+						this.animateParams[i].animationDuration = emptyDurVal;
+					}
+				}
+			
+			// This is for the likely case that there is only one, to save time
+			} else {
+				this.animateParams[0].animationDuration = 1;
+			}
+			
+			
 			this.isRunning = true;
-			this.$element.animate( this.animateParams, time, proxy( this, function( ){ 
+			for( var i=0; i<this.animateParams.length-1; ++i ){
+				this.$element.animate( this.animateParams[i], time*this.animateParams[i].animationDuration );
+			}
+			this.$element.animate( this.animateParams[i], time*this.animateParams[i].animationDuration, proxy( this, function( ){ 
 				this.isRunning = false; 
 			} ) );
 		}
@@ -505,8 +639,10 @@ $.jcoverflip = {
 
 
 // The widget
-$.widget( 'ui.jcoverflip', {
-	_init: function( ){
+var methods = {
+	_init: function( args ){
+		this.options = $.extend( defaults, args || {} );
+
 		// init some internal values
 		this.animationQueue = new animationqueue.AnimationQueue( );
 		this.isInit = false; // used for setting up the CSS
@@ -540,6 +676,11 @@ $.widget( 'ui.jcoverflip', {
 		
 		// Bind the click action for when the user clicks on the item to change the current
 		this.element.click( proxy( this, this._clickItem ) );
+		
+		// Setup wrap around
+		if( this.options.wrapItemsAround ){
+			this.options.wrapCenter = this.options.wrapCenter === undefined? this.options.current : this.options.wrapCenter;
+		}
 		
 		// setup the positioning of the elements, pass 0 for time, pass true to flag to init
 		this._goTo( this.options.current, 0, true );
@@ -819,13 +960,13 @@ $.widget( 'ui.jcoverflip', {
 	
 	
 	enable: function( ){
-		$.widget.prototype.enable.apply( this, arguments );
+		this.options.disabled  = false;
 		this._trigger( 'enable', {} );
 	},
 		
 	
 	disable: function( ){
-		$.widget.prototype.disable.apply( this, arguments );
+		this.options.disabled = true;
 		this._trigger( 'disable', {} );
 	},
 	
@@ -926,28 +1067,63 @@ $.widget( 'ui.jcoverflip', {
 				stepsToCurrent = current;
 			}
 			
-			var items = this.items( );
-			// Add sets for each step
-			// The test works for moving in both directions
-			while( ( goingToTheRight && stepsToCurrent <= current ) || ( !goingToTheRight && stepsToCurrent >= current ) || ( force && stepsToCurrent == current ) ){
+			var fromOffset = this.getOffset(oldCurrent),
+			    lastToOffset = fromOffset,
+				goingRight = fromOffset[ current ] > 0,
+				numberOfSteps = Math.abs(fromOffset[ current ]),
+			    items = this.items( ),
+			    startFrom = goingRight? current - numberOfSteps : current + numberOfSteps,
+			    minOffset = this.options.wrapItemsAround ? -1*this.options.wrapCenter : 1-items.length,
+			    maxOffset = this.options.wrapItemsAround ? items.length-1-this.options.wrapCenter : items.length-1;
+			
+			// Special case the first time this is created
+			if( force && numberOfSteps==0 ){
+				numberOfSteps = 1;
+				startFrom += goingRight? -1: 1;
+			}
+			
+			// The main animation setup loop
+			// Loops for the number of places the items have to move
+			for( var step=1; step <= numberOfSteps; ++step ){
+				var stepIndex = startFrom + (goingRight? step: -1*step);
+				var toOffset = this.getOffset( stepIndex );
+				
 				// Create a set
 				var animationSet = new animationqueue.AnimationSet( );
 				this.animationQueue.queue( animationSet );
-				animationSet.setData( 'goingToTheRight', goingToTheRight );
-				animationSet.setData( 'to', stepsToCurrent );
+				animationSet.setData( 'goingToTheRight', goingRight );
+				animationSet.setData( 'to', stepIndex );
 				
-				// Setup animation for all the items
-				var i = items.length;
-				while( i-- ){
-					var el = items.eq( i );
-					if( i < stepsToCurrent ){
-						var css = this.options.beforeCss( el, this.element, stepsToCurrent-i-1 );
+				
+				var ii=items.length;
+				while( ii--!=0 ) {
+					var el = items.eq(ii);
+					
+					// current
+					if( toOffset[ii]==0 ){
+						var css = this.options.currentCss( el, this.element, step == numberOfSteps );
 						
-					} else if( i > stepsToCurrent ){
-						var css = this.options.afterCss( el, this.element, i-stepsToCurrent-1 );
+					// from start to end
+					} else if( lastToOffset[ii]==minOffset && toOffset[ii]==maxOffset ){
+						if( this.options.startToEndCss ){
+							var css = this.options.startToEndCss( el, this.element, toOffset[ii]-1, -1*lastToOffset[ii]-1 );
+						} else {
+							var css = this.options.afterCss( el, this.element, toOffset[ii]-1 );
+						}
+					// from end to start
+					} else if( lastToOffset[ii]==maxOffset && toOffset[ii]==minOffset ){
+						if( this.options.endToStartCss ){
+							var css = this.options.endToStartCss( el, this.element, -1*toOffset[ii]-1, lastToOffset[ii]-1 );
+						} else {
+							var css = this.options.beforeCss( el, this.element, -1*toOffset[ii]-1 );
+						}
+					// after
+					} else if( toOffset[ii]>0 ){
+						var css = this.options.afterCss( el, this.element, toOffset[ii]-1 );
 						
-					} else { // i == stepsToCurrent
-						var css = this.options.currentCss( el, this.element, i-stepsToCurrent-1 );
+					// before
+					} else if( toOffset[ii]<0 ){
+						var css = this.options.beforeCss( el, this.element, -1*toOffset[ii]-1 );
 					}
 					
 					// Push all the animation info onto the animation queue
@@ -959,9 +1135,12 @@ $.widget( 'ui.jcoverflip', {
 							animationSet.add( new animationqueue.AnimationStep( cssI.element, cssI.steps[ step ], parseFloat( step ) ) );
 						}
 					}
-				} // endwhile( i-- ) End the looping through all the items
-				stepsToCurrent += goingToTheRight? 1: -1;
-			} // endwhile( ) End looping through all the steps from current to i
+				}
+				
+				// for determining if the item moved from start to end and vice-versa
+				lastToOffset = toOffset;
+				
+			}
 			
 			// hide/show the title
 			var titleElement = items.eq( current ).data( 'jcoverflip__titleElement' );
@@ -1024,11 +1203,77 @@ $.widget( 'ui.jcoverflip', {
 			return this.itemsCache;
 		},
 	
+	
+	
+	/**
+	 * Get length
+	 *
+	 * Returns the number of items.
+	 */
 	length: function( ){
 		var items = this.items( );
 		return items.length;
+	},
+	
+	
+	
+	/**
+	 * Get offset object
+	 *
+	 * Returns an object that maps an item index to its position.
+	 */
+	getOffset: function( current ){
+		var r = {}, 
+		    length = this.length();
+		
+		if( !this.options.wrapItemsAround ){
+			for( var i=0; i<length; ++i ){
+				r[i] = i-current;
+			}
+		} else {
+			var min = -1*this.options.wrapCenter,
+			    minStart = ( current - this.options.wrapCenter + length ) % length,
+			    max = length + min;
+			
+			for( var i=minStart, j=min; j<max; ++j, i=(i+1)%length ){
+				r[i] = j;
+			}
+		}
+		
+		return r;
+	},
+	
+	
+	/**
+	 * Copied from jQuery UI
+	 */
+	_trigger: function(type, event, data) {
+		var callback = this.options[type],
+			eventName = (type == 'jcoverflip'
+				? type : 'jcoverflip' + type);
+
+		event = $.Event(event);
+		event.type = eventName;
+
+		// copy original event properties over to the new event
+		// this would happen if we could call $.event.fix instead of $.Event
+		// but we don't have a way to force an event to be fixed multiple times
+		if (event.originalEvent) {
+			for (var i = $.event.props.length, prop; i;) {
+				prop = $.event.props[--i];
+				event[prop] = event.originalEvent[prop];
+			}
+		}
+
+		this.element.trigger(event, data);
+
+		return !($.isFunction(callback) && callback.call(this.element[0], event, data) === false
+			|| event.isDefaultPrevented());
 	}
-} ) ;
+	
+	
+	
+};
 
 
 
@@ -1038,25 +1283,93 @@ $.widget( 'ui.jcoverflip', {
 
 
 
-$.ui.jcoverflip.defaults = {
+var defaults = {
 	items: '',
+	
+	/**
+	 *	Controls the CSS/Animation for items that go from the start to the end
+	 * 
+	 *
+	 * @param el jQuery element - the item element
+	 * @param container jQuery element - the container element
+	 * @param endOffset int - the offset of the item at the end (where the animation ends)
+	 * @param startOffset int - the offset of the item at the start (where the animation starts)
+	 */
+	startToEndCss: function( el, container, endOffset, startOffset ){
+		return [
+				$.jcoverflip.animationElement( el, { left: ( container.width( )/2 + 110 + 110*endOffset )+'px', bottom: '20px' }, { } ),
+				$.jcoverflip.animationElement( el.find( 'img' ), [
+					{ opacity: 0.2, width: '50px' },
+					{ opacity: 0.5, width: '100px' }
+					], {} )
+			];
+		},
+	
+	/**
+	 *	Controls the CSS/Animation for items that go from the end to the start
+	 *
+	 * @param el jQuery element - the item element
+	 * @param container jQuery element - the container element
+	 * @param startOffset int - the offset of the item at the start (where the animation ends)
+	 * @param endOffset int - the offset of the item at the end (where the animation starts)
+	 */
+	endToStartCss: function( el, container, endOffset, startOffset ){ 
+		return [
+				$.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 210 - 110*endOffset )+'px', bottom: '20px' }, { } ),
+				$.jcoverflip.animationElement( el.find( 'img' ), [
+					{ opacity: 0.2, width: '50px' },
+					{ opacity: 0.5, width: '100px' }
+					], {} )
+			];
+		},
+	
+	/**
+	 * Controls the CSS/Animation for items before the current
+	 *
+	 * @param el jQuery element - the item element
+	 * @param container jQuery element - the container element
+	 * @param offset int - the offset of the item from the current starting with zero
+	 */
 	beforeCss: function( el, container, offset ){
 		return [
 			$.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 210 - 110*offset )+'px', bottom: '20px' }, { } ),
 			$.jcoverflip.animationElement( el.find( 'img' ), { opacity: 0.5, width: '100px' }, {} )
 		];
 	},
+	
+	/**
+	 * Controls the CSS/Animation for items after the current
+	 *
+	 * @param el jQuery element - the item element
+	 * @param container jQuery element - the container element
+	 * @param offset int - the offset of the item from the current starting with zero
+	 */
 	afterCss: function( el, container, offset ){
 		return [
 			$.jcoverflip.animationElement( el, { left: ( container.width( )/2 + 110 + 110*offset )+'px', bottom: '20px' }, { } ),
 			$.jcoverflip.animationElement( el.find( 'img' ), { opacity: 0.5, width: '100px' }, {} )
 		];
 	},
-	currentCss: function( el, container ){
-		return [
-			$.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 100 )+'px', bottom: 0 }, { } ),
-			$.jcoverflip.animationElement( el.find( 'img' ), { opacity: 1, width: '200px' }, { } )
-		];
+	
+	/**
+	 * Controls the CSS/Animation for item that is the current
+	 *
+	 * @param el jQuery element - the item element
+	 * @param container jQuery element - the container element
+	 * @param isFinal boolean - a flag if the item is going to stop as the current or if it is passing through the current place to its final location
+	 */
+	currentCss: function( el, container, isFinal ){
+		if( isFinal ){
+			return [
+				$.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 100 )+'px', bottom: 0 }, { } ),
+				$.jcoverflip.animationElement( el.find( 'img' ), { opacity: 1, width: '200px' }, { } )
+			];
+		} else {
+			return [
+				$.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 50 )+'px', bottom: '20px' }, { } ),
+				$.jcoverflip.animationElement( el.find( 'img' ), { opacity: 0.5, width: '100px' }, { } )
+			];
+		}
 	},
 	time: 500, // half a second
 	
@@ -1140,8 +1453,11 @@ $.ui.jcoverflip.defaults = {
 
 
 // specify  the getters
-$.ui.jcoverflip.getter = [ 'length', 'current'  ];
+var getters = [ 'length', 'current'  ];
 
+
+// Create the plugin
+jQueryPluginFactory(jQuery, 'jcoverflip', methods, getters);
 
 
 
