@@ -3,9 +3,10 @@ include("database.php");
 include('include/lib/nusoap.php');
 include('include/nganluong.microcheckout.class.php');
 
+$order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
 	$inputs = array(
 		'receiver'		=> RECEIVER,
-		'order_code'	=> '',
+		'order_code'	=> $order_id,
 		'return_url'	=> $_return_url,
 		'cancel_url'	=> '',
 		'language'		=> 'vn'
@@ -155,7 +156,7 @@ include('include/nganluong.microcheckout.class.php');
 											<img style="margin-top: 100px;" src="images/loader.gif" />
 										</div -->
 										<?
-											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = 4");
+											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = 1");
 											$length = mysql_num_rows ($image_list);
 											if($length > 6){
 										?>
@@ -195,7 +196,7 @@ include('include/nganluong.microcheckout.class.php');
 									</div>
 									<ul id="quote" class="content_creative_sub_4 scroll_bar" style="width:400px; height: 160px;">
 										<?
-											$quote_list = mysql_query("SELECT * FROM quote_master WHERE id_topic_master = 4");
+											$quote_list = mysql_query("SELECT * FROM quote_master WHERE id_topic_master = 1");
 											while($row = mysql_fetch_array($quote_list)){
 										?>
 										<li>
@@ -593,7 +594,8 @@ include('include/nganluong.microcheckout.class.php');
 					to_name: $("#master_to_name").val(),
 					to_add: $("#master_to_add").val(),
 					to_tel: $("#master_to_tel").val(),
-					to_mail: $("#master_to_mail").val()
+					to_mail: $("#master_to_mail").val(),
+					order_id: '<?=$order_id?>'
 				},
 				success: function(data){
 					console.log(data);
@@ -710,7 +712,7 @@ include('include/nganluong.microcheckout.class.php');
 					var tempId = $(this).data("templateid");
 					$(".text").click(function(){
 						var val = $(this).data("order");
-						$("#wish").text($("#master_text" + val).val()).focus();
+						$("#wish").html($("#master_text" + val).val()).focus();
 						$("#master_text_num").val(val);
 					});
 					

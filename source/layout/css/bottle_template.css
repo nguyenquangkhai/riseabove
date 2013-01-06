@@ -9,13 +9,14 @@
 }
 
 .bottle_template .image_holder{
-	width:290px;
+	width:180px;
 	position:relative;
+	margin-left: 65px;
 }
 
 
 .bottle_template .image_holder img{
-	max-width: 290px !important;
+	max-width: 175px !important;
 	display: block;
 	margin: auto;
 	position:absolute;
@@ -24,13 +25,15 @@
 
 
 .bottle_template .text{
-	width:290px;
+	width:180px;
 	color:#E8B876;
 	padding:5px 3px;
 	text-align: center;
 	vertical-align: middle;
 	font-family: "Times New Roman";
 	font-style: italic;
+	font-size: 11px;
+	margin-left: 65px;
 }
 
 .bottle_template .text img{
@@ -39,11 +42,11 @@
 }
 
 .bottle_template .bottle_template_imglarge{
-	height:125px;
+	height:166px;
 	background:url(../images/creative/template/bird.png) no-repeat center;
 	cursor:pointer;
 }
-.bottle_template .bottle_template_imglarge img{	max-height: 125px !important;}
+.bottle_template .bottle_template_imglarge img{	max-height: 166px !important;}
 
 .bottle_template .bottle_template_imgsmall{
 	height:90px;
