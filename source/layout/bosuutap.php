@@ -12,6 +12,17 @@
 <link rel="stylesheet" type="text/css" media="all" href="css/style_gallery.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<style>
+	.ui-jcoverflip {
+	position: relative;
+	}
+
+	.ui-jcoverflip--item {
+	position: absolute;
+	display: block;
+	}
+</style>
 </head>
 
 <body >
@@ -39,13 +50,13 @@
   </article>
 </section>
 <footer><div class="bg_content_5 gallery">
-        <div class="content_gallery">
-            <div class="bottle_gallery 1"><img src="images/common/bottle_ori_1.png" width="111" height="351"><br><span>Design by Ankzu</span></div>
-            <div class="bottle_gallery 2"><img src="images/common/bottle_ori_1.png" width="134" height="423"><br><span>Design by Ankzu</span></div>
-            <div class="bottle_gallery 3"><img src="images/common/bottle_ori_1.png" width="158" height="499"><br><span>Design by Ankzu</span></div>
-            <div class="bottle_gallery 4"><img src="images/common/bottle_ori_1.png" width="134" height="423"><br><span>Design by Ankzu</span></div>
-            <div class="bottle_gallery 5"><img src="images/common/bottle_ori_1.png" width="111" height="351"><br><span>Design by Ankzu</span></div>
-        </div>
+	<ul id="flip" class="content_gallery">
+		<li><img src="images/common/bottle_ori_1.png" width="111" height="351" /><span class="title">Design by Ankzu</span></li>
+		<li><img src="images/common/bottle_ori_1.png" width="111" height="351" /><span class="title">Design by Ankzu</span></li>
+		<li><img src="images/common/bottle_ori_1.png" width="111" height="351" /><span class="title">Design by Ankzu</span></li>
+		<li><img src="images/common/bottle_ori_1.png" width="111" height="351" /><span class="title">Design by Ankzu</span></li>
+		<li><img src="images/common/bottle_ori_1.png" width="111" height="351" /><span class="title">Design by Ankzu</span></li>
+	</ul>
     </div> 
     <div class="wrapp_sns">
     	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="#" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
@@ -54,12 +65,14 @@
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> --> 
 <script src="js/jquery.event.frame.js"></script> 
 <script src="js/jquery.parallax.js"></script> 
+<script src="js/jquery.jcoverflip.js"></script> 
 <script>
   jQuery(document).ready(function(){
     jQuery('#parallax .parallax-layer')
     .parallax({
       mouseport: jQuery('#parallax')
     });
+	$('#flip').jcoverflip();
   });
   </script> 
 

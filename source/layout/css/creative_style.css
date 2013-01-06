@@ -230,13 +230,13 @@ section{
 	background-image:url(../images/common/ar_sub_2.png);
 	}
 .arrow_creative_sub{
-	right:-70px;
+	right:-50px;
 	}
 .arrow_creative_sub_1{
 	-webkit-transform:rotate(180deg);
 	-moz-transform:rotate(180deg);
 	transform:rotate(180deg);
-	left:-60px;
+	left:-50px;
 	}
 .arrow_creative_sub:hover, .arrow_creative_sub_1:hover{
 	opacity:0.5;}
@@ -415,11 +415,11 @@ section{
 	background-image:url(../images/common/ar_sub_2.png);
 }
 .arrow_creative_sub {
-	right:-70px;
+	right:-50px;
 }
 .arrow_creative_sub_1 {
 	-webkit-transform:rotate(180deg);
-	left:-60px;
+	left:-50px;
 }
 .arrow_creative_sub:hover, .arrow_creative_sub_1:hover {
 	opacity:0.5;
@@ -532,6 +532,7 @@ section{
 	cursor:pointer;
 }
 
+.wrapp_content .contact_submit.gallery_save{background-image: url(../images/new_year/chiase_btn.png); background-size:113px 39px; background-position: 10px 14px;}
 
 /************** BACKGROUND 4 **************/
 .bg_content_4_holder{

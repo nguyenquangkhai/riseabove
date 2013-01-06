@@ -105,13 +105,16 @@ include('include/nganluong.microcheckout.class.php');
             </div>
 							<ul id="template_chosen" class="content_creative">
 								<?
+									$i = 1;
 									$template_list = mysql_query("SELECT * FROM template_master");
 									while($row = mysql_fetch_array($template_list)){
 								?>
 									<li data-templateId="<?= $row['id_template_master'] ?>" rel="#template_<?= $row['id_template_master'] ?>">
 										<img src="images/creative/template/<?= $row['template_name'] ?>.jpg" width="119" height="183"/>
+										<img src="images/creative/template/bc<?=$i?>.png" width="119" height="183" style="top: 183px;"/>
 									</li>			
 								<?
+									$i++;
 									}
 								?>
 							</ul>
@@ -124,7 +127,7 @@ include('include/nganluong.microcheckout.class.php');
 							<ol class="creative_left_sub">
 								<li>
 									<div class="title_left_sub">
-										<h1>CHỌN CHỦ ĐỀ BẠN YÊU THÍCH</h1>
+										<h1>1. Chọn chủ đề Tết&Valetine 2013</h1>
 									</div>
 									<ul id="topic_chosen" class="content_creative_sub">
 										<?
@@ -144,7 +147,7 @@ include('include/nganluong.microcheckout.class.php');
 								<div class="clear"></div>
 								<li>
 									<div class="title_left_sub">
-										<h1>CHỌN HÌNH ẢNH CHO KIỆT TÁC</h1>
+										<h1>3. Chọn hình ảnh đi theo chủ đề</h1>
 									</div>
 									
 									<ul id="image_chosen" class="content_creative_sub_1">
@@ -175,7 +178,7 @@ include('include/nganluong.microcheckout.class.php');
 								<li>
 									<div class="title_martell"></div>
 									<div class="title_left_sub">
-										<h1>TỰ SÁNG TẠO NỘI DUNG</h1>
+										<h1>2. Tự sáng tạo lời chúc</h1>
 									</div>
 									<form class="form_right_sub">
 										<div id="wish" contenteditable="true" class="textarea" style="background-color: #fff; text-align: left">
@@ -188,7 +191,7 @@ include('include/nganluong.microcheckout.class.php');
 								<div class="space10"></div>
 								<li>
 									<div class="title_left_sub">
-										<h1>CHỌN CÂU CHÚC DÀNH CHO NGƯỜI THÂN</h1>
+										<h1>4. Chọn câu chúc đi theo chủ đề</h1>
 									</div>
 									<ul id="quote" class="content_creative_sub_4 scroll_bar" style="width:400px; height: 160px;">
 										<?
@@ -225,6 +228,7 @@ include('include/nganluong.microcheckout.class.php');
 								<div id="to_add" contenteditable="true" class="contact_address_1"></div>
 								<input id="to_tel" class="contact_tel_1" type="text" value=""/>
 								<input id="to_mail" class="contact_email_1" type="text" value=""/>
+								<button class="contact_submit gallery_save" value="" style="bottom: 50px; left: 400px; cursor: pointer;"></button>
 								<button id="do_transaction" class="contact_submit" value="" style="bottom: 50px; cursor: pointer;"></button>
 						</div>
 					</div>
@@ -596,7 +600,64 @@ include('include/nganluong.microcheckout.class.php');
 				}
 			});
 		}
-			jQuery(window).load(function() {
+		
+		var anim = (function() {
+			var i = 0.5;
+			var step = 0.1;
+			var up = true;
+			var timer = null;
+
+			var next = function($selector) {
+				if (up) {
+					i += step;
+				}
+				else {
+					i -= step;
+				}
+				if(i<0.5){i=0.5; up=true;}
+				if(i>1){i=1; up=false;}
+				update($selector);
+			};
+
+			var update = function($selector) {
+				$selector.css("opacity", i);
+			};
+
+			var go = function($selector) {
+				next($selector);
+				timer = window.setTimeout(function(){anim.go($selector);}, 30);
+			};
+
+			var stop = function($selector) {
+				if (timer) {
+					window.clearTimeout(timer);
+					timer = null;
+					$selector.css("opacity", 1);
+				}
+			};
+
+			var addClickHandler = function($selector) {
+				$selector.click(function() {
+					if(timer){
+						anim.stop();
+					}
+					else{
+						anim.go($selector);
+					}
+
+				});
+			};
+
+
+
+			return {
+				go: go,
+				stop: stop,
+				addClickHandler: addClickHandler 
+			};
+		}());
+	
+			$(function() {
 				$(".loader").ajaxStart(function(){
 					$(this).show();
 				});
@@ -696,8 +757,9 @@ include('include/nganluong.microcheckout.class.php');
 							quotes_holder.children("li").remove();
 							quotes.forEach(function(obj, index){
 								var li = $('<li>');
-								var span = $('<span>').text(obj.content).appendTo(li);
+								var span = $('<span>').html(obj.content).appendTo(li);
 								li.appendTo(quotes_holder);
+								li.data('')
 							});
 							addScrollBar1();
 							addScrollBar2();
@@ -719,14 +781,15 @@ include('include/nganluong.microcheckout.class.php');
 				});
 				
 				$("#quote li").live('click',function(){
-					var text = $.trim($(this).text());
-					$("#wish").text("").text(text).focus();
+					var html = $(this).children('span').html();
+					$("#wish").html(html).focus();
 					
 					$("#wish").trigger("keyup");
 				});
 				
 				$("#wish").keyup(function (){
 					var text = $.trim($(this).text());
+					var html = $(this).html();
 					var text_current = $("#master_text_num").val();
 					var bottle_template_text = $(".bottle_template").not(":hidden").children(".text").eq(text_current);
 					var limit = bottle_template_text.data("limit");
@@ -736,17 +799,17 @@ include('include/nganluong.microcheckout.class.php');
 						$("#counter_master").show().delay(1000).fadeOut("slow");
 					}
 					if(text.length > 0 && text.length <= limit){
-						bottle_template_text.text(text);
+						bottle_template_text.html(html);
 					}else if(text.length > limit){
 						text = text.substring(0,limit);
-						$(this).text(text);
+						$(this).html(text);
 					}
 					if(text.length != 0)
 						bottle_template_text.addClass("no-image");
 					else
 						bottle_template_text.removeClass("no-image");
-					bottle_template_text.text(text);
-					$("#master_text"+text_current).val(text);
+					bottle_template_text.html(html);
+					$("#master_text"+text_current).val(html);
 				});
 				
 				$("#from_name").keyup(function(){
@@ -821,6 +884,15 @@ include('include/nganluong.microcheckout.class.php');
 							top: 0
 						},200);
 						return false;
+					}
+				);
+				
+				$('.bottle_template .image_holder, .bottle_template .text').hover(
+					function(e){
+						anim.go($(e.target));
+					},
+					function(e){
+						anim.stop($(e.target));
 					}
 				);
 			});

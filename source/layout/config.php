@@ -24,7 +24,7 @@ define('RECEIVER','nghiakt@peacesoft.net');// Email chính đăng ký trên Ngâ
 define('URL_WS', 'https://www.nganluong.vn/micro_checkout_api.php?wsdl');
 
 define('PAGE_TITLE', 'Quà tặng tết');
-define('FALVICON_PATH', 'Quà tặng tết');
+define('FALVICON_PATH', 'images/favicon.png');
 /*
 $_host = "db.hostvn.net";
 $_username = "fasia_riseabove";
