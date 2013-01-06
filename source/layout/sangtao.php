@@ -782,14 +782,63 @@ $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
 					$("#master_image" + image_num).val(image_id);
 				});
 				
+				function setEndOfContenteditable(contentEditableElement)
+				{
+				    var range,selection;
+				    if(document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
+				    {
+				        range = document.createRange();//Create a range (a range is a like the selection but invisible)
+				        range.selectNodeContents(contentEditableElement);//Select the entire contents of the element with the range
+				        range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+				        selection = window.getSelection();//get the selection object (allows you to change selection)
+				        selection.removeAllRanges();//remove any selections already made
+				        selection.addRange(range);//make the range you have just created the visible selection
+				    }
+				    else if(document.selection)//IE 8 and lower
+				    { 
+				        range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
+				        range.moveToElementText(contentEditableElement);//Select the entire contents of the element with the range
+				        range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+				        range.select();//Select the range (make it the visible selection
+				    }
+				}
+				
 				$("#quote li").live('click',function(){
 					var html = $(this).children('span').html();
-					$("#wish").html(html).focus();
+
+					var text = $.trim($(this).text());
 					
-					$("#wish").trigger("keyup");
+
+					
+					
+					var html = $(this).html();
+					var text_current = $("#master_text_num").val();
+					var bottle_template_text = $(".bottle_template").not(":hidden").children(".text").eq(text_current);
+					var limit = bottle_template_text.data("limit");
+					if(text.length > 0 && text.length < limit){
+						bottle_template_text.html(html);
+					}else if(text.length > limit){
+						html = text = text.substring(0,limit);
+					}
+					
+					$("#counter_hold").text(limit);
+					$("#counter_cur").text(text.length);
+					if($("#counter_master").is(":hidden")){
+						$("#counter_master").show().delay(1000).fadeOut("slow");
+					};
+					
+					
+					
+					
+					bottle_template_text.addClass("no-image");
+					$("#wish").html(html);
+					bottle_template_text.html(html);
+					$("#master_text"+text_current).val(html);
+					
+					setEndOfContenteditable(document.getElementById("wish"));
 				});
 				
-				$("#wish").keyup(function (){
+				$("#wish").keypress(function (e){
 					var text = $.trim($(this).text());
 					var html = $(this).html();
 					var text_current = $("#master_text_num").val();
@@ -800,11 +849,15 @@ $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
 					if($("#counter_master").is(":hidden")){
 						$("#counter_master").show().delay(1000).fadeOut("slow");
 					}
-					if(text.length > 0 && text.length <= limit){
+					if(text.length > 0 && text.length < limit){
 						bottle_template_text.html(html);
-					}else if(text.length > limit){
+
+					}else if(text.length >= limit){
+						e.preventDefault();
 						text = text.substring(0,limit);
 						$(this).html(text);
+						setEndOfContenteditable(document.getElementById("wish"));
+						
 					}
 					if(text.length != 0)
 						bottle_template_text.addClass("no-image");
