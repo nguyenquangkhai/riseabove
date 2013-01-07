@@ -69,24 +69,24 @@ $inputs = array(
 				<div class="bottle slider">
 					<div class="bottle_template" id="template_1" style="display: none">
 						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
-						<div data-limit="120" data-order="0" class="bottle_template_textlarge text"></div>
+						<div data-limit="260" data-order="0" class="bottle_template_textlarge text"></div>
 					</div>
 					<div class="bottle_template" id="template_2" style="display: none">
-						<div data-limit="120" data-order="0" class="bottle_template_textlarge text"></div>
+						<div data-limit="260" data-order="0" class="bottle_template_textlarge text"></div>
 						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
 					</div>
 					<div class="bottle_template" id="template_3" style="display: none">
-						<div data-limit="60" data-order="0" class="bottle_template_textsmall text"></div>
+						<div data-limit="130" data-order="0" class="bottle_template_textsmall text"></div>
 						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
-						<div data-limit="60" data-order="1" class="bottle_template_textsmall text"></div>
+						<div data-limit="130" data-order="1" class="bottle_template_textsmall text"></div>
 					</div>
 					<div class="bottle_template" id="template_4" style="display: none">
 						<div data-order="0" class="bottle_template_imgsmall bottle_template_img image_holder"></div>
-						<div data-limit="60" data-order="0" class="bottle_template_textsmall text"></div>
+						<div data-limit="130" data-order="0" class="bottle_template_textsmall text"></div>
 						<div data-order="1" class="bottle_template_imgsmall bottle_template_img image_holder"></div>
 					</div>
 					<div class="bottle_template" id="template_5" style="display: none">
-						<div data-limit="220" data-order="0" class="bottle_template_textfull text"></div>
+						<div data-limit="500" data-order="0" class="bottle_template_textfull text"></div>
 					</div>
 					<div class="bottle_template" id="template_6" style="display: none">
 						<div data-order="0" class="bottle_template_imgfull bottle_template_img image_holder"></div>
