@@ -1361,8 +1361,8 @@ var defaults = {
 	currentCss: function( el, container, isFinal ){
 		if( isFinal ){
 			return [
-				$.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 100 )+'px', bottom: 0 }, { } ),
-				$.jcoverflip.animationElement( el.find( 'img' ), { opacity: 1, width: '200px' }, { } )
+				$.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 80 )+'px', bottom: 0 }, { } ),
+				$.jcoverflip.animationElement( el.find( 'img' ), { opacity: 1, width: '160px' }, { } )
 			];
 		} else {
 			return [

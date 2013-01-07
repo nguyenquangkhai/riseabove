@@ -1,4 +1,4 @@
-<? include('config.php'); ?>
+<? include('database.php'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -44,11 +44,11 @@
 	<div class="bg_content_5 gallery">        
 		<div class="content_gallery">
 			<ul id="flip">
-			  <li><img src="images/common/bottle_ori_1.png" /></li>
-			  <li><img src="images/common/bottle_ori_1.png" /></li>
-			  <li><img src="images/common/bottle_ori_1.png" /></li>
-			  <li><img src="images/common/bottle_ori_1.png" /></li>
-			  <li><img src="images/common/bottle_ori_1.png" /></li>
+			<? $gallery_list = mysql_query("SELECT * FROM gallery_image");
+				while($row = mysql_fetch_array($gallery_list)){
+			?>
+			  <li><img src="images/gallery/<?=$row['name_image']?>" /></li>
+			<? }?>
 			</ul>
         </div>
 		<a href="#" class="prev"></a>
@@ -70,10 +70,10 @@
     });
 	$('#flip').jcoverflip();
 	$('.prev').click(function(){
-		$('#flip').jcoverflip('previous');
+		$('#flip').jcoverflip('previous', 1, false);
 	});
 	$('.next').click(function(){
-		$('#flip').jcoverflip('next');
+		$('#flip').jcoverflip('next', 1, false);
 	});
   });
   </script> 
