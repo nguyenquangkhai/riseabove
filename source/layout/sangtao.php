@@ -61,30 +61,24 @@ $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
 				<div class="bottle slider">
 					<div class="bottle_template" id="template_1" style="display: none">
 						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
-						<div data-limit="120" data-order="0" class="bottle_template_textlarge text">
-						</div>
+						<div data-limit="120" data-order="0" class="bottle_template_textlarge text"></div>
 					</div>
 					<div class="bottle_template" id="template_2" style="display: none">
-						<div data-limit="120" data-order="0" class="bottle_template_textlarge text">
-						</div>
+						<div data-limit="120" data-order="0" class="bottle_template_textlarge text"></div>
 						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
 					</div>
 					<div class="bottle_template" id="template_3" style="display: none">
-						<div data-limit="60" data-order="0" class="bottle_template_textsmall text">
-						</div>
+						<div data-limit="60" data-order="0" class="bottle_template_textsmall text"></div>
 						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
-						<div data-limit="60" data-order="1" class="bottle_template_textsmall text">
-						</div>
+						<div data-limit="60" data-order="1" class="bottle_template_textsmall text"></div>
 					</div>
 					<div class="bottle_template" id="template_4" style="display: none">
 						<div data-order="0" class="bottle_template_imgsmall bottle_template_img image_holder"></div>
-						<div data-limit="60" data-order="0" class="bottle_template_textsmall text">
-						</div>
+						<div data-limit="60" data-order="0" class="bottle_template_textsmall text"></div>
 						<div data-order="1" class="bottle_template_imgsmall bottle_template_img image_holder"></div>
 					</div>
 					<div class="bottle_template" id="template_5" style="display: none">
-						<div data-limit="220" data-order="0" class="bottle_template_textfull text">
-						</div>
+						<div data-limit="220" data-order="0" class="bottle_template_textfull text"></div>
 					</div>
 					<div class="bottle_template" id="template_6" style="display: none">
 						<div data-order="0" class="bottle_template_imgfull bottle_template_img image_holder"></div>
@@ -650,8 +644,6 @@ $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
 				});
 			};
 
-
-
 			return {
 				go: go,
 				stop: stop,
@@ -660,6 +652,7 @@ $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
 		}());
 	
 			$(function() {
+				var $template = null;
 				$(".loader").ajaxStart(function(){
 					$(this).show();
 				});
@@ -694,6 +687,20 @@ $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
 				});
 				
 				$("#arrow_from2_to3").click(function() {
+					if ($('.text', $template).html() == '') {
+						anim.go($('.text', $template));
+						$('.text', $template).click(function(){
+							anim.stop($(this));
+						});
+						return;
+					}
+					if ($('.image_holder', $template).html() == '') {
+						anim.go($('.image_holder', $template));
+						$('.image_holder', $template).click(function(){
+							anim.stop($(this));
+						});					
+						return;
+					}
 					$content2.fadeOut("slow");
 					$content3.fadeIn("slow");
 					$(".slider").addClass("step3");
@@ -710,6 +717,7 @@ $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
 					$(".bottle_template").hide();
 					$(obj).show();
 					var tempId = $(this).data("templateid");
+					$template = $('#template_' + tempId);
 					$(".text").click(function(){
 						var val = $(this).data("order");
 						$("#wish").html($("#master_text" + val).val()).focus();
