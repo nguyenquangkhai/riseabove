@@ -32,8 +32,9 @@
 	vertical-align: middle;
 	font-family: "Times New Roman";
 	font-style: italic;
-	font-size: 11px;
-	margin-left: 65px;
+	/*font-size: 11px;
+	margin-left: 65px;*/
+	margin:0 auto;
 }
 
 .bottle_template .text img{
