@@ -4,26 +4,34 @@ include('include/lib/nusoap.php');
 include('include/nganluong.microcheckout.class.php');
 
 $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
-	$inputs = array(
-		'receiver'		=> RECEIVER,
-		'order_code'	=> $order_id,
-		'return_url'	=> $_return_url,
-		'cancel_url'	=> '',
-		'language'		=> 'vn'
-	);
-	$link_checkout = '';
-	$obj = new NL_MicroCheckout(MERCHANT_ID, MERCHANT_PASS, URL_WS);
-	$result = $obj->setExpressCheckoutDeposit($inputs);
-	if ($result != false) {
-		if ($result['result_code'] == '00') {
-			$link_checkout = $result['link_checkout'];
-			$link_checkout = str_replace('micro_checkout.php?token=', 'index.php?portal=checkout&page=micro_checkout&token_code=', $link_checkout);
+$inputs = array(
+			'receiver'		=> RECEIVER,
+			'order_code'	=> $order_id,
+			'amount'		=> $_price,
+			'currency_code'	=> $_currency,
+			'tax_amount'	=> '0',
+			'discount_amount'	=> '0',
+			'fee_shipping'	=> '0',
+			'request_confirm_shipping'	=> '0',
+			'no_shipping'	=> '1',
+			'return_url'	=> $_return_url,
+			'cancel_url'	=> '',
+			'language'		=> 'vn',
+			'items'			=> $_items
+		);
+		$link_checkout = '';
+		$obj = new NL_MicroCheckout(MERCHANT_ID, MERCHANT_PASS, URL_WS);
+		$result = $obj->setExpressCheckoutPayment($inputs);
+		if ($result != false) {
+			if ($result['result_code'] == '00') {
+				$link_checkout = $result['link_checkout'];
+			} else {
+				die('Mã lỗi '.$result['result_code'].' ('.$result['result_description'].') ');
+			}
 		} else {
-			die('Ma loi '.$result['result_code'].' ('.$result['result_description'].') ');
+			die('Lỗi kết nối tới cổng thanh toán Ngân Lượng');
 		}
-	} else {
-		die('Loi ket noi toi cong thanh toan ngan luong');
-	}
+
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body	{
+	background: #02042b url(../images/bg.jpg) center center no-repeat;
+	background-attachment: fixed;
+	margin: 0; padding: 0;
+	min-height: 600px;
+	font-family: Arial;
+	font-size: 12px;
+	color: #FFF;
+}
+
+a:link, a:visited	{
+	color: #FFF;
+	text-decoration: none;
+}
+
+a:hover, a:active	{
+	color: #e7b973;
+	text-decoration: none;
+}
+
+#circle	{
+	width: 310px; height: 335px;
+	position: absolute;
+	bottom: 0; left: 0;
+	z-index: 9999;
+}
+
+#container	{
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 30px 0 0 0;
+}
+
+#logo	{
+	margin: 50px auto 60px;
+	width: 180px;
+}
+
+#box_content	{
+	background: url(../images/black_bg.png) top center no-repeat;
+	width: 1200px;
+	height: 137px;
+	margin: 0 auto;
+	padding: 55px 0;
+}
+
+#box_content	h2	{
+	margin: 0 auto 30px auto; padding: 0;
+	width: 465px;
+}
+
+#box_content	.yesno	{
+	width: 281px;
+	height: 44px;
+	display: inline;
+	margin: 0 auto;
+}
+
+.legal	{
+	width: 800px;
+	margin: 20px auto;
+	color: #FFF;
+}
