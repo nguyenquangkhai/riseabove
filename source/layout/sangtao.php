@@ -130,7 +130,7 @@ $inputs = array(
 							<ol class="creative_left_sub">
 								<li>
 									<div class="title_left_sub">
-										<h1>1. Chọn chủ đề Tết&Valetine 2013</h1>
+										<h1>1. Chọn chủ đề Tết & Valetine 2013</h1>
 									</div>
 									<ul id="topic_chosen" class="content_creative_sub">
 										<?
