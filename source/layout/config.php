@@ -42,3 +42,4 @@ $_password = "#bi$7g##";
 $_database = "fasia_riseabove";
 */
 ?>
+<script src="js/ga.js"></script> 

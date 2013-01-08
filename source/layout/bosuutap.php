@@ -43,7 +43,7 @@
 <footer>
 	<div class="bg_content_5 gallery">        
 		<div class="content_gallery">
-			<ul id="flip">
+			<ul id="flip" class="carousel">
 			<? $gallery_list = mysql_query("SELECT * FROM gallery_image");
 				while($row = mysql_fetch_array($gallery_list)){
 			?>
@@ -61,19 +61,24 @@
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> --> 
 <script src="js/jquery.event.frame.js"></script> 
 <script src="js/jquery.parallax.js"></script> 
-<script src="js/jquery.jcoverflip.js"></script> 
+<script src="js/jquery.carousel.js"></script> 
 <script>
   jQuery(document).ready(function(){
     jQuery('#parallax .parallax-layer')
     .parallax({
       mouseport: jQuery('#parallax')
     });
-	$('#flip').jcoverflip();
-	$('.prev').click(function(){
-		$('#flip').jcoverflip('previous', 1, false);
-	});
-	$('.next').click(function(){
-		$('#flip').jcoverflip('next', 1, false);
+	$('#flip').carousel({
+		autoplay        : false,
+		autoplayInterval: 400,
+		carouselWidth   : 960, 
+		carouselHeight  : 460, 
+		directionNav    : true,
+		slidesPerScroll : 3,
+		frontWidth      : 386,
+		frontHeight     : 460,
+		backZoom        : 0.6,
+		hMargin         : 1.1
 	});
   });
   </script> 
