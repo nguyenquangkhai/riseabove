@@ -39,6 +39,7 @@
 	}
 	.imageflow .navigation{
 		z-index:10000;
+		margin-top: -200px;
 	}
 	.imageflow .caption {
 		font-weight:bold;
@@ -47,7 +48,6 @@
 		z-index:10001;
 	}
 	.imageflow .scrollbar {
-		border-bottom:1px solid #b3b3b3;
 		position:relative; 
 		visibility:hidden;
 		z-index:10002;
@@ -81,17 +81,18 @@
 	}
 	.imageflow .button {
 		cursor:pointer;
-		height:17px;
+		height:85px;
 		position:relative;
-		width:17px;
+		width:43px;
+		z-index: 99999;
 	}
 	.imageflow .previous {
-		background: url(button_left.png) top left no-repeat;
+		background: url("../images/new_year/arrow_creative_ prev.png") no-repeat;
 		float:left;
 		margin: -7px 0 0 -30px;
 	}
 	.imageflow .next {
-		background: url(button_right.png) top left no-repeat;
+		background: url("../images/new_year/arrow_creative.png") no-repeat;
 		float:right;	
 		margin:-7px -30px 0 30px;
 	}

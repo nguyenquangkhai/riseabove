@@ -1,9 +1,9 @@
 <?
-/*
+
 $_host = "localhost";
 $_username = "root";
 $_password = "";
-$_database = "riseabove";*/
+$_database = "riseabove";
 
 $_reciever = "pikqilee@gmail.com";
 $_price = 1000000;
@@ -33,11 +33,11 @@ define('URL_WS', 'https://www.nganluong.vn/micro_checkout_api.php?wsdl');
 
 define('PAGE_TITLE', 'Quà tặng tết');
 define('FALVICON_PATH', 'images/favicon.png');
-
+/*
 $_host = "db.hostvn.net";
 $_username = "fasia_riseabove";
 $_password = "#bi$7g##";
 $_database = "fasia_riseabove";
-
+*/
 
 ?>

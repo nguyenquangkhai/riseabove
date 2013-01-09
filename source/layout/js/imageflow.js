@@ -41,8 +41,8 @@ function ImageFlow ()
 	{
 		animationSpeed:     50,             /* Animation speed in ms */
 		aspectRatio:        2,          /* Aspect ratio of the ImageFlow container (width divided by height) */
-		buttons:            false,          /* Toggle navigation buttons */
-		captions:           true,           /* Toggle captions */
+		buttons:            true,          /* Toggle navigation buttons */
+		captions:           false,           /* Toggle captions */
 		circular:           true,          /* Toggle circular rotation */
 		imageCursor:        'default',      /* Cursor type for all images - default is 'default' */
 		ImageFlowID:        'imageflow',    /* Default id of the ImageFlow container */
@@ -63,7 +63,7 @@ function ImageFlow ()
 		reflectionP:        0.0,            /* Height of the reflection in percent of the source image */
 		reflectionPNG:      false,          /* Toggle reflect2.php or reflect3.php */
 		reflectPath:        '',             /* Path to the reflect_.php script */
-		scrollbarP:         0.6,            /* Width of the scrollbar in percent */
+		scrollbarP:         0.9,            /* Width of the scrollbar in percent */
 		slider:             true,           /* Toggle slider */
 		sliderCursor:       'e-resize',     /* Slider cursor type - default is 'default' */
 		sliderWidth:        14,             /* Width of the slider in px */
