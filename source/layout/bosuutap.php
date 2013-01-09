@@ -11,9 +11,13 @@
 <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/style_gallery.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
-<link rel="stylesheet" type="text/css" media="all" href="css/jcoverflip.css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="css/carousel.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="js/ga.js"></script>
+<script src="js/jquery.carousel.js"></script> 
+<script src="js/jquery.mousewheel.min.js"></script>
+
 </head>
 
 <body >
@@ -61,24 +65,16 @@
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> --> 
 <script src="js/jquery.event.frame.js"></script> 
 <script src="js/jquery.parallax.js"></script> 
-<script src="js/jquery.carousel.js"></script> 
+
+
 <script>
   jQuery(document).ready(function(){
     jQuery('#parallax .parallax-layer')
     .parallax({
       mouseport: jQuery('#parallax')
     });
-	$('#flip').carousel({
-		autoplay        : false,
-		autoplayInterval: 400,
-		carouselWidth   : 960, 
-		carouselHeight  : 460, 
-		directionNav    : true,
-		slidesPerScroll : 3,
-		frontWidth      : 386,
-		frontHeight     : 460,
-		backZoom        : 0.6,
-		hMargin         : 1.1
+	$('.carousel').carousel({
+		autoplay        : false
 	});
   });
   </script> 

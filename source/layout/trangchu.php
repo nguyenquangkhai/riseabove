@@ -4,6 +4,8 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width;minimum-scale=0.5,maximum-scale=1.0; user-scalable=1;" />
+	<meta name="description" content="Website cung cấp quà Tết 2013 và Valentine 2013 dành cho sản phẩm rượu Martell VSOP. Sản phẩm rượu cognac nổi tiếng từ Pháp.Website Risabove">
+	<meta name="keywords" content="Martell, Martell VSOP, Riseabove, rượu cognac, VSOP, quà xuân, quà tết quà Valentine 2013. Quà độc đáo, quà handmade, quà tặng Tết Nguyên Đán, Túi quà">
 	<title><?=PAGE_TITLE?></title>
 	<link href="<?=FALVICON_PATH?>" rel="shortcut icon"/> 
 	<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
@@ -14,6 +16,7 @@
 	<style type="text/css" media="screen, projection">
 
 </style>
+<script src="js/ga.js"></script> 
 	</head>
 
 	<body >
@@ -24,8 +27,7 @@
     	<li> <a class="logo"></a></li>
 		<li> <a class="active"> TRANG CHỦ </a></li>|
 		<li> <a href="gioithieu.php"> GIỚI THIỆU </a></li>|
-		<li> <a href="sangtao.php"> SÁNG TẠO </a> </li>|
-		<li> <a href="bosuutap.php"> BỘ SƯU TẬP </a></li>
+		<li> <a href="sangtao.php"> SÁNG TẠO </a> </li>
      </ul>
   </nav>
     </header>
@@ -37,7 +39,7 @@
     </section>
 <footer>
 	<div class="wrapp_sns">
-    	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="#" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
+    	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="http://www.facebook.com/riseabovefashion" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
     </div>
 </footer>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 

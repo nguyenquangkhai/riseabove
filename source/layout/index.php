@@ -16,7 +16,7 @@ if ($pos !== false) {
    $redirect_url = $org_url;   
 } else {
 	//if not exists --> add www
-   $redirect_url = str_replace("quatang.riseabove.vn","www.quatang.riseabove.vn",$org_url);
+   $redirect_url = str_replace("www.quatang.riseabove.vn","quatang.riseabove.vn",$org_url);
 }
 
 //replace string
@@ -40,27 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?=PAGE_TITLE?></title>
 <link href="preload/style.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="<?=FALVICON?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?=FALVICON_PATH?>" type="image/x-icon" />
 <meta name="description" content="Rise Above">
 <meta name="DC.Title" content="Rise Above">
 <meta name="DC.Description" content="Rise Above">
 <meta property="og:title" content="Rise Above" />
 <meta property="og:description" content="Rise Above" />
 <meta property="og:image" content="/images/logo.png" />
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31951017-1']);
-  _gaq.push(['_setDomainName', 'riseabove.vn']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+<script src="js/ga.js"></script> 
 
 </head>
 

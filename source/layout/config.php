@@ -17,6 +17,7 @@ $_discount=0;
 $_fee_cal=0;
 $_fee_shipping=0;
 $_return_url = "http://quatang.riseabove.vn/verify_transaction.php";
+$_cancel_url = "http://quatang.riseabove.vn/trangchu.php";
 $_items = array(
 	array(
 		'item_name'		=> 'Rượu Martell',
@@ -26,20 +27,17 @@ $_items = array(
 
 define('MERCHANT_ID', '26275');// Biến này được cấp khi đăng ký merchantsite( đăng ký website trên Ngân Lượng)
 define('MERCHANT_PASS', 'nganluong456');// Biến này là mật khẩu giao tiếp khi đăng ký merchantsite bạn nhập vào
-define('USER_ID', '210570'); //là Mã tài khoản NgânLượng.vn của bạn
-define('IMAGE_TYPE', 180); //180 là kích thước logo rộng 180px
 define('RECEIVER', $_reciever);// Email chính đăng ký trên Ngân Lượng
 
 define('URL_WS', 'https://www.nganluong.vn/micro_checkout_api.php?wsdl');
 
 define('PAGE_TITLE', 'Quà tặng tết');
 define('FALVICON_PATH', 'images/favicon.png');
-
 /*
 $_host = "db.hostvn.net";
 $_username = "fasia_riseabove";
 $_password = "#bi$7g##";
 $_database = "fasia_riseabove";
 */
+
 ?>
-<script src="js/ga.js"></script> 

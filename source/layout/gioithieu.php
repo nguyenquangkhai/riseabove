@@ -14,6 +14,7 @@
 <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.codrops2.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/tabs.css" />
+<script src="js/ga.js"></script> 
 <style>
 	p{
 		margin-bottom:5px;
@@ -36,8 +37,7 @@
    			<li> <a class="logo"></a></li>
       		<li> <a href="trangchu.php"> TRANG CHỦ </a></li>|
           <li> <a class="active"> GIỚI THIỆU </a></li>|
-          <li> <a href="sangtao.php"> SÁNG TẠO </a> </li>|
-          <li> <a href="bosuutap.php"> BỘ SƯU TẬP </a></li>
+          <li> <a href="sangtao.php"> SÁNG TẠO </a> </li>
     </ul>
   </nav>
 </header>
@@ -169,7 +169,7 @@
   </article>
 </section>
 <footer><div class="wrapp_sns">
-    	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="#" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
+    	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="http://www.facebook.com/riseabovefashion" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
     </div> </footer>
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> --> 
 <script src="js/jquery.event.frame.js"></script> 

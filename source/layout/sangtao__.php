@@ -4,34 +4,26 @@ include('include/lib/nusoap.php');
 include('include/nganluong.microcheckout.class.php');
 
 $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
-$inputs = array(
-			'receiver'		=> RECEIVER,
-			'order_code'	=> $order_id,
-			'amount'		=> $_price,
-			'currency_code'	=> $_currency,
-			'tax_amount'	=> '0',
-			'discount_amount'	=> '0',
-			'fee_shipping'	=> '0',
-			'request_confirm_shipping'	=> '0',
-			'no_shipping'	=> '1',
-			'return_url'	=> $_return_url,
-			'cancel_url'	=> $_cancel_url,
-			'language'		=> 'vn',
-			'items'			=> $_items
-		);
-		$link_checkout = '';
-		$obj = new NL_MicroCheckout(MERCHANT_ID, MERCHANT_PASS, URL_WS);
-		$result = $obj->setExpressCheckoutPayment($inputs);
-		if ($result != false) {
-			if ($result['result_code'] == '00') {
-				$link_checkout = $result['link_checkout'];
-			} else {
-				die('Mã lỗi '.$result['result_code'].' ('.$result['result_description'].') ');
-			}
+	$inputs = array(
+		'receiver'		=> RECEIVER,
+		'order_code'	=> $order_id,
+		'return_url'	=> $_return_url,
+		'cancel_url'	=> '',
+		'language'		=> 'vn'
+	);
+	$link_checkout = '';
+	$obj = new NL_MicroCheckout(MERCHANT_ID, MERCHANT_PASS, URL_WS);
+	$result = $obj->setExpressCheckoutDeposit($inputs);
+	if ($result != false) {
+		if ($result['result_code'] == '00') {
+			$link_checkout = $result['link_checkout'];
+			$link_checkout = str_replace('micro_checkout.php?token=', 'index.php?portal=checkout&page=micro_checkout&token_code=', $link_checkout);
 		} else {
-			die('Lỗi kết nối tới cổng thanh toán Ngân Lượng');
+			die('Ma loi '.$result['result_code'].' ('.$result['result_description'].') ');
 		}
-
+	} else {
+		die('Loi ket noi toi cong thanh toan ngan luong');
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +41,6 @@ $inputs = array(
 		<link rel="stylesheet" type="text/css" media="all" href="css/creative_style.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="css/jquery.jscrollpane.codrops2.css" />
 		<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
-		<script src="js/ga.js"></script> 
 	</head>
 
 	<body >
@@ -60,7 +51,8 @@ $inputs = array(
                 	<li> <a class="logo"></a></li>
 					<li> <a href="trangchu.php"> TRANG CHỦ </a></li>|
 			          <li> <a href="gioithieu.php"> GIỚI THIỆU </a></li>|
-			          <li> <a  class="active"> SÁNG TẠO </a> </li>
+			          <li> <a  class="active"> SÁNG TẠO </a> </li>|
+			          <li> <a href="bosuutap.php"> BỘ SƯU TẬP </a></li>
 				</ul>
 			</nav>
 		</header>
@@ -69,24 +61,30 @@ $inputs = array(
 				<div class="bottle slider">
 					<div class="bottle_template" id="template_1" style="display: none">
 						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
-						<div data-limit="260" data-order="0" class="bottle_template_textlarge text"></div>
+						<div data-limit="260" data-order="0" class="bottle_template_textlarge text">
+						</div>
 					</div>
 					<div class="bottle_template" id="template_2" style="display: none">
-						<div data-limit="260" data-order="0" class="bottle_template_textlarge text"></div>
+						<div data-limit="260" data-order="0" class="bottle_template_textlarge text">
+						</div>
 						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
 					</div>
 					<div class="bottle_template" id="template_3" style="display: none">
-						<div data-limit="130" data-order="0" class="bottle_template_textsmall text"></div>
+						<div data-limit="130" data-order="0" class="bottle_template_textsmall text">
+						</div>
 						<div data-order="0" class="bottle_template_imglarge bottle_template_img image_holder"></div>
-						<div data-limit="130" data-order="1" class="bottle_template_textsmall text"></div>
+						<div data-limit="130" data-order="1" class="bottle_template_textsmall text">
+						</div>
 					</div>
 					<div class="bottle_template" id="template_4" style="display: none">
 						<div data-order="0" class="bottle_template_imgsmall bottle_template_img image_holder"></div>
-						<div data-limit="130" data-order="0" class="bottle_template_textsmall text"></div>
+						<div data-limit="130" data-order="0" class="bottle_template_textsmall text">
+						</div>
 						<div data-order="1" class="bottle_template_imgsmall bottle_template_img image_holder"></div>
 					</div>
 					<div class="bottle_template" id="template_5" style="display: none">
-						<div data-limit="500" data-order="0" class="bottle_template_textfull text"></div>
+						<div data-limit="500" data-order="0" class="bottle_template_textfull text">
+						</div>
 					</div>
 					<div class="bottle_template" id="template_6" style="display: none">
 						<div data-order="0" class="bottle_template_imgfull bottle_template_img image_holder"></div>
@@ -130,7 +128,7 @@ $inputs = array(
 							<ol class="creative_left_sub">
 								<li>
 									<div class="title_left_sub">
-										<h1>1. Chọn chủ đề Tết & Valetine 2013</h1>
+										<h1>1. Chọn chủ đề Tết&Valetine 2013</h1>
 									</div>
 									<ul id="topic_chosen" class="content_creative_sub">
 										<?
@@ -261,7 +259,7 @@ $inputs = array(
 			<input type="hidden" id="master_image_num" value="0"/>
 		</section>
 		<footer><div class="wrapp_sns">
-    	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="http://www.facebook.com/riseabovefashion" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
+    	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="#" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
     </div> </footer>
 		<!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script -->
@@ -652,6 +650,8 @@ $inputs = array(
 				});
 			};
 
+
+
 			return {
 				go: go,
 				stop: stop,
@@ -660,7 +660,6 @@ $inputs = array(
 		}());
 	
 			$(function() {
-				var $template = null;
 				$(".loader").ajaxStart(function(){
 					$(this).show();
 				});
@@ -695,20 +694,6 @@ $inputs = array(
 				});
 				
 				$("#arrow_from2_to3").click(function() {
-					if ($('.text', $template).html() == '') {
-						anim.go($('.text', $template));
-						$('.text', $template).click(function(){
-							anim.stop($(this));
-						});
-						return;
-					}
-					if ($('.image_holder', $template).html() == '') {
-						anim.go($('.image_holder', $template));
-						$('.image_holder', $template).click(function(){
-							anim.stop($(this));
-						});					
-						return;
-					}
 					$content2.fadeOut("slow");
 					$content3.fadeIn("slow");
 					$(".slider").addClass("step3");
@@ -725,7 +710,6 @@ $inputs = array(
 					$(".bottle_template").hide();
 					$(obj).show();
 					var tempId = $(this).data("templateid");
-					$template = $('#template_' + tempId);
 					$(".text").click(function(){
 						var val = $(this).data("order");
 						$("#wish").html($("#master_text" + val).val()).focus();
