@@ -68,7 +68,7 @@
 <p>-	<u>Bước 3:</u> Sau khi hoàn thành sản phẩm Martell V.S.O.P độc đáo của riêng mình, bạn hãy điền thông tin người gửi và người nhận của món quà đặc biệt này. Tại đây bạn cũng có thể chọn <b>Thanh toán</b> để đặt hàng. Ngoài ra, có nút <b>Chia sẻ tác phẩm trên Facebook & bộ sưu tập</b> để bạn chia sẻ và lưu giữ những tác phẩm do chính bạn tạo ra.</p>
 <br/><br/>
 			<p><b>II.	Cách thức chi trả:</b></p>
-<p>-	<b>Mỗi chai Martell VSOP phiên bản đặc biệt có giá: 1,300,000 vnđ</b> (Bao gồm phí thanh toán phát sinh (nếu có) và phí vận chuyển đến nơi người nhận)</p>
+<p>-	<b>Mỗi chai Martell VSOP phiên bản đặc biệt có giá: <?=number_format($_price)?> vnđ</b> (Bao gồm phí thanh toán phát sinh (nếu có) và phí vận chuyển đến nơi người nhận)</p>
 <p>-	Được thực hiện bởi hệ thống thanh toán trực tuyến NgânLượng.vn, các bước chi trả tuyệt đối an toàn, nhanh chóng với kết nối online trực tiếp với hầu hết các ngân hàng lớn tại Việt Nam như VietComBank, TechComBank, Đông Á, VIB, SHB, Quân đội, BIDV, VietinBank, Sacombank…cũng như hệ thống thẻ Visa, Master card.
 (<a href="http://help.nganluong.vn/chi-tiet-49/2/4369/Vi-sao-nen-su-dung-NganLuong.vn:-24-diem-khac-biet.html"><u>Tìm hiểu về hệ thống NgânLượng.vn</u></a>)</p>
 <br/><br/>
