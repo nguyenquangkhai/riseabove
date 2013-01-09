@@ -12,7 +12,10 @@
 <link rel="stylesheet" type="text/css" media="all" href="css/style_gallery.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/carousel.css" />
+<link rel="stylesheet" href="css/imageflow.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="js/imageflow.js" type="text/javascript"></script>
 
 <script src="js/ga.js"></script>
 <script src="js/jquery.carousel.js"></script> 
@@ -47,16 +50,14 @@
 <footer>
 	<div class="bg_content_5 gallery">        
 		<div class="content_gallery">
-			<ul id="flip" class="carousel">
+			<div id="slide-gallery" class="imageflow"> 
 			<? $gallery_list = mysql_query("SELECT * FROM gallery_image");
 				while($row = mysql_fetch_array($gallery_list)){
 			?>
-			  <li><img src="images/gallery/<?=$row['name_image']?>" /></li>
+			  <img src="images/gallery/<?=$row['name_image']?>" longdesc="images/gallery/<?=$row['name_image']?>" alt=""/>
 			<? }?>
-			</ul>
+			</div>
         </div>
-		<a href="#" class="prev"></a>
-		<a href="#" class="next"></a>
     </div> 
     <div class="wrapp_sns">
     	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="#" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
@@ -73,9 +74,6 @@
     .parallax({
       mouseport: jQuery('#parallax')
     });
-	$('.carousel').carousel({
-		autoplay        : false
-	});
   });
   </script> 
 
