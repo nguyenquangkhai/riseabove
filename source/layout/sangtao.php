@@ -224,6 +224,9 @@ $inputs = array(
 								<input id="from_tel" class="contact_tell" type="text" value=""/>
 								<div></div>
 								<input id="from_mail" class="contact_email" type="text" value=""/>
+								<div id="is_save_gallery" style="position: absolute; right: 180px; top: 120px;">
+									<input type="checkbox" name="save" id="save" />Lưu vào bộ sưu tập
+								</div>
 								<div id="same_from_to">
 									<input type="checkbox" name="copy" />
 								</div>
