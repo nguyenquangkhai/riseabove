@@ -11,16 +11,10 @@
 <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/style_gallery.css" />
 <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
-<link rel="stylesheet" type="text/css" media="all" href="css/carousel.css" />
 <link rel="stylesheet" href="css/imageflow.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
 <script src="js/imageflow.js" type="text/javascript"></script>
-
 <script src="js/ga.js"></script>
-<script src="js/jquery.carousel.js"></script> 
-<script src="js/jquery.mousewheel.min.js"></script>
-
 </head>
 
 <body >
