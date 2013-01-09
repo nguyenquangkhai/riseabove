@@ -32,7 +32,7 @@
 		<li> <a href="trangchu.php"> TRANG CHỦ </a></li>|
 		<li> <a href="gioithieu.php"> GIỚI THIỆU </a></li>|
 		<li> <a href="sangtao.php"> SÁNG TẠO </a> </li>|
-		<li> <a class="active" href="gallery_page.php"> BỘ SƯU TẬP </a></li>
+		<li> <a class="active"> BỘ SƯU TẬP </a></li>
     </ul>
   </nav>
 </header>

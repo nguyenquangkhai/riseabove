@@ -37,7 +37,8 @@
    			<li> <a class="logo"></a></li>
       		<li> <a href="trangchu.php"> TRANG CHỦ </a></li>|
           <li> <a class="active"> GIỚI THIỆU </a></li>|
-          <li> <a href="sangtao.php"> SÁNG TẠO </a> </li>
+          <li> <a href="sangtao.php"> SÁNG TẠO </a> </li>|
+		<li> <a href="bosuutap.php"> BỘ SƯU TẬP </a></li>
     </ul>
   </nav>
 </header>
