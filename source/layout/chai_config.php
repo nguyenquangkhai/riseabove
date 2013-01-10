@@ -19,6 +19,7 @@ define('IMAGE_HEIGHT_SMALL', 90);
 define('GALLERY_URL', 'images/gallery/');
 define('GALLERY_PATTERN', 'GA-');	
 
+define('SHARE_URL', 'images/share/');
 
 
 

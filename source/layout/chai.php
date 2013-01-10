@@ -1,7 +1,7 @@
 <?php
 require_once 'chai_config.php';
 
-function create_chai($template, $topic, $image1, $image2, $text1, $text2, $uid) {
+function create_chai($template, $topic, $image1, $image2, $text1, $text2, $uid, $is_share = false) {
  //Load chai
  $image_1 = $image_2 = null;
  if ($uid != null) {
@@ -63,7 +63,12 @@ function create_chai($template, $topic, $image1, $image2, $text1, $text2, $uid) 
   imagealphablending($thumb, false);
   imagesavealpha($thumb, true);
   imagecopyresampled($thumb, $chai, 0, 0, 0, 0, imagesx($chai), imagesy($chai), imagesx($chai), imagesy($chai));
-  $gallery_id = GALLERY_URL.GALLERY_PATTERN.$uid.".png";
+  if($is_share){
+  	$gallery_id = SHARE_URL.GALLERY_PATTERN.$uid.".png";
+  }
+  else{
+ 	$gallery_id = GALLERY_URL.GALLERY_PATTERN.$uid.".png";
+  }
   $result = imagepng($thumb,  $gallery_id);
   imagedestroy($thumb);
   return GALLERY_PATTERN.$uid.".png";
