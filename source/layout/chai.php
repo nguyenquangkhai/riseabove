@@ -71,10 +71,5 @@ function create_chai($template, $topic, $image1, $image2, $text1, $text2, $uid) 
 	}
 }
 
-$user_list = mysql_query("SELECT * FROM user_info");
-while($row = mysql_fetch_array($user_list)){
-	if($row[template_id] != NULL)
-		create_chai($row[template_id], $row[topic_id], $row[image_1_id], $row[image_2_id], $row[text_1], $row[text_2], $row[user_info_id]);
-}
  
 //header('Content-type: text/html; charset=utf-8');
