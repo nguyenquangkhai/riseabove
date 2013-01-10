@@ -22,7 +22,7 @@ $inputs = array(
 		$link_checkout = '';
 		$obj = new NL_MicroCheckout(MERCHANT_ID, MERCHANT_PASS, URL_WS);
 		$result = $obj->setExpressCheckoutPayment($inputs);
-		if ($result != false) {
+		/*if ($result != false) {
 			if ($result['result_code'] == '00') {
 				$link_checkout = $result['link_checkout'];
 			} else {
@@ -30,7 +30,7 @@ $inputs = array(
 			}
 		} else {
 			die('Lỗi kết nối tới cổng thanh toán Ngân Lượng');
-		}
+		}*/
 
 ?>
 <!DOCTYPE html>
