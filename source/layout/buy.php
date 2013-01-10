@@ -87,6 +87,11 @@ mysql_query($insert_user_payment_query, $con);
 $_order_code = mysql_insert_id();
 
 include('chai.php');
+$gallery_id = create_chai($template, $topic, $image_1, $image_2, $text_1, $text_2, $last_info_id);
+if($gallery_id != NULL){
+ $insert_gallery_query = "INSERT INTO gallery_image (name_image) VALUES ('$gallery_id')";
+ mysql_query($insert_gallery_query, $con);
+};
 
 if ($_order_code != 0) {
 	echo 'success';
