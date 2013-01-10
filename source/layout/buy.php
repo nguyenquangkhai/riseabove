@@ -87,7 +87,6 @@ mysql_query($insert_user_payment_query, $con);
 $_order_code = mysql_insert_id();
 
 include('chai.php');
-create_chai($template, $topic, $image_1, $image_2, $text_1, $text_2, $last_info_id);
 
 if ($_order_code != 0) {
 	echo 'success';
