@@ -1,6 +1,6 @@
 <?php
 require_once 'chai_config.php';
-include("database.php");
+
 function create_chai($template, $topic, $image1, $image2, $text1, $text2, $uid) {
 	//Load chai
 	if ($uid != null) {

@@ -86,6 +86,8 @@ $insert_user_payment_query = "INSERT INTO `user_payment`
 mysql_query($insert_user_payment_query, $con);
 $_order_code = mysql_insert_id();
 
+include('chai.php');
+
 if ($_order_code != 0) {
 	echo 'success';
 }

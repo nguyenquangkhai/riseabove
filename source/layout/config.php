@@ -2,7 +2,7 @@
 
 $_host = "localhost";
 $_username = "root";
-$_password = "123456";
+$_password = "";
 $_database = "riseabove";
 
 $_reciever = "pikqilee@gmail.com";
