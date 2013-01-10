@@ -52,7 +52,7 @@ function ImageFlow ()
 		imageScaling:       true,           /* Toggle image scaling */ 
 		imagesHeight:       1.0,           /* Height of the images div container in percent */
 		imagesM:            1.5,            /* Multiplicator for all images in percent */
-		onClick:            function() { document.location = this.url; },   /* Onclick behaviour */
+		onClick:            function() { },//document.location = this.url; },   /* Onclick behaviour */
 		opacity:            true,          /* Toggle image opacity */
 		opacityArray:       [10,8,6,4,2],   /* Image opacity (range: 0 to 10) first value is for the focussed image */
 		percentLandscape:   118,            /* Scale landscape format */
