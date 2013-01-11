@@ -285,7 +285,7 @@ $inputs = array(
     <p id='msg'></p>
 
     <script> 
-      FB.init({appId: "458358780877780", status: true, cookie: true});
+      FB.init({appId: "347744198639921", status: true, cookie: true});
 
       function postToFeed() {
 
