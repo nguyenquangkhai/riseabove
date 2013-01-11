@@ -45,7 +45,7 @@
 	<div class="bg_content_5 gallery">        
 		<div class="content_gallery">
 			<div id="slide-gallery" class="imageflow"> 
-			<? $gallery_list = mysql_query("SELECT * FROM gallery_image");
+			<? $gallery_list = mysql_query("SELECT * FROM gallery_image ORDER BY id_image DESC");
 				while($row = mysql_fetch_array($gallery_list)){
 			?>
 			  <img src="images/gallery/<?=$row['name_image']?>" longdesc="images/gallery/<?=$row['name_image']?>" alt=""/>
