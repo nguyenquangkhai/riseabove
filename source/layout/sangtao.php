@@ -234,37 +234,8 @@ $inputs = array(
 								<input id="to_name" class="contact_name_1" type="text" value=""/>
 								<div id="to_add" contenteditable="true" class="contact_address_1"></div>
 								<input id="to_tel" class="contact_tel_1" type="text" value=""/>
-								<input id="to_mail" class="contact_email_1" type="text" value=""/>
-								
-								<div id='fb-root'></div>
-								<script src='http://connect.facebook.net/en_US/all.js'></script>
-								<p><a onclick='postToFeed(); return false;' class="contact_submit gallery_save" style="bottom: 50px; left: 400px; cursor: pointer;"></a></p>
-								<p id='msg'></p>
-
-								<script> 
-								  FB.init({appId: "458358780877780", status: true, cookie: true});
-
-								  function postToFeed() {
-
-									// calling the API ...
-									var obj = {
-									  method: 'feed',
-									  redirect_uri: 'YOUR URL HERE',
-									  link: 'https://developers.facebook.com/docs/reference/dialogs/',
-									  picture: 'http://fbrell.com/f8.jpg',
-									  name: 'Facebook Dialogs',
-									  caption: 'Reference Documentation',
-									  description: 'Using Dialogs to interact with users.'
-									};
-
-									function callback(response) {
-									  document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
-									}
-
-									FB.ui(obj, callback);
-								  }
-								
-								</script>
+								<input id="to_mail" class="contact_email_1" type="text" value=""/>			
+								<a id="share_button" href="#" class="contact_submit gallery_save" style="bottom: 50px; left: 400px; cursor: pointer;"></a>
 								<button id="do_transaction" class="contact_submit" value="" style="bottom: 50px; cursor: pointer;"></button>
 						</div>
 					</div>
@@ -1014,7 +985,39 @@ $inputs = array(
 						anim.stop($(e.target));
 					}
 				);
+				$('#share_button').click(function(){
+					ajaxShare();
+				});
 			});
+			function ajaxShare(){
+				$.ajax({
+					url: "share.php",
+					type: "POST",
+					data: {
+						template: $("#master_template").val(),
+						topic: $("#master_topic").val(),
+						image_1: $("#master_image0").val(),
+						image_2: $("#master_image1").val(),
+						text_1: $("#master_text0").val(),
+						text_2: $("#master_text1").val()
+					},
+					success: function(data){
+						console.log(data);
+						if (data) {
+							var url = 'https://www.facebook.com/sharer/sharer.php?app_id=458358780877780&sdk=joey&u=http://' + '<?php echo $_SERVER["HTTP_HOST"]."/images/share/";?>' + data;
+							poptastic(url);
+						}
+					}
+				});			
+			}
+			var newwindow;
+			function poptastic(url)
+			{
+				newwindow=window.open(url,'Share','height=400,width=500');
+				if (window.focus) {
+					newwindow.focus();
+				}
+			}
 		</script>
 	</body>
 </html>
