@@ -235,7 +235,36 @@ $inputs = array(
 								<div id="to_add" contenteditable="true" class="contact_address_1"></div>
 								<input id="to_tel" class="contact_tel_1" type="text" value=""/>
 								<input id="to_mail" class="contact_email_1" type="text" value=""/>
-								<a onclick='postToFeed(); return false;' class="contact_submit gallery_save" value="" style="bottom: 50px; left: 400px; cursor: pointer;"></a>
+								
+								<div id='fb-root'></div>
+								<script src='http://connect.facebook.net/en_US/all.js'></script>
+								<p><a onclick='postToFeed(); return false;' class="contact_submit gallery_save" style="bottom: 50px; left: 400px; cursor: pointer;"></a></p>
+								<p id='msg'></p>
+
+								<script> 
+								  FB.init({appId: "458358780877780", status: true, cookie: true});
+
+								  function postToFeed() {
+
+									// calling the API ...
+									var obj = {
+									  method: 'feed',
+									  redirect_uri: 'YOUR URL HERE',
+									  link: 'https://developers.facebook.com/docs/reference/dialogs/',
+									  picture: 'http://fbrell.com/f8.jpg',
+									  name: 'Facebook Dialogs',
+									  caption: 'Reference Documentation',
+									  description: 'Using Dialogs to interact with users.'
+									};
+
+									function callback(response) {
+									  document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+									}
+
+									FB.ui(obj, callback);
+								  }
+								
+								</script>
 								<button id="do_transaction" class="contact_submit" value="" style="bottom: 50px; cursor: pointer;"></button>
 						</div>
 					</div>
@@ -295,34 +324,6 @@ $inputs = array(
 		<!-- the jScrollPane script -->
 		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
 		<script type="text/javascript" src="js/scroll-startstop.events.jquery.js"></script>
-		<div id='fb-root'></div>
-    <script src='http://connect.facebook.net/en_US/all.js'></script>
-    <p id='msg'></p>
-
-    <script> 
-      FB.init({appId: "347744198639921", status: true, cookie: true});
-
-      function postToFeed() {
-
-        // calling the API ...
-        var obj = {
-          method: 'feed',
-          redirect_uri: 'quatang.riseabove.vn/sangtao.php',
-          link: 'images/asd.png',
-          picture: 'images/asd.png',
-          name: 'Facebook Dialogs',
-          caption: 'Reference Documentation',
-          description: 'Using Dialogs to interact with users.'
-        };
-
-        function callback(response) {
-          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
-        }
-
-        FB.ui(obj, callback);
-      }
-    
-    </script>
 		<script type="text/javascript">
 			function addScrollBar1(){
 			
