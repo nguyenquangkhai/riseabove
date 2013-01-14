@@ -169,9 +169,23 @@
     <div class="bottle about"></div>
   </article>
 </section>
-<footer><div class="wrapp_sns">
+<footer>
+	<style>
+		#nganluongframe26275{margin: -200px 0 0 350px;}
+	</style>
+	<div style="padding-top:200px; padding-left:200px;">
+		<script src="https://www.nganluong.vn/tooltip_nbdb/nldb_tootip.js"></script>
+		<script type="text/javascript">
+			var merchantID=<?=MERCHANT_ID?>; // 22287 là Mã merchant site( hay mã website dăng ky trên Ngân Lượng)
+			var uesrID=<?=USER_ID?>; //  là Mã tài khoản NgânLượng.vn của bạn
+			var imageType=<?=IMAGE_TYPE?>; // 230 là kích thước logo rộng 230px
+			ngaluongloadframe(merchantID,uesrID,imageType);	
+		</script>
+	</div>
+	<div class="wrapp_sns">
     	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="http://www.facebook.com/riseabovefashion" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
-    </div> </footer>
+    </div> 
+</footer>
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> --> 
 <script src="js/jquery.event.frame.js"></script> 
 <script src="js/jquery.parallax.js"></script> 
