@@ -54,7 +54,8 @@
         </div>
     </div> 
 	<style>
-		#nganluongframe26275{margin: -720px 0 0 350px;}
+		#nganluongframe26275{margin: -720px 0 0 400px;}
+		#tt_nganluong26275{width: 130px;}
 	</style>
 	<div style="padding-top:200px; padding-left:200px;">
 		<script src="https://www.nganluong.vn/tooltip_nbdb/nldb_tootip.js"></script>
