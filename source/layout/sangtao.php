@@ -1005,7 +1005,7 @@ $inputs = array(
 						if (data) {
 							var app_id = '458358780877780',
 								link = 'http://<?php echo $_SERVER["HTTP_HOST"];?>',
-								picture = link + "/images/share/";
+								picture = 'http://<?php echo $_SERVER["HTTP_HOST"];?>/images/share/';
 								name = 'quatang.riseabove.vn',
 								caption = 'Tết Tết Tết đến rồi',
 								description = 'Hãy cùng tham gia để nhận 1 chai rượu Martell',
@@ -1027,7 +1027,7 @@ $inputs = array(
 			var newwindow;
 			function poptastic(url)
 			{
-				newwindow=window.open(url,'Share','height=400,width=500');
+				newwindow=window.open(url,'Share','height=500,width=500');
 				if (window.focus) {
 					newwindow.focus();
 				}
