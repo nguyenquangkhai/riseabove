@@ -1002,9 +1002,23 @@ $inputs = array(
 						text_2: $("#master_text1").val()
 					},
 					success: function(data){
-						console.log(data);
 						if (data) {
-							var url = 'https://www.facebook.com/sharer/sharer.php?app_id=458358780877780&sdk=joey&u=http://' + '<?php echo $_SERVER["HTTP_HOST"]."/images/share/";?>' + data;
+							var app_id = '458358780877780',
+								link = 'http://<?php echo $_SERVER["HTTP_HOST"];?>',
+								picture = link + "/images/share/";
+								name = 'quatang.riseabove.vn',
+								caption = 'Tết Tết Tết đến rồi',
+								description = 'Hãy cùng tham gia để nhận 1 chai rượu Martell',
+								redirect_uri = 'http://quatang.riseabove.vn';
+							//var url = 'https://www.facebook.com/sharer/sharer.php?app_id=458358780877780&sdk=joey&u=http://' + '<?php echo $_SERVER["HTTP_HOST"]."/images/share/";?>' + data;
+							var url = 'https://www.facebook.com/dialog/feed?' +
+										'app_id=' + app_id +
+										'&link=' + link + 
+										'&picture=' + picture + data +
+										'&name=' + name +
+										'&caption=' + caption +
+										'&description=' + description +
+										'&redirect_uri=' + 'https://mighty-lowlands-6381.herokuapp.com/';
 							poptastic(url);
 						}
 					}
