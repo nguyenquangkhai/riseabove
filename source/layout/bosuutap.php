@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/imageflow.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="js/imageflow.js" type="text/javascript"></script>
+<script src="js/jquery.slidingGallery-1.2.js" type="text/javascript"></script>
 <script src="js/ga.js"></script>
 </head>
 
@@ -44,12 +45,20 @@
 <footer>
 	<div class="bg_content_5 gallery">        
 		<div class="content_gallery">
-			<div id="slide-gallery" class="imageflow"> 
+			<div class="gallery_container" style="top:0; left:-20px; width:1000px; height:500px;"> 
 			<? $gallery_list = mysql_query("SELECT * FROM gallery_image ORDER BY id_image DESC");
+				$i = 0;
 				while($row = mysql_fetch_array($gallery_list)){
+					if ($i == 0) {
 			?>
-			  <img src="images/gallery/<?=$row['name_image']?>" longdesc="images/gallery/<?=$row['name_image']?>" alt=""/>
-			<? }?>
+				<img src="images/gallery/<?=$row['name_image']?>" alt="" layout="portrait" class="start"/>
+			<? 		}
+					else {
+			?>
+				<img src="images/gallery/<?=$row['name_image']?>" alt="" layout="portrait" />
+			<?		}
+				$i++;
+			}?>
 			</div>
         </div>
     </div> 
@@ -57,7 +66,7 @@
 		#nganluongframe26275{margin: -720px 0 0 400px;}
 		#tt_nganluong26275{width: 130px;}
 	</style>
-	<div style="padding-top:200px; padding-left:200px;">
+	<div style="padding-top:200px; padding-left:400px;">
 		<script src="https://www.nganluong.vn/tooltip_nbdb/nldb_tootip.js"></script>
 		<script type="text/javascript">
 			var merchantID=<?=MERCHANT_ID?>; // 22287 là Mã merchant site( hay mã website dăng ky trên Ngân Lượng)
@@ -83,6 +92,16 @@
     });
   });
   </script> 
-
+    <script language="javascript" type="text/javascript">
+        $(function() {
+            var zoomFunc = function(dimension) {
+                return dimension * 1.5;
+            }
+            var shrinkFunc = function(dimension) {
+                return dimension * 0.7;
+            }
+            $('div.gallery_container img').slidingGallery({'slideSpeed':'slow','Lzoom':zoomFunc, 'Pzoom':zoomFunc,'Lshrink':shrinkFunc,'Pshrink':shrinkFunc, container: $('div.gallery_container')});
+        });
+    </script>
 </body>
 </html>
