@@ -265,19 +265,7 @@ $inputs = array(
 			<input type="hidden" id="master_image_num" value="0"/>
 		</section>
 		<footer>
-			<style>
-				#nganluongframe26275{margin: -200px 0 0 400px;}
-				#tt_nganluong26275{width: 130px;}
-			</style>
-			<div style="padding-top:200px; padding-left:200px;">
-				<script src="https://www.nganluong.vn/tooltip_nbdb/nldb_tootip.js"></script>
-				<script type="text/javascript">
-					var merchantID=<?=MERCHANT_ID?>; // 22287 là Mã merchant site( hay mã website dăng ky trên Ngân Lượng)
-					var uesrID=<?=USER_ID?>; //  là Mã tài khoản NgânLượng.vn của bạn
-					var imageType=<?=IMAGE_TYPE?>; // 230 là kích thước logo rộng 230px
-					ngaluongloadframe(merchantID,uesrID,imageType);	
-				</script>
-			</div>
+			<? include("logoNL.php"); ?>
 		<div class="wrapp_sns">
 			<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="http://www.facebook.com/riseabovefashion" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
 		</div> 
@@ -1007,8 +995,8 @@ $inputs = array(
 								link = 'http://<?php echo $_SERVER["HTTP_HOST"];?>',
 								picture = 'http://<?php echo $_SERVER["HTTP_HOST"];?>/images/share/';
 								name = 'quatang.riseabove.vn',
-								caption = 'Tết Tết Tết đến rồi',
-								description = 'Hãy cùng tham gia để nhận 1 chai rượu Martell',
+								caption = 'Tết Tết Tết Tết đến rồi',
+								description = 'Hãy tự tay thiết kế món quà Tết đẳng cấp Martell VSOP - phiên bản đặc biệt dành tặng cho bạn bè nào. \<\<From Martell with Love\>\>',
 								redirect_uri = 'http://quatang.riseabove.vn';
 							//var url = 'https://www.facebook.com/sharer/sharer.php?app_id=458358780877780&sdk=joey&u=http://' + '<?php echo $_SERVER["HTTP_HOST"]."/images/share/";?>' + data;
 							var url = 'https://www.facebook.com/dialog/feed?' +
@@ -1027,7 +1015,7 @@ $inputs = array(
 			var newwindow;
 			function poptastic(url)
 			{
-				newwindow=window.open(url,'Share','height=500,width=500');
+				newwindow=window.open(url,'Share','height=500,width=800');
 				if (window.focus) {
 					newwindow.focus();
 				}
