@@ -608,7 +608,6 @@ $inputs = array(
 					save: $('#save').is(':checked') ? 1 : 0
 				},
 				success: function(data){
-					console.log(data);
 				}
 			});
 		}
