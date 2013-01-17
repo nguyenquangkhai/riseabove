@@ -46,7 +46,7 @@
 	<div class="bg_content_5 gallery">        
 		<div class="content_gallery">
 			<div class="gallery_container" style="top:0; left:-20px; width:1000px; height:500px;"> 
-			<? $gallery_list = mysql_query("SELECT * FROM gallery_image ORDER BY id_image DESC");
+			<? $gallery_list = mysql_query("SELECT * FROM gallery_image WHERE `show` = 1 ORDER BY id_image DESC");
 				$i = 0;
 				while($row = mysql_fetch_array($gallery_list)){
 					if ($i == 0) {

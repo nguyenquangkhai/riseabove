@@ -604,7 +604,8 @@ $inputs = array(
 					to_add: $("#master_to_add").val(),
 					to_tel: $("#master_to_tel").val(),
 					to_mail: $("#master_to_mail").val(),
-					order_id: '<?=$order_id?>'
+					order_id: '<?=$order_id?>',
+					save: $('#save').is(':checked') ? 1 : 0
 				},
 				success: function(data){
 					console.log(data);
