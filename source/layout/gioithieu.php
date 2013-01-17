@@ -170,8 +170,8 @@
   </article>
 </section>
 <footer>
-	<? include("logoNL.php"); ?>
 	<div class="wrapp_sns">
+		<? include("logoNL.php"); ?>
     	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="http://www.facebook.com/riseabovefashion" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
     </div> 
 </footer>

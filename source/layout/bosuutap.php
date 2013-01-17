@@ -62,8 +62,9 @@
 			</div>
         </div>
     </div> 
-	<? include("logoNLGA.php"); ?>
+	
     <div class="wrapp_sns">
+		<? include("logoNL.php"); ?>
     	<a href="#" class="btn_sns"></a><a href="#">SHARE ON</a><a href="#" class="btn_sns_f"></a><a href="#" class="btn_sns_g"></a><a href="#" class="btn_sns_t"></a>
     </div>
 </footer>
