@@ -33,19 +33,15 @@
 </header>
 <section style="height: 656px;">
   <article class="wrapper parallax-viewport" id="parallax">
-    <div class="bg_content_1 gallery"></div>
-    <div class="bg_content_3 gallery" style="width: 396px; height:42px;">
-      <div class="wrapp_content gallery" style="width: 0px;">
-		<div class="title_gallery" style="left: 280px;"><img src="images/new_year/title_martell.png" width="396" height="42"> </div>
-      	
-      </div>
-    </div>    
+    <div class="bg_content_1 gallery"></div> 
+	<div class="title_gallery">
+		<img src="images/new_year/title_martell.png" width="396" height="42"> 
+	</div>	
   </article>
-</section>
-<footer>
-	<div class="bg_content_5 gallery">        
+	
+	<div class="gallery">  
 		<div class="content_gallery">
-			<div class="gallery_container" style="top:0; left:-20px; width:1000px; height:500px;"> 
+			<div class="gallery_container" style="left:-50px; width:1000px; height:500px;"> 
 			<? $gallery_list = mysql_query("SELECT * FROM gallery_image WHERE `show` = 1 ORDER BY id_image DESC");
 				$i = 0;
 				while($row = mysql_fetch_array($gallery_list)){
@@ -60,8 +56,12 @@
 				$i++;
 			}?>
 			</div>
-        </div>
-    </div> 
+		</div>
+	</div> 
+
+</section>
+<footer>
+
 	
     <div class="wrapp_sns">
 		<? include("logoNL.php"); ?>
