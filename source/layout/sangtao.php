@@ -159,7 +159,8 @@ $inputs = array(
 											<img style="margin-top: 100px;" src="images/loader.gif" />
 										</div -->
 										<?
-											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = 1");
+											$id_topic = rand(1, 6);
+											$image_list = mysql_query("SELECT * FROM image_master WHERE id_topic_master = $id_topic");
 											$length = mysql_num_rows ($image_list);
 											if($length > 6){
 										?>
