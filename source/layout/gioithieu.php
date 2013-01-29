@@ -78,8 +78,8 @@
 <p>-	Sau 4 – 5 ngày phiên bản sẽ chyển phát nhanh món quà của bạn đến với người nhận theo địa chỉ bạn đã cung cấp.</p>
 <br/><br/>
 <p><b>IV.	Liênhệ:</b></p> 
-<p>-	Mọi chi tiết vui lòng liên hệ qua mail: <a href="mailto:info@riseabove.vn"><u>info@riseabove.vn</u></a> </p>
-	
+<p>-	Mọi chi tiết vui lòng liên hệ qua mail: <a href="mailto:quatang.riseabove@gmail.com"><u>quatang.riseabove@gmail.com</u></a> </p>
+		Hotline: 098 6803329 hoặc 0937 116186
             </div>
             <div class="tabcontent hide jp-container" id="cont-3-1">
             	<h2>Điều Lệ Bảo Mật</h2>
