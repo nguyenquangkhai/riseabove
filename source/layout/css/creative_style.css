@@ -458,8 +458,7 @@ section{
 
 /********************** CONTACT FORM ************************/
 #same_from_to{
-	margin:-10px 0 0 390px;
-	background: url(../images/common/same_address.png) top right no-repeat;
+	margin:15px 0 0 438px;
 	width: 140px;
 	height: 20px;
 	padding-top: 7px;
@@ -475,21 +474,21 @@ section{
 
 .wrapp_content .contact_name {
 	width: 220px;
-	margin: 68px 0 0 115px;
+	margin: 90px 0 0 115px;
 }
 
 .wrapp_content .contact_address {
 	width: 260px;
-	margin: 13px 0 0 70px;
+	margin: 6px 0 0 65px;
 }
 
 .wrapp_content .contact_tell {
-	margin: 16px 0 0 83px;
+	margin: 14px 0 0 98px;
 	width: 240px;
 }
 
 .wrapp_content .contact_email {
-	margin:7px 0 0 102px;
+	margin:9px 0 0 125px;
 	width: 220px;
 }
 
@@ -499,40 +498,37 @@ section{
 
 .wrapp_content  .contact_name_1 {
 	width:230px;
-	margin: 10px 0 0 440px;
+	margin: 7px 0 0 500px;
 }
 .wrapp_content.contact .contact_address_1 {
 	width: 280px;
 	height: 40px;
-	margin: 13px 0 0 400px;
+	margin: 6px 0 0 450px;
 }
 
 .wrapp_content.contact .contact_tel_1 {
 	width: 195px;
-	margin: 14px 0 0 415px
+	margin: 14px 0 0 485px;
 }
 
 
 .wrapp_content.contact .contact_email_1 {
 	width: 230px;
-	margin: 6px 0 0 435px
+	margin: 9px 0 0 510px;
 }
 
 .wrapp_content .contact_submit{
 	position:absolute;
 	display:block;
-	right: 180px;
-	width:131px;
-	height:67px;
-	background:inherit;
-	background-image: url(../images/new_year/button_payment.png);
-	background-repeat:no-repeat;
-	background-size:131px 67px;
+	left: 190px;
+	width:127px;
+	height:36px;
+	background: url(../images/new_year/button_payment.png) no-repeat;
 	border:none;
 	cursor:pointer;
 }
 
-.wrapp_content .contact_submit.gallery_save{background-image: url(../images/new_year/chiase_btn.png); background-size:113px 39px; background-position: 10px 14px;}
+.wrapp_content .contact_submit.gallery_save{background: url(../images/new_year/chiase_btn.png) no-repeat;}
 
 /************** BACKGROUND 4 **************/
 .bg_content_4_holder{

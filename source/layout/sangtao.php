@@ -226,8 +226,8 @@ $inputs = array(
 								<input id="from_tel" class="contact_tell" type="text" value=""/>
 								<div></div>
 								<input id="from_mail" class="contact_email" type="text" value=""/>
-								<div id="is_save_gallery" style="position: absolute; right: 180px; top: 120px;">
-									<input type="checkbox" name="save" id="save" />Lưu vào bộ sưu tập
+								<div id="is_save_gallery" style="position: absolute; right: 338px; top: 160px;">
+									<input type="checkbox" name="save" id="save" />
 								</div>
 								<div id="same_from_to">
 									<input type="checkbox" name="copy" />
@@ -236,7 +236,7 @@ $inputs = array(
 								<div id="to_add" contenteditable="true" class="contact_address_1"></div>
 								<input id="to_tel" class="contact_tel_1" type="text" value=""/>
 								<input id="to_mail" class="contact_email_1" type="text" value=""/>			
-								<a id="share_button" href="#" class="contact_submit gallery_save" style="bottom: 50px; left: 400px; cursor: pointer;"></a>
+								<a id="share_button" href="#" class="contact_submit gallery_save" style="bottom: 50px; left: 50px; cursor: pointer;"></a>
 								<button id="do_transaction" class="contact_submit" value="" style="bottom: 50px; cursor: pointer;"></button>
 						</div>
 					</div>

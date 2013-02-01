@@ -223,8 +223,8 @@ width:100%;
 	}
 .btn_creative{
 	position:absolute;
-	bottom:70px;
-	left:725px;
+	top:290px;
+	left:780px;
 	width:148px;
 	height:62px;
 	background-image:url(../images/new_year/btn_creative.png);
