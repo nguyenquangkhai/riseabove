@@ -35,7 +35,7 @@
 <section style="height:100%">
       <article class="wrapper parallax-viewport" id="parallax">
     <div class="bg_content_1"></div>
-    <div class="bottle home"><a href="sangtao.php" class="btn_creative"></a></div>
+    <div class="bottle home bottle_trangchu"><a href="sangtao.php" class="btn_creative"></a></div>
   </article>
     </section>
 <footer>
