@@ -3,7 +3,7 @@ include("database.php");
 include('include/lib/nusoap.php');
 include('include/nganluong.microcheckout.class.php');
 
-$error_NL = false;
+$error_of_NL = false;
 $order_id = 'MT-'.date('His-dmY').rand(1000, 9999);
 $inputs = array(
 			'receiver'		=> RECEIVER,
@@ -28,7 +28,7 @@ $inputs = array(
 				$link_checkout = $result['link_checkout'];
 			} else {
 				//die('Mã lỗi '.$result['result_code'].' ('.$result['result_description'].') ');
-				$error_NL = true;
+				$error_of_NL = true;
 			}
 		} else {
 			die('Lỗi kết nối tới cổng thanh toán Ngân Lượng');
@@ -584,12 +584,9 @@ $inputs = array(
 		</script>
 		<script language="javascript" src="include/nganluong.apps.mcflow.js"></script>
 		<script language="javascript">
-		<? if(error_NL) {?>
-			$("#do_transaction").click(function(){
-				alert('Hiện tại chúng tôi ngưng cung cấp sản phẩm. Hen gặp các bạn sau Tết! Martell V.S.O.P chúc mừng năm mới!');
-			});
-		<? }
-			else { ?>
+		<? if($error_of_NL) {?>
+			alert('Hiện tại chúng tôi ngưng cung cấp sản phẩm. Hen gặp các bạn sau Tết! Martell V.S.O.P chúc mừng năm mới!');
+		<? } else { ?>
 			var mc_flow = new NGANLUONG.apps.MCFlow({trigger:'do_transaction',url:'<?php echo @$link_checkout;?>'});
 		<? } ?>
 		</script>
